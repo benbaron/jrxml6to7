@@ -1,0 +1,6334 @@
+{
+  "generated_at": "2025-12-28T05:26:41Z",
+  "source": {
+    "archive": "samples.tar",
+    "files_total": 652,
+    "xml_like_files": 239,
+    "parse_errors": 0
+  },
+  "notes": [
+    "Corpus-derived catalog: elements/attributes observed in provided JR 7.x samples (not a full JasperReports specification).",
+    "Element tags are reported by local-name. Namespaced attributes are normalized when possible (e.g., xsi:schemaLocation).",
+    "Any tag that appears with a 'kind' attribute is additionally broken down by observed kind values."
+  ],
+  "namespaces_seen": {
+    "element_ns_uris": [
+      "antlib:org.apache.ivy.ant",
+      "http://maven.apache.org/POM/4.0.0",
+      "http://www.springframework.org/schema/beans",
+      "http://xmlns.jcp.org/xml/ns/persistence"
+    ],
+    "attribute_ns_uris": [
+      "http://www.w3.org/2001/XMLSchema-instance"
+    ],
+    "known_prefixes": {
+      "http://www.w3.org/2001/XMLSchema-instance": "xsi"
+    }
+  },
+  "tags": {
+    "Address": {
+      "count": 91,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "AggExclude": {
+      "count": 6,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "AggFactCount": {
+      "count": 1,
+      "attributes": [
+        "column"
+      ],
+      "attributes_ranked": [
+        "column"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "AggForeignKey": {
+      "count": 4,
+      "attributes": [
+        "aggColumn",
+        "factColumn"
+      ],
+      "attributes_ranked": [
+        "aggColumn",
+        "factColumn"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "AggIgnoreColumn": {
+      "count": 2,
+      "attributes": [
+        "column"
+      ],
+      "attributes_ranked": [
+        "column"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "AggLevel": {
+      "count": 3,
+      "attributes": [
+        "column",
+        "name"
+      ],
+      "attributes_ranked": [
+        "column",
+        "name"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "AggMeasure": {
+      "count": 3,
+      "attributes": [
+        "column",
+        "name"
+      ],
+      "attributes_ranked": [
+        "column",
+        "name"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "AggName": {
+      "count": 1,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [
+        "AggFactCount",
+        "AggForeignKey",
+        "AggIgnoreColumn",
+        "AggLevel",
+        "AggMeasure"
+      ],
+      "child_elements_ranked": [
+        "AggForeignKey",
+        "AggLevel",
+        "AggMeasure",
+        "AggIgnoreColumn",
+        "AggFactCount"
+      ]
+    },
+    "CalculatedMember": {
+      "count": 5,
+      "attributes": [
+        "caption",
+        "dimension",
+        "formatString",
+        "formula",
+        "name",
+        "visible"
+      ],
+      "attributes_ranked": [
+        "dimension",
+        "name",
+        "formula",
+        "formatString",
+        "visible",
+        "caption"
+      ],
+      "child_elements": [
+        "CalculatedMemberProperty",
+        "Formula"
+      ],
+      "child_elements_ranked": [
+        "CalculatedMemberProperty",
+        "Formula"
+      ]
+    },
+    "CalculatedMemberProperty": {
+      "count": 2,
+      "attributes": [
+        "name",
+        "value"
+      ],
+      "attributes_ranked": [
+        "name",
+        "value"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "City": {
+      "count": 91,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Closure": {
+      "count": 1,
+      "attributes": [
+        "childColumn",
+        "parentColumn"
+      ],
+      "attributes_ranked": [
+        "childColumn",
+        "parentColumn"
+      ],
+      "child_elements": [
+        "Table"
+      ],
+      "child_elements_ranked": [
+        "Table"
+      ]
+    },
+    "CompanyName": {
+      "count": 91,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "ContactName": {
+      "count": 91,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "ContactTitle": {
+      "count": 91,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Country": {
+      "count": 91,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Cube": {
+      "count": 6,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [
+        "CalculatedMember",
+        "Dimension",
+        "DimensionUsage",
+        "Measure",
+        "Table"
+      ],
+      "child_elements_ranked": [
+        "Dimension",
+        "Measure",
+        "DimensionUsage",
+        "Table",
+        "CalculatedMember"
+      ]
+    },
+    "CubeGrant": {
+      "count": 2,
+      "attributes": [
+        "access",
+        "cube"
+      ],
+      "attributes_ranked": [
+        "access",
+        "cube"
+      ],
+      "child_elements": [
+        "HierarchyGrant"
+      ],
+      "child_elements_ranked": [
+        "HierarchyGrant"
+      ]
+    },
+    "CustomerID": {
+      "count": 921,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Customers": {
+      "count": 91,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "Address",
+        "City",
+        "CompanyName",
+        "ContactName",
+        "ContactTitle",
+        "Country",
+        "CustomerID",
+        "Fax",
+        "Phone",
+        "PostalCode",
+        "Region"
+      ],
+      "child_elements_ranked": [
+        "Address",
+        "City",
+        "CompanyName",
+        "ContactName",
+        "ContactTitle",
+        "Country",
+        "CustomerID",
+        "Phone",
+        "PostalCode",
+        "Fax",
+        "Region"
+      ]
+    },
+    "Dimension": {
+      "count": 33,
+      "attributes": [
+        "foreignKey",
+        "name",
+        "type"
+      ],
+      "attributes_ranked": [
+        "name",
+        "foreignKey",
+        "type"
+      ],
+      "child_elements": [
+        "Hierarchy"
+      ],
+      "child_elements_ranked": [
+        "Hierarchy"
+      ]
+    },
+    "DimensionUsage": {
+      "count": 16,
+      "attributes": [
+        "foreignKey",
+        "name",
+        "source"
+      ],
+      "attributes_ranked": [
+        "name",
+        "source",
+        "foreignKey"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "EmployeeID": {
+      "count": 830,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Fax": {
+      "count": 69,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Formula": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Freight": {
+      "count": 830,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Hierarchy": {
+      "count": 34,
+      "attributes": [
+        "allMemberName",
+        "hasAll",
+        "name",
+        "primaryKey",
+        "primaryKeyTable"
+      ],
+      "attributes_ranked": [
+        "hasAll",
+        "primaryKey",
+        "allMemberName",
+        "primaryKeyTable",
+        "name"
+      ],
+      "child_elements": [
+        "Join",
+        "Level",
+        "Table"
+      ],
+      "child_elements_ranked": [
+        "Level",
+        "Table",
+        "Join"
+      ]
+    },
+    "HierarchyGrant": {
+      "count": 3,
+      "attributes": [
+        "access",
+        "bottomLevel",
+        "hierarchy",
+        "topLevel"
+      ],
+      "attributes_ranked": [
+        "access",
+        "hierarchy",
+        "topLevel",
+        "bottomLevel"
+      ],
+      "child_elements": [
+        "MemberGrant"
+      ],
+      "child_elements_ranked": [
+        "MemberGrant"
+      ]
+    },
+    "Join": {
+      "count": 5,
+      "attributes": [
+        "leftKey",
+        "rightKey"
+      ],
+      "attributes_ranked": [
+        "leftKey",
+        "rightKey"
+      ],
+      "child_elements": [
+        "Table"
+      ],
+      "child_elements_ranked": [
+        "Table"
+      ]
+    },
+    "KeyExpression": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "SQL"
+      ],
+      "child_elements_ranked": [
+        "SQL"
+      ]
+    },
+    "Level": {
+      "count": 67,
+      "attributes": [
+        "column",
+        "hideMemberIf",
+        "levelType",
+        "name",
+        "nameColumn",
+        "nullParentValue",
+        "ordinalColumn",
+        "parentColumn",
+        "table",
+        "type",
+        "uniqueMembers"
+      ],
+      "attributes_ranked": [
+        "name",
+        "uniqueMembers",
+        "column",
+        "table",
+        "levelType",
+        "type",
+        "hideMemberIf",
+        "nameColumn",
+        "nullParentValue",
+        "ordinalColumn",
+        "parentColumn"
+      ],
+      "child_elements": [
+        "Closure",
+        "KeyExpression",
+        "NameExpression",
+        "Property"
+      ],
+      "child_elements_ranked": [
+        "Property",
+        "KeyExpression",
+        "Closure",
+        "NameExpression"
+      ]
+    },
+    "Measure": {
+      "count": 24,
+      "attributes": [
+        "aggregator",
+        "column",
+        "formatString",
+        "name"
+      ],
+      "attributes_ranked": [
+        "aggregator",
+        "column",
+        "name",
+        "formatString"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "MemberGrant": {
+      "count": 4,
+      "attributes": [
+        "access",
+        "member"
+      ],
+      "attributes_ranked": [
+        "access",
+        "member"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "NameExpression": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "SQL"
+      ],
+      "child_elements_ranked": [
+        "SQL"
+      ]
+    },
+    "Northwind": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "Customers",
+        "Orders"
+      ],
+      "child_elements_ranked": [
+        "Orders",
+        "Customers"
+      ]
+    },
+    "OrderDate": {
+      "count": 830,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "OrderID": {
+      "count": 830,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Orders": {
+      "count": 830,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "CustomerID",
+        "EmployeeID",
+        "Freight",
+        "OrderDate",
+        "OrderID",
+        "RequiredDate",
+        "ShipAddress",
+        "ShipCity",
+        "ShipCountry",
+        "ShipName",
+        "ShipPostalCode",
+        "ShipRegion",
+        "ShipVia",
+        "ShippedDate"
+      ],
+      "child_elements_ranked": [
+        "CustomerID",
+        "EmployeeID",
+        "Freight",
+        "OrderDate",
+        "OrderID",
+        "RequiredDate",
+        "ShipAddress",
+        "ShipCity",
+        "ShipCountry",
+        "ShipName",
+        "ShipVia",
+        "ShipPostalCode",
+        "ShippedDate",
+        "ShipRegion"
+      ]
+    },
+    "Phone": {
+      "count": 91,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "PostalCode": {
+      "count": 90,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Property": {
+      "count": 39,
+      "attributes": [
+        "column",
+        "name",
+        "type"
+      ],
+      "attributes_ranked": [
+        "column",
+        "name",
+        "type"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Region": {
+      "count": 31,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "RequiredDate": {
+      "count": 830,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Role": {
+      "count": 2,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [
+        "SchemaGrant"
+      ],
+      "child_elements_ranked": [
+        "SchemaGrant"
+      ]
+    },
+    "SQL": {
+      "count": 17,
+      "attributes": [
+        "dialect"
+      ],
+      "attributes_ranked": [
+        "dialect"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Schema": {
+      "count": 2,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [
+        "Cube",
+        "Dimension",
+        "Role",
+        "VirtualCube"
+      ],
+      "child_elements_ranked": [
+        "Cube",
+        "Dimension",
+        "Role",
+        "VirtualCube"
+      ]
+    },
+    "SchemaGrant": {
+      "count": 2,
+      "attributes": [
+        "access"
+      ],
+      "attributes_ranked": [
+        "access"
+      ],
+      "child_elements": [
+        "CubeGrant"
+      ],
+      "child_elements_ranked": [
+        "CubeGrant"
+      ]
+    },
+    "ShipAddress": {
+      "count": 830,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "ShipCity": {
+      "count": 830,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "ShipCountry": {
+      "count": 830,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "ShipName": {
+      "count": 830,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "ShipPostalCode": {
+      "count": 811,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "ShipRegion": {
+      "count": 323,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "ShipVia": {
+      "count": 830,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "ShippedDate": {
+      "count": 809,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "Table": {
+      "count": 44,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [
+        "AggExclude",
+        "AggName"
+      ],
+      "child_elements_ranked": [
+        "AggExclude",
+        "AggName"
+      ]
+    },
+    "VirtualCube": {
+      "count": 1,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [
+        "VirtualCubeDimension",
+        "VirtualCubeMeasure"
+      ],
+      "child_elements_ranked": [
+        "VirtualCubeDimension",
+        "VirtualCubeMeasure"
+      ]
+    },
+    "VirtualCubeDimension": {
+      "count": 11,
+      "attributes": [
+        "cubeName",
+        "name"
+      ],
+      "attributes_ranked": [
+        "name",
+        "cubeName"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "VirtualCubeMeasure": {
+      "count": 11,
+      "attributes": [
+        "cubeName",
+        "name"
+      ],
+      "attributes_ranked": [
+        "cubeName",
+        "name"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "additionalClasspathElement": {
+      "count": 10,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "additionalClasspathElements": {
+      "count": 10,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "additionalClasspathElement"
+      ],
+      "child_elements_ranked": [
+        "additionalClasspathElement"
+      ]
+    },
+    "anchorNameExpression": {
+      "count": 38,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "animal": {
+      "count": 30,
+      "attributes": [
+        "image",
+        "name",
+        "size",
+        "type"
+      ],
+      "attributes_ranked": [
+        "image",
+        "name",
+        "size",
+        "type"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "antcall": {
+      "count": 9,
+      "attributes": [
+        "target"
+      ],
+      "attributes_ranked": [
+        "target"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "argument": {
+      "count": 16,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "arguments": {
+      "count": 13,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "argument"
+      ],
+      "child_elements_ranked": [
+        "argument"
+      ]
+    },
+    "artifactId": {
+      "count": 229,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "axis": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "chart",
+        "position"
+      ],
+      "child_elements_ranked": [
+        "chart",
+        "position"
+      ]
+    },
+    "background": {
+      "count": 7,
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "attributes_ranked": [
+        "splitType",
+        "height"
+      ],
+      "child_elements": [
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element"
+      ]
+    },
+    "band": {
+      "count": 385,
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "attributes_ranked": [
+        "height",
+        "splitType"
+      ],
+      "child_elements": [
+        "element",
+        "printWhenExpression"
+      ],
+      "child_elements_ranked": [
+        "element",
+        "printWhenExpression"
+      ]
+    },
+    "bean": {
+      "count": 8,
+      "attributes": [
+        "abstract",
+        "class",
+        "id",
+        "parent"
+      ],
+      "attributes_ranked": [
+        "class",
+        "id",
+        "parent",
+        "abstract"
+      ],
+      "child_elements": [
+        "property"
+      ],
+      "child_elements_ranked": [
+        "property"
+      ]
+    },
+    "beans": {
+      "count": 2,
+      "attributes": [
+        "xsi:schemaLocation"
+      ],
+      "attributes_ranked": [
+        "xsi:schemaLocation"
+      ],
+      "child_elements": [
+        "bean"
+      ],
+      "child_elements_ranked": [
+        "bean"
+      ]
+    },
+    "bold": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "boldItalic": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "bookmarkLevelExpression": {
+      "count": 4,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "borderSplitType": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "bottomPen": {
+      "count": 150,
+      "attributes": [
+        "lineColor",
+        "lineStyle",
+        "lineWidth"
+      ],
+      "attributes_ranked": [
+        "lineWidth",
+        "lineColor",
+        "lineStyle"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "box": {
+      "count": 379,
+      "attributes": [
+        "bottomPadding",
+        "leftPadding",
+        "padding",
+        "rightPadding",
+        "style",
+        "topPadding"
+      ],
+      "attributes_ranked": [
+        "leftPadding",
+        "rightPadding",
+        "style",
+        "bottomPadding",
+        "topPadding",
+        "padding"
+      ],
+      "child_elements": [
+        "bottomPen",
+        "leftPen",
+        "pen",
+        "rightPen",
+        "topPen"
+      ],
+      "child_elements_ranked": [
+        "pen",
+        "bottomPen",
+        "leftPen",
+        "topPen",
+        "rightPen"
+      ]
+    },
+    "bucket": {
+      "count": 24,
+      "attributes": [
+        "class",
+        "order"
+      ],
+      "attributes_ranked": [
+        "class",
+        "order"
+      ],
+      "child_elements": [
+        "expression",
+        "orderByExpression"
+      ],
+      "child_elements_ranked": [
+        "expression",
+        "orderByExpression"
+      ]
+    },
+    "build": {
+      "count": 8,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "plugins",
+        "resources",
+        "sourceDirectory"
+      ],
+      "child_elements_ranked": [
+        "plugins",
+        "resources",
+        "sourceDirectory"
+      ]
+    },
+    "cachepath": {
+      "count": 2,
+      "attributes": [
+        "pathid"
+      ],
+      "attributes_ranked": [
+        "pathid"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "categoryAxisLabelExpression": {
+      "count": 14,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "categoryExpression": {
+      "count": 34,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "cell": {
+      "count": 58,
+      "attributes": [
+        "columnTotalGroup",
+        "height",
+        "rowTotalGroup",
+        "style",
+        "width"
+      ],
+      "attributes_ranked": [
+        "height",
+        "width",
+        "rowTotalGroup",
+        "columnTotalGroup",
+        "style"
+      ],
+      "child_elements": [
+        "contents",
+        "element"
+      ],
+      "child_elements_ranked": [
+        "contents",
+        "element"
+      ]
+    },
+    "chain": {
+      "count": 2,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [
+        "ibiblio"
+      ],
+      "child_elements_ranked": [
+        "ibiblio"
+      ]
+    },
+    "chart": {
+      "count": 3,
+      "attributes": [
+        "backcolor",
+        "chartType",
+        "evaluationGroup",
+        "evaluationTime",
+        "height",
+        "key",
+        "legendBackgroundColor",
+        "legendColor",
+        "positionType",
+        "showLegend",
+        "subtitleColor",
+        "titleColor",
+        "uuid",
+        "width",
+        "x",
+        "y"
+      ],
+      "attributes_ranked": [
+        "backcolor",
+        "chartType",
+        "evaluationGroup",
+        "evaluationTime",
+        "height",
+        "legendBackgroundColor",
+        "legendColor",
+        "positionType",
+        "showLegend",
+        "subtitleColor",
+        "titleColor",
+        "uuid",
+        "width",
+        "x",
+        "y",
+        "key"
+      ],
+      "child_elements": [
+        "dataset",
+        "plot"
+      ],
+      "child_elements_ranked": [
+        "dataset",
+        "plot"
+      ]
+    },
+    "chartSettings": {
+      "count": 1,
+      "attributes": [
+        "backcolor",
+        "customizerClass",
+        "legendBackgroundColor",
+        "showLegend",
+        "subtitleColor",
+        "titlePosition"
+      ],
+      "attributes_ranked": [
+        "backcolor",
+        "customizerClass",
+        "legendBackgroundColor",
+        "showLegend",
+        "subtitleColor",
+        "titlePosition"
+      ],
+      "child_elements": [
+        "hyperlinkTooltipExpression",
+        "legendFont",
+        "subtitleExpression",
+        "subtitleFont",
+        "titleExpression",
+        "titleFont"
+      ],
+      "child_elements_ranked": [
+        "hyperlinkTooltipExpression",
+        "legendFont",
+        "subtitleExpression",
+        "subtitleFont",
+        "titleExpression",
+        "titleFont"
+      ]
+    },
+    "chartTitleExpression": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "class": {
+      "count": 12,
+      "attributes": [
+        "name",
+        "table"
+      ],
+      "attributes_ranked": [
+        "name",
+        "table"
+      ],
+      "child_elements": [
+        "id",
+        "many-to-one",
+        "property",
+        "set"
+      ],
+      "child_elements_ranked": [
+        "property",
+        "id",
+        "many-to-one",
+        "set"
+      ]
+    },
+    "classpath": {
+      "count": 13,
+      "attributes": [
+        "refid"
+      ],
+      "attributes_ranked": [
+        "refid"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "cleanupDaemonThreads": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "closeExpression": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "codeExpression": {
+      "count": 19,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "colorExpression": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "column": {
+      "count": 47,
+      "attributes": [
+        "kind",
+        "uuid",
+        "width"
+      ],
+      "attributes_ranked": [
+        "kind",
+        "uuid",
+        "width"
+      ],
+      "child_elements": [
+        "column",
+        "columnFooter",
+        "columnHeader",
+        "detailCell",
+        "groupFooter",
+        "groupHeader"
+      ],
+      "child_elements_ranked": [
+        "detailCell",
+        "columnHeader",
+        "column",
+        "groupHeader",
+        "columnFooter",
+        "groupFooter"
+      ]
+    },
+    "columnFooter": {
+      "count": 35,
+      "attributes": [
+        "height",
+        "style"
+      ],
+      "attributes_ranked": [
+        "height",
+        "style"
+      ],
+      "child_elements": [
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element"
+      ]
+    },
+    "columnGroup": {
+      "count": 10,
+      "attributes": [
+        "height",
+        "name",
+        "position",
+        "totalPosition"
+      ],
+      "attributes_ranked": [
+        "height",
+        "name",
+        "totalPosition",
+        "position"
+      ],
+      "child_elements": [
+        "bucket",
+        "header",
+        "totalHeader"
+      ],
+      "child_elements_ranked": [
+        "bucket",
+        "header",
+        "totalHeader"
+      ]
+    },
+    "columnHeader": {
+      "count": 68,
+      "attributes": [
+        "height",
+        "rowSpan",
+        "style"
+      ],
+      "attributes_ranked": [
+        "height",
+        "style",
+        "rowSpan"
+      ],
+      "child_elements": [
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element"
+      ]
+    },
+    "compileSourceRoot": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "compileSourceRoots": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "compileSourceRoot"
+      ],
+      "child_elements_ranked": [
+        "compileSourceRoot"
+      ]
+    },
+    "compilerArgument": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "compilerarg": {
+      "count": 6,
+      "attributes": [
+        "value"
+      ],
+      "attributes_ranked": [
+        "value"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "component": {
+      "count": 52,
+      "attributes": [
+        "ascenderHeight",
+        "barHeight",
+        "barWidth",
+        "checksumMode",
+        "checksumRequired",
+        "drawText",
+        "errorCorrectionLevel",
+        "evaluationTime",
+        "hAlign",
+        "iconPosition",
+        "intercharGapWidth",
+        "kind",
+        "labelFill",
+        "margin",
+        "moduleWidth",
+        "printOrder",
+        "shortBarHeight",
+        "style",
+        "textPosition",
+        "trackHeight",
+        "type",
+        "usingCache",
+        "vAlign",
+        "whenNoDataType",
+        "wideFactor"
+      ],
+      "attributes_ranked": [
+        "kind",
+        "hAlign",
+        "iconPosition",
+        "labelFill",
+        "style",
+        "vAlign",
+        "printOrder",
+        "whenNoDataType",
+        "moduleWidth",
+        "usingCache",
+        "checksumRequired",
+        "drawText",
+        "type",
+        "ascenderHeight",
+        "checksumMode",
+        "trackHeight",
+        "barHeight",
+        "barWidth",
+        "errorCorrectionLevel",
+        "evaluationTime",
+        "intercharGapWidth",
+        "margin",
+        "shortBarHeight",
+        "textPosition",
+        "wideFactor"
+      ],
+      "child_elements": [
+        "chartSettings",
+        "chartTitleExpression",
+        "codeExpression",
+        "column",
+        "contents",
+        "dataset",
+        "datasetRun",
+        "expression",
+        "iconTextField",
+        "labelTextField",
+        "parameter",
+        "plot",
+        "xaxisTitleExpression",
+        "yaxisTitleExpression"
+      ],
+      "child_elements_ranked": [
+        "codeExpression",
+        "column",
+        "datasetRun",
+        "iconTextField",
+        "labelTextField",
+        "contents",
+        "parameter",
+        "expression",
+        "dataset",
+        "chartSettings",
+        "chartTitleExpression",
+        "plot",
+        "xaxisTitleExpression",
+        "yaxisTitleExpression"
+      ]
+    },
+    "conditionExpression": {
+      "count": 15,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "conditionalStyle": {
+      "count": 15,
+      "attributes": [
+        "backcolor",
+        "bold",
+        "fontSize",
+        "forecolor",
+        "mode"
+      ],
+      "attributes_ranked": [
+        "backcolor",
+        "bold",
+        "forecolor",
+        "mode",
+        "fontSize"
+      ],
+      "child_elements": [
+        "conditionExpression",
+        "pen"
+      ],
+      "child_elements_ranked": [
+        "conditionExpression",
+        "pen"
+      ]
+    },
+    "configuration": {
+      "count": 19,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "additionalClasspathElements",
+        "arguments",
+        "cleanupDaemonThreads",
+        "compileSourceRoots",
+        "compilerArgument",
+        "deployMode",
+        "executable",
+        "fork",
+        "mainClass",
+        "outputDirectory",
+        "resources",
+        "showWarnings",
+        "skip",
+        "source",
+        "stopKey",
+        "stopPort",
+        "systemProperties",
+        "target",
+        "webAppSourceDirectory",
+        "workingDirectory"
+      ],
+      "child_elements_ranked": [
+        "arguments",
+        "additionalClasspathElements",
+        "mainClass",
+        "executable",
+        "workingDirectory",
+        "deployMode",
+        "outputDirectory",
+        "resources",
+        "stopKey",
+        "stopPort",
+        "webAppSourceDirectory",
+        "cleanupDaemonThreads",
+        "compileSourceRoots",
+        "compilerArgument",
+        "fork",
+        "showWarnings",
+        "skip",
+        "source",
+        "systemProperties",
+        "target"
+      ]
+    },
+    "configure": {
+      "count": 2,
+      "attributes": [
+        "file",
+        "override"
+      ],
+      "attributes_ranked": [
+        "file",
+        "override"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "connectionExpression": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "contents": {
+      "count": 55,
+      "attributes": [
+        "backcolor",
+        "height",
+        "mode",
+        "style",
+        "width"
+      ],
+      "attributes_ranked": [
+        "mode",
+        "backcolor",
+        "height",
+        "width",
+        "style"
+      ],
+      "child_elements": [
+        "box",
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element",
+        "box"
+      ]
+    },
+    "copy": {
+      "count": 2,
+      "attributes": [
+        "todir"
+      ],
+      "attributes_ranked": [
+        "todir"
+      ],
+      "child_elements": [
+        "fileset"
+      ],
+      "child_elements_ranked": [
+        "fileset"
+      ]
+    },
+    "dataRange": {
+      "count": 9,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "highExpression",
+        "lowExpression"
+      ],
+      "child_elements_ranked": [
+        "highExpression",
+        "lowExpression"
+      ]
+    },
+    "dataSourceExpression": {
+      "count": 29,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "dataset": {
+      "count": 85,
+      "attributes": [
+        "incrementGroup",
+        "incrementType",
+        "kind",
+        "name",
+        "resetGroup",
+        "resetType",
+        "timePeriod",
+        "uuid"
+      ],
+      "attributes_ranked": [
+        "kind",
+        "incrementGroup",
+        "incrementType",
+        "name",
+        "uuid",
+        "resetType",
+        "resetGroup",
+        "timePeriod"
+      ],
+      "child_elements": [
+        "closeExpression",
+        "datasetRun",
+        "dateExpression",
+        "field",
+        "group",
+        "highExpression",
+        "incrementWhenExpression",
+        "lowExpression",
+        "openExpression",
+        "parameter",
+        "property",
+        "query",
+        "series",
+        "seriesExpression",
+        "sortField",
+        "valueExpression",
+        "variable",
+        "volumeExpression"
+      ],
+      "child_elements_ranked": [
+        "field",
+        "series",
+        "datasetRun",
+        "group",
+        "variable",
+        "query",
+        "property",
+        "parameter",
+        "closeExpression",
+        "dateExpression",
+        "highExpression",
+        "lowExpression",
+        "openExpression",
+        "seriesExpression",
+        "sortField",
+        "valueExpression",
+        "volumeExpression",
+        "incrementWhenExpression"
+      ]
+    },
+    "datasetRun": {
+      "count": 43,
+      "attributes": [
+        "subDataset",
+        "uuid"
+      ],
+      "attributes_ranked": [
+        "subDataset",
+        "uuid"
+      ],
+      "child_elements": [
+        "connectionExpression",
+        "dataSourceExpression",
+        "parameter"
+      ],
+      "child_elements_ranked": [
+        "dataSourceExpression",
+        "parameter",
+        "connectionExpression"
+      ]
+    },
+    "dateExpression": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "defaultValueExpression": {
+      "count": 22,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "delete": {
+      "count": 4,
+      "attributes": [
+        "dir"
+      ],
+      "attributes_ranked": [
+        "dir"
+      ],
+      "child_elements": [
+        "include"
+      ],
+      "child_elements_ranked": [
+        "include"
+      ]
+    },
+    "dependencies": {
+      "count": 44,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "dependency"
+      ],
+      "child_elements_ranked": [
+        "dependency"
+      ]
+    },
+    "dependency": {
+      "count": 69,
+      "attributes": [
+        "name",
+        "org",
+        "rev"
+      ],
+      "attributes_ranked": [
+        "name",
+        "org",
+        "rev"
+      ],
+      "child_elements": [
+        "artifactId",
+        "exclusions",
+        "groupId",
+        "optional",
+        "scope",
+        "version"
+      ],
+      "child_elements_ranked": [
+        "artifactId",
+        "groupId",
+        "optional",
+        "scope",
+        "version",
+        "exclusions"
+      ]
+    },
+    "deployMode": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "description": {
+      "count": 21,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "detail": {
+      "count": 92,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "band",
+        "part"
+      ],
+      "child_elements_ranked": [
+        "band",
+        "part"
+      ]
+    },
+    "detailCell": {
+      "count": 40,
+      "attributes": [
+        "height",
+        "style"
+      ],
+      "attributes_ranked": [
+        "height",
+        "style"
+      ],
+      "child_elements": [
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element"
+      ]
+    },
+    "directory": {
+      "count": 4,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "display-name": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "echo": {
+      "count": 6,
+      "attributes": [
+        "message"
+      ],
+      "attributes_ranked": [
+        "message"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "element": {
+      "count": 2899,
+      "attributes": [
+        "backcolor",
+        "blankWhenNull",
+        "bold",
+        "bookmarkLevel",
+        "chartType",
+        "columnBreakOffset",
+        "customizerClass",
+        "direction",
+        "evaluationGroup",
+        "evaluationTime",
+        "fontName",
+        "fontSize",
+        "forecolor",
+        "hImageAlign",
+        "hTextAlign",
+        "height",
+        "italic",
+        "key",
+        "kind",
+        "lazy",
+        "linkTarget",
+        "linkType",
+        "markup",
+        "mode",
+        "onErrorType",
+        "pattern",
+        "pdfEmbedded",
+        "pdfFontName",
+        "positionType",
+        "printInFirstWholeBand",
+        "printRepeatedValues",
+        "printWhenDetailOverflows",
+        "printWhenGroupChanges",
+        "radius",
+        "removeLineWhenBlank",
+        "repeatColumnHeaders",
+        "rotation",
+        "scaleImage",
+        "showLegend",
+        "stretchType",
+        "strikeThrough",
+        "style",
+        "textAdjust",
+        "underline",
+        "usingCache",
+        "uuid",
+        "vImageAlign",
+        "vTextAlign",
+        "width",
+        "x",
+        "y"
+      ],
+      "attributes_ranked": [
+        "kind",
+        "height",
+        "uuid",
+        "width",
+        "y",
+        "x",
+        "hTextAlign",
+        "style",
+        "backcolor",
+        "mode",
+        "forecolor",
+        "fontSize",
+        "textAdjust",
+        "positionType",
+        "pattern",
+        "vTextAlign",
+        "evaluationTime",
+        "stretchType",
+        "blankWhenNull",
+        "evaluationGroup",
+        "bold",
+        "key",
+        "bookmarkLevel",
+        "chartType",
+        "scaleImage",
+        "linkType",
+        "underline",
+        "printWhenDetailOverflows",
+        "fontName",
+        "removeLineWhenBlank",
+        "markup",
+        "vImageAlign",
+        "hImageAlign",
+        "pdfFontName",
+        "printRepeatedValues",
+        "italic",
+        "lazy",
+        "onErrorType",
+        "columnBreakOffset",
+        "rotation",
+        "repeatColumnHeaders",
+        "showLegend",
+        "strikeThrough",
+        "linkTarget",
+        "printInFirstWholeBand",
+        "printWhenGroupChanges",
+        "usingCache",
+        "direction",
+        "pdfEmbedded",
+        "radius",
+        "customizerClass"
+      ],
+      "child_elements": [
+        "anchorNameExpression",
+        "bookmarkLevelExpression",
+        "borderSplitType",
+        "box",
+        "cell",
+        "columnGroup",
+        "component",
+        "connectionExpression",
+        "dataSourceExpression",
+        "dataset",
+        "element",
+        "expression",
+        "genericType",
+        "headerCell",
+        "hyperlinkAnchorExpression",
+        "hyperlinkPageExpression",
+        "hyperlinkReferenceExpression",
+        "hyperlinkTooltipExpression",
+        "measure",
+        "paragraph",
+        "parameter",
+        "patternExpression",
+        "pen",
+        "plot",
+        "printWhenExpression",
+        "property",
+        "propertyExpression",
+        "returnValue",
+        "rowGroup",
+        "subtitleExpression",
+        "text",
+        "titleExpression",
+        "whenNoDataCell"
+      ],
+      "child_elements_ranked": [
+        "expression",
+        "text",
+        "box",
+        "element",
+        "property",
+        "pen",
+        "dataset",
+        "cell",
+        "component",
+        "plot",
+        "anchorNameExpression",
+        "hyperlinkTooltipExpression",
+        "hyperlinkReferenceExpression",
+        "propertyExpression",
+        "parameter",
+        "hyperlinkAnchorExpression",
+        "subtitleExpression",
+        "titleExpression",
+        "printWhenExpression",
+        "rowGroup",
+        "measure",
+        "paragraph",
+        "columnGroup",
+        "bookmarkLevelExpression",
+        "dataSourceExpression",
+        "headerCell",
+        "connectionExpression",
+        "genericType",
+        "hyperlinkPageExpression",
+        "returnValue",
+        "borderSplitType",
+        "patternExpression",
+        "whenNoDataCell"
+      ]
+    },
+    "endDateExpression": {
+      "count": 5,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "entry": {
+      "count": 5,
+      "attributes": [
+        "key"
+      ],
+      "attributes_ranked": [
+        "key"
+      ],
+      "child_elements": [
+        "map",
+        "ref"
+      ],
+      "child_elements_ranked": [
+        "ref",
+        "map"
+      ]
+    },
+    "exclude": {
+      "count": 2,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "exclusion": {
+      "count": 5,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "artifactId",
+        "groupId"
+      ],
+      "child_elements_ranked": [
+        "artifactId",
+        "groupId"
+      ]
+    },
+    "exclusions": {
+      "count": 5,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "exclusion"
+      ],
+      "child_elements_ranked": [
+        "exclusion"
+      ]
+    },
+    "executable": {
+      "count": 4,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "execution": {
+      "count": 15,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "configuration",
+        "goals",
+        "id",
+        "phase"
+      ],
+      "child_elements_ranked": [
+        "configuration",
+        "id",
+        "goals",
+        "phase"
+      ]
+    },
+    "executions": {
+      "count": 8,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "execution"
+      ],
+      "child_elements_ranked": [
+        "execution"
+      ]
+    },
+    "export": {
+      "count": 1,
+      "attributes": [
+        "key"
+      ],
+      "attributes_ranked": [
+        "key"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "exportFonts": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "export"
+      ],
+      "child_elements_ranked": [
+        "export"
+      ]
+    },
+    "expression": {
+      "count": 1950,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "family": {
+      "count": 12,
+      "attributes": [
+        "familyName"
+      ],
+      "attributes_ranked": [
+        "familyName"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "field": {
+      "count": 713,
+      "attributes": [
+        "class",
+        "name"
+      ],
+      "attributes_ranked": [
+        "class",
+        "name"
+      ],
+      "child_elements": [
+        "description",
+        "property",
+        "propertyExpression"
+      ],
+      "child_elements_ranked": [
+        "property",
+        "description",
+        "propertyExpression"
+      ]
+    },
+    "fileset": {
+      "count": 5,
+      "attributes": [
+        "dir"
+      ],
+      "attributes_ranked": [
+        "dir"
+      ],
+      "child_elements": [
+        "exclude",
+        "include"
+      ],
+      "child_elements_ranked": [
+        "include",
+        "exclude"
+      ]
+    },
+    "filterExpression": {
+      "count": 8,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "font": {
+      "count": 3,
+      "attributes": [
+        "bold",
+        "fontSize"
+      ],
+      "attributes_ranked": [
+        "fontSize",
+        "bold"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "fontFamilies": {
+      "count": 4,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "fontFamily",
+        "fontSet"
+      ],
+      "child_elements_ranked": [
+        "fontFamily",
+        "fontSet"
+      ]
+    },
+    "fontFamily": {
+      "count": 15,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [
+        "bold",
+        "boldItalic",
+        "exportFonts",
+        "italic",
+        "normal",
+        "pdfEmbedded",
+        "pdfEncoding"
+      ],
+      "child_elements_ranked": [
+        "normal",
+        "pdfEmbedded",
+        "pdfEncoding",
+        "bold",
+        "boldItalic",
+        "italic",
+        "exportFonts"
+      ]
+    },
+    "fontSet": {
+      "count": 1,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [
+        "family"
+      ],
+      "child_elements_ranked": [
+        "family"
+      ]
+    },
+    "fork": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "generator": {
+      "count": 4,
+      "attributes": [
+        "class"
+      ],
+      "attributes_ranked": [
+        "class"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "genericType": {
+      "count": 2,
+      "attributes": [
+        "name",
+        "namespace"
+      ],
+      "attributes_ranked": [
+        "name",
+        "namespace"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "goal": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "goals": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "goal"
+      ],
+      "child_elements_ranked": [
+        "goal"
+      ]
+    },
+    "group": {
+      "count": 139,
+      "attributes": [
+        "minHeightToStartNewPage",
+        "name",
+        "reprintHeaderOnEachPage",
+        "startNewColumn",
+        "startNewPage"
+      ],
+      "attributes_ranked": [
+        "name",
+        "minHeightToStartNewPage",
+        "startNewColumn",
+        "reprintHeaderOnEachPage",
+        "startNewPage"
+      ],
+      "child_elements": [
+        "expression",
+        "groupFooter",
+        "groupHeader"
+      ],
+      "child_elements_ranked": [
+        "expression",
+        "groupHeader",
+        "groupFooter"
+      ]
+    },
+    "groupFooter": {
+      "count": 86,
+      "attributes": [
+        "groupName"
+      ],
+      "attributes_ranked": [
+        "groupName"
+      ],
+      "child_elements": [
+        "band",
+        "cell"
+      ],
+      "child_elements_ranked": [
+        "band",
+        "cell"
+      ]
+    },
+    "groupHeader": {
+      "count": 113,
+      "attributes": [
+        "groupName"
+      ],
+      "attributes_ranked": [
+        "groupName"
+      ],
+      "child_elements": [
+        "band",
+        "cell",
+        "part"
+      ],
+      "child_elements_ranked": [
+        "band",
+        "cell",
+        "part"
+      ]
+    },
+    "groupId": {
+      "count": 156,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "header": {
+      "count": 24,
+      "attributes": [
+        "style"
+      ],
+      "attributes_ranked": [
+        "style"
+      ],
+      "child_elements": [
+        "box",
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element",
+        "box"
+      ]
+    },
+    "headerCell": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "box",
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element",
+        "box"
+      ]
+    },
+    "hibernate-configuration": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "session-factory"
+      ],
+      "child_elements_ranked": [
+        "session-factory"
+      ]
+    },
+    "hibernate-mapping": {
+      "count": 4,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "class"
+      ],
+      "child_elements_ranked": [
+        "class"
+      ]
+    },
+    "highExpression": {
+      "count": 15,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "highRange": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "highExpression",
+        "lowExpression"
+      ],
+      "child_elements_ranked": [
+        "highExpression",
+        "lowExpression"
+      ]
+    },
+    "hyperlinkAnchorExpression": {
+      "count": 21,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "hyperlinkPageExpression": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "hyperlinkReferenceExpression": {
+      "count": 28,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "hyperlinkTooltipExpression": {
+      "count": 43,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "ibiblio": {
+      "count": 8,
+      "attributes": [
+        "m2compatible",
+        "name",
+        "root",
+        "usepoms"
+      ],
+      "attributes_ranked": [
+        "m2compatible",
+        "name",
+        "usepoms",
+        "root"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "iconTextField": {
+      "count": 12,
+      "attributes": [
+        "height",
+        "style",
+        "textAdjust",
+        "uuid",
+        "width",
+        "x",
+        "y"
+      ],
+      "attributes_ranked": [
+        "height",
+        "style",
+        "textAdjust",
+        "uuid",
+        "width",
+        "x",
+        "y"
+      ],
+      "child_elements": [
+        "expression"
+      ],
+      "child_elements_ranked": [
+        "expression"
+      ]
+    },
+    "id": {
+      "count": 19,
+      "attributes": [
+        "column",
+        "name"
+      ],
+      "attributes_ranked": [
+        "column",
+        "name"
+      ],
+      "child_elements": [
+        "generator"
+      ],
+      "child_elements_ranked": [
+        "generator"
+      ]
+    },
+    "import": {
+      "count": 10,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "include": {
+      "count": 23,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "includes": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "include"
+      ],
+      "child_elements_ranked": [
+        "include"
+      ]
+    },
+    "incrementWhenExpression": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "info": {
+      "count": 2,
+      "attributes": [
+        "module",
+        "organisation"
+      ],
+      "attributes_ranked": [
+        "module",
+        "organisation"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "initialValueExpression": {
+      "count": 16,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "interval": {
+      "count": 6,
+      "attributes": [
+        "alpha",
+        "backgroundColor",
+        "label"
+      ],
+      "attributes_ranked": [
+        "label",
+        "backgroundColor",
+        "alpha"
+      ],
+      "child_elements": [
+        "dataRange"
+      ],
+      "child_elements_ranked": [
+        "dataRange"
+      ]
+    },
+    "italic": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "itemHyperlink": {
+      "count": 4,
+      "attributes": [
+        "linkTarget",
+        "linkType"
+      ],
+      "attributes_ranked": [
+        "linkType",
+        "linkTarget"
+      ],
+      "child_elements": [
+        "hyperlinkAnchorExpression",
+        "hyperlinkReferenceExpression",
+        "hyperlinkTooltipExpression"
+      ],
+      "child_elements_ranked": [
+        "hyperlinkReferenceExpression",
+        "hyperlinkTooltipExpression",
+        "hyperlinkAnchorExpression"
+      ]
+    },
+    "itemLabel": {
+      "count": 22,
+      "attributes": [
+        "backgroundColor",
+        "color"
+      ],
+      "attributes_ranked": [
+        "backgroundColor",
+        "color"
+      ],
+      "child_elements": [
+        "font"
+      ],
+      "child_elements_ranked": [
+        "font"
+      ]
+    },
+    "ivy-module": {
+      "count": 2,
+      "attributes": [
+        "version"
+      ],
+      "attributes_ranked": [
+        "version"
+      ],
+      "child_elements": [
+        "dependencies",
+        "info"
+      ],
+      "child_elements_ranked": [
+        "dependencies",
+        "info"
+      ]
+    },
+    "ivysettings": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "resolvers",
+        "settings"
+      ],
+      "child_elements_ranked": [
+        "resolvers",
+        "settings"
+      ]
+    },
+    "jasperReport": {
+      "count": 136,
+      "attributes": [
+        "bottomMargin",
+        "columnCount",
+        "columnSpacing",
+        "columnWidth",
+        "floatColumnFooter",
+        "ignorePagination",
+        "language",
+        "leftMargin",
+        "name",
+        "orientation",
+        "pageHeight",
+        "pageWidth",
+        "printOrder",
+        "resourceBundle",
+        "rightMargin",
+        "scriptletClass",
+        "sectionType",
+        "summaryNewPage",
+        "titleNewPage",
+        "topMargin",
+        "uuid",
+        "whenNoDataType",
+        "whenResourceMissingType"
+      ],
+      "attributes_ranked": [
+        "bottomMargin",
+        "columnWidth",
+        "language",
+        "leftMargin",
+        "name",
+        "pageHeight",
+        "pageWidth",
+        "rightMargin",
+        "topMargin",
+        "uuid",
+        "whenNoDataType",
+        "columnCount",
+        "columnSpacing",
+        "orientation",
+        "scriptletClass",
+        "floatColumnFooter",
+        "resourceBundle",
+        "sectionType",
+        "summaryNewPage",
+        "ignorePagination",
+        "printOrder",
+        "titleNewPage",
+        "whenResourceMissingType"
+      ],
+      "child_elements": [
+        "background",
+        "columnFooter",
+        "columnHeader",
+        "dataset",
+        "detail",
+        "field",
+        "filterExpression",
+        "group",
+        "import",
+        "lastPageFooter",
+        "noData",
+        "pageFooter",
+        "pageHeader",
+        "parameter",
+        "property",
+        "query",
+        "sortField",
+        "style",
+        "summary",
+        "template",
+        "title",
+        "variable"
+      ],
+      "child_elements_ranked": [
+        "field",
+        "style",
+        "variable",
+        "parameter",
+        "group",
+        "title",
+        "property",
+        "detail",
+        "query",
+        "pageFooter",
+        "pageHeader",
+        "columnHeader",
+        "columnFooter",
+        "summary",
+        "dataset",
+        "sortField",
+        "lastPageFooter",
+        "import",
+        "filterExpression",
+        "background",
+        "template",
+        "noData"
+      ]
+    },
+    "jasperTemplate": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "style",
+        "template"
+      ],
+      "child_elements_ranked": [
+        "style",
+        "template"
+      ]
+    },
+    "jasperreports.root.dir": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "javac": {
+      "count": 2,
+      "attributes": [
+        "debug",
+        "destdir",
+        "encoding",
+        "includeantruntime",
+        "optimize",
+        "source",
+        "srcdir",
+        "target"
+      ],
+      "attributes_ranked": [
+        "debug",
+        "destdir",
+        "encoding",
+        "includeantruntime",
+        "optimize",
+        "source",
+        "srcdir",
+        "target"
+      ],
+      "child_elements": [
+        "classpath",
+        "compilerarg"
+      ],
+      "child_elements_ranked": [
+        "compilerarg",
+        "classpath"
+      ]
+    },
+    "jrc": {
+      "count": 4,
+      "attributes": [
+        "destdir",
+        "keepjava",
+        "srcdir",
+        "tempdir",
+        "xmlvalidation"
+      ],
+      "attributes_ranked": [
+        "destdir",
+        "srcdir",
+        "keepjava",
+        "tempdir",
+        "xmlvalidation"
+      ],
+      "child_elements": [
+        "classpath",
+        "include",
+        "src"
+      ],
+      "child_elements_ranked": [
+        "classpath",
+        "include",
+        "src"
+      ]
+    },
+    "jrdc": {
+      "count": 1,
+      "attributes": [
+        "destdir"
+      ],
+      "attributes_ranked": [
+        "destdir"
+      ],
+      "child_elements": [
+        "classpath",
+        "src"
+      ],
+      "child_elements_ranked": [
+        "classpath",
+        "src"
+      ]
+    },
+    "jru": {
+      "count": 2,
+      "attributes": [
+        "destdir",
+        "srcdir"
+      ],
+      "attributes_ranked": [
+        "destdir",
+        "srcdir"
+      ],
+      "child_elements": [
+        "classpath",
+        "include",
+        "src"
+      ],
+      "child_elements_ranked": [
+        "classpath",
+        "include",
+        "src"
+      ]
+    },
+    "key": {
+      "count": 3,
+      "attributes": [
+        "column"
+      ],
+      "attributes_ranked": [
+        "column"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "keyExpression": {
+      "count": 5,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "labelExpression": {
+      "count": 30,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "labelFont": {
+      "count": 1,
+      "attributes": [
+        "bold",
+        "fontSize",
+        "italic"
+      ],
+      "attributes_ranked": [
+        "bold",
+        "fontSize",
+        "italic"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "labelTextField": {
+      "count": 12,
+      "attributes": [
+        "fontSize",
+        "height",
+        "style",
+        "textAdjust",
+        "uuid",
+        "vTextAlign",
+        "width",
+        "x",
+        "y"
+      ],
+      "attributes_ranked": [
+        "height",
+        "style",
+        "textAdjust",
+        "uuid",
+        "width",
+        "x",
+        "y",
+        "fontSize",
+        "vTextAlign"
+      ],
+      "child_elements": [
+        "box",
+        "expression"
+      ],
+      "child_elements_ranked": [
+        "expression",
+        "box"
+      ]
+    },
+    "lastPageFooter": {
+      "count": 11,
+      "attributes": [
+        "height"
+      ],
+      "attributes_ranked": [
+        "height"
+      ],
+      "child_elements": [
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element"
+      ]
+    },
+    "leftPen": {
+      "count": 132,
+      "attributes": [
+        "lineColor",
+        "lineStyle",
+        "lineWidth"
+      ],
+      "attributes_ranked": [
+        "lineWidth",
+        "lineColor",
+        "lineStyle"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "legendFont": {
+      "count": 1,
+      "attributes": [
+        "fontSize"
+      ],
+      "attributes_ranked": [
+        "fontSize"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "lowExpression": {
+      "count": 15,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "lowRange": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "highExpression",
+        "lowExpression"
+      ],
+      "child_elements_ranked": [
+        "highExpression",
+        "lowExpression"
+      ]
+    },
+    "mainClass": {
+      "count": 10,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "many-to-one": {
+      "count": 2,
+      "attributes": [
+        "column",
+        "name"
+      ],
+      "attributes_ranked": [
+        "column",
+        "name"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "map": {
+      "count": 4,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "entry"
+      ],
+      "child_elements_ranked": [
+        "entry"
+      ]
+    },
+    "mapping": {
+      "count": 4,
+      "attributes": [
+        "resource"
+      ],
+      "attributes_ranked": [
+        "resource"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "maven.buildNumber.doCheck": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "maxValueExpression": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "measure": {
+      "count": 12,
+      "attributes": [
+        "calculation",
+        "class",
+        "name"
+      ],
+      "attributes_ranked": [
+        "calculation",
+        "class",
+        "name"
+      ],
+      "child_elements": [
+        "expression"
+      ],
+      "child_elements_ranked": [
+        "expression"
+      ]
+    },
+    "mediumRange": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "highExpression",
+        "lowExpression"
+      ],
+      "child_elements_ranked": [
+        "highExpression",
+        "lowExpression"
+      ]
+    },
+    "mkdir": {
+      "count": 8,
+      "attributes": [
+        "dir"
+      ],
+      "attributes_ranked": [
+        "dir"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "modelVersion": {
+      "count": 73,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "module": {
+      "count": 70,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "modules": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "module"
+      ],
+      "child_elements_ranked": [
+        "module"
+      ]
+    },
+    "noData": {
+      "count": 1,
+      "attributes": [
+        "height"
+      ],
+      "attributes_ranked": [
+        "height"
+      ],
+      "child_elements": [
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element"
+      ]
+    },
+    "normal": {
+      "count": 15,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "one-to-many": {
+      "count": 2,
+      "attributes": [
+        "class"
+      ],
+      "attributes_ranked": [
+        "class"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "openExpression": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "optional": {
+      "count": 67,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "orderByExpression": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "outputDirectory": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "packaging": {
+      "count": 73,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "pageFooter": {
+      "count": 67,
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "attributes_ranked": [
+        "height",
+        "splitType"
+      ],
+      "child_elements": [
+        "element",
+        "printWhenExpression"
+      ],
+      "child_elements_ranked": [
+        "element",
+        "printWhenExpression"
+      ]
+    },
+    "pageHeader": {
+      "count": 57,
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "attributes_ranked": [
+        "height",
+        "splitType"
+      ],
+      "child_elements": [
+        "element",
+        "printWhenExpression"
+      ],
+      "child_elements_ranked": [
+        "element",
+        "printWhenExpression"
+      ]
+    },
+    "paragraph": {
+      "count": 12,
+      "attributes": [
+        "firstLineIndent",
+        "leftIndent",
+        "lineSpacing",
+        "lineSpacingSize",
+        "rightIndent"
+      ],
+      "attributes_ranked": [
+        "lineSpacing",
+        "lineSpacingSize",
+        "firstLineIndent",
+        "leftIndent",
+        "rightIndent"
+      ],
+      "child_elements": [
+        "tabStop"
+      ],
+      "child_elements_ranked": [
+        "tabStop"
+      ]
+    },
+    "parameter": {
+      "count": 210,
+      "attributes": [
+        "class",
+        "forPrompting",
+        "name"
+      ],
+      "attributes_ranked": [
+        "name",
+        "class",
+        "forPrompting"
+      ],
+      "child_elements": [
+        "defaultValueExpression",
+        "expression",
+        "property"
+      ],
+      "child_elements_ranked": [
+        "expression",
+        "defaultValueExpression",
+        "property"
+      ]
+    },
+    "parent": {
+      "count": 73,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "artifactId",
+        "groupId",
+        "relativePath",
+        "version"
+      ],
+      "child_elements_ranked": [
+        "artifactId",
+        "groupId",
+        "relativePath",
+        "version"
+      ]
+    },
+    "part": {
+      "count": 5,
+      "attributes": [
+        "evaluationTime",
+        "uuid"
+      ],
+      "attributes_ranked": [
+        "uuid",
+        "evaluationTime"
+      ],
+      "child_elements": [
+        "component",
+        "partNameExpression",
+        "property"
+      ],
+      "child_elements_ranked": [
+        "component",
+        "partNameExpression",
+        "property"
+      ]
+    },
+    "partNameExpression": {
+      "count": 5,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "path": {
+      "count": 4,
+      "attributes": [
+        "id",
+        "refid"
+      ],
+      "attributes_ranked": [
+        "id",
+        "refid"
+      ],
+      "child_elements": [
+        "path",
+        "pathelement"
+      ],
+      "child_elements_ranked": [
+        "pathelement",
+        "path"
+      ]
+    },
+    "pathelement": {
+      "count": 4,
+      "attributes": [
+        "location"
+      ],
+      "attributes_ranked": [
+        "location"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "patternExpression": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "pdfEmbedded": {
+      "count": 15,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "pdfEncoding": {
+      "count": 14,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "pen": {
+      "count": 268,
+      "attributes": [
+        "lineColor",
+        "lineStyle",
+        "lineWidth"
+      ],
+      "attributes_ranked": [
+        "lineWidth",
+        "lineColor",
+        "lineStyle"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "percentExpression": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "persistence": {
+      "count": 2,
+      "attributes": [
+        "version",
+        "xsi:schemaLocation"
+      ],
+      "attributes_ranked": [
+        "version",
+        "xsi:schemaLocation"
+      ],
+      "child_elements": [
+        "persistence-unit"
+      ],
+      "child_elements_ranked": [
+        "persistence-unit"
+      ]
+    },
+    "persistence-unit": {
+      "count": 2,
+      "attributes": [
+        "name"
+      ],
+      "attributes_ranked": [
+        "name"
+      ],
+      "child_elements": [
+        "class",
+        "properties",
+        "provider"
+      ],
+      "child_elements_ranked": [
+        "class",
+        "properties",
+        "provider"
+      ]
+    },
+    "phase": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "plot": {
+      "count": 50,
+      "attributes": [
+        "axisLineColor",
+        "axisLineWidth",
+        "backcolor",
+        "circular",
+        "depthFactor",
+        "foregroundAlpha",
+        "headPercent",
+        "interiorGap",
+        "labelFormat",
+        "labelGap",
+        "labelRotation",
+        "legendLabelFormat",
+        "mercuryColor",
+        "meterColor",
+        "needleColor",
+        "rotation",
+        "scaleType",
+        "showLabels",
+        "showLines",
+        "showShapes",
+        "showTickLabels",
+        "showTickMarks",
+        "showVolume",
+        "startAngle",
+        "tableOrder",
+        "tickColor",
+        "tickInterval",
+        "units",
+        "valueAxisLabelColor",
+        "valueAxisLineColor",
+        "valueAxisTickLabelColor",
+        "valueAxisTickLabelMask",
+        "valueLocation"
+      ],
+      "attributes_ranked": [
+        "showShapes",
+        "showLines",
+        "showTickLabels",
+        "showTickMarks",
+        "labelFormat",
+        "legendLabelFormat",
+        "valueAxisLabelColor",
+        "valueAxisLineColor",
+        "valueAxisTickLabelColor",
+        "valueAxisTickLabelMask",
+        "circular",
+        "meterColor",
+        "needleColor",
+        "scaleType",
+        "showLabels",
+        "tickColor",
+        "tickInterval",
+        "units",
+        "axisLineColor",
+        "axisLineWidth",
+        "backcolor",
+        "depthFactor",
+        "foregroundAlpha",
+        "headPercent",
+        "interiorGap",
+        "labelGap",
+        "labelRotation",
+        "mercuryColor",
+        "rotation",
+        "showVolume",
+        "startAngle",
+        "tableOrder",
+        "valueLocation"
+      ],
+      "child_elements": [
+        "axis",
+        "categoryAxisLabelExpression",
+        "dataRange",
+        "highRange",
+        "interval",
+        "itemLabel",
+        "labelFont",
+        "lowRange",
+        "maxValueExpression",
+        "mediumRange",
+        "seriesColor",
+        "timeAxisLabelExpression",
+        "valueAxisLabelExpression",
+        "valueDisplay",
+        "xaxisLabelExpression",
+        "yaxisLabelExpression"
+      ],
+      "child_elements_ranked": [
+        "itemLabel",
+        "valueAxisLabelExpression",
+        "categoryAxisLabelExpression",
+        "interval",
+        "seriesColor",
+        "axis",
+        "dataRange",
+        "valueDisplay",
+        "timeAxisLabelExpression",
+        "xaxisLabelExpression",
+        "yaxisLabelExpression",
+        "highRange",
+        "labelFont",
+        "lowRange",
+        "maxValueExpression",
+        "mediumRange"
+      ]
+    },
+    "plugin": {
+      "count": 11,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "artifactId",
+        "configuration",
+        "executions",
+        "groupId",
+        "version"
+      ],
+      "child_elements_ranked": [
+        "artifactId",
+        "groupId",
+        "version",
+        "executions",
+        "configuration"
+      ]
+    },
+    "plugins": {
+      "count": 8,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "plugin"
+      ],
+      "child_elements_ranked": [
+        "plugin"
+      ]
+    },
+    "position": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "printWhenExpression": {
+      "count": 29,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "project": {
+      "count": 75,
+      "attributes": [
+        "basedir",
+        "default",
+        "name",
+        "xsi:schemaLocation"
+      ],
+      "attributes_ranked": [
+        "xsi:schemaLocation",
+        "basedir",
+        "default",
+        "name"
+      ],
+      "child_elements": [
+        "artifactId",
+        "build",
+        "dependencies",
+        "description",
+        "modelVersion",
+        "modules",
+        "packaging",
+        "parent",
+        "path",
+        "properties",
+        "target"
+      ],
+      "child_elements_ranked": [
+        "artifactId",
+        "modelVersion",
+        "packaging",
+        "parent",
+        "properties",
+        "dependencies",
+        "target",
+        "build",
+        "description",
+        "path",
+        "modules"
+      ]
+    },
+    "properties": {
+      "count": 73,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "jasperreports.root.dir",
+        "maven.buildNumber.doCheck",
+        "property",
+        "sample.app.name",
+        "sample.base.name",
+        "sample.report.name"
+      ],
+      "child_elements_ranked": [
+        "sample.base.name",
+        "sample.report.name",
+        "property",
+        "jasperreports.root.dir",
+        "maven.buildNumber.doCheck",
+        "sample.app.name"
+      ]
+    },
+    "property": {
+      "count": 478,
+      "attributes": [
+        "column",
+        "name",
+        "value"
+      ],
+      "attributes_ranked": [
+        "name",
+        "value",
+        "column"
+      ],
+      "child_elements": [
+        "bean",
+        "map"
+      ],
+      "child_elements_ranked": [
+        "bean",
+        "map"
+      ]
+    },
+    "propertyExpression": {
+      "count": 24,
+      "attributes": [
+        "name",
+        "type"
+      ],
+      "attributes_ranked": [
+        "name",
+        "type"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "provider": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "query": {
+      "count": 85,
+      "attributes": [
+        "language"
+      ],
+      "attributes_ranked": [
+        "language"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "ref": {
+      "count": 3,
+      "attributes": [
+        "bean"
+      ],
+      "attributes_ranked": [
+        "bean"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "relativePath": {
+      "count": 73,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "resolve": {
+      "count": 2,
+      "attributes": [
+        "file",
+        "log"
+      ],
+      "attributes_ranked": [
+        "file",
+        "log"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "resolvers": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "chain"
+      ],
+      "child_elements_ranked": [
+        "chain"
+      ]
+    },
+    "resource": {
+      "count": 4,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "directory",
+        "includes"
+      ],
+      "child_elements_ranked": [
+        "directory",
+        "includes"
+      ]
+    },
+    "resources": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "resource"
+      ],
+      "child_elements_ranked": [
+        "resource"
+      ]
+    },
+    "returnValue": {
+      "count": 2,
+      "attributes": [
+        "calculation",
+        "subreportVariable",
+        "toVariable"
+      ],
+      "attributes_ranked": [
+        "subreportVariable",
+        "toVariable",
+        "calculation"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "rightPen": {
+      "count": 62,
+      "attributes": [
+        "lineColor",
+        "lineStyle",
+        "lineWidth"
+      ],
+      "attributes_ranked": [
+        "lineWidth",
+        "lineColor",
+        "lineStyle"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "root": {
+      "count": 3,
+      "attributes": [
+        "totalResults"
+      ],
+      "attributes_ranked": [
+        "totalResults"
+      ],
+      "child_elements": [
+        "animal"
+      ],
+      "child_elements_ranked": [
+        "animal"
+      ]
+    },
+    "rowGroup": {
+      "count": 14,
+      "attributes": [
+        "name",
+        "totalPosition",
+        "width"
+      ],
+      "attributes_ranked": [
+        "name",
+        "totalPosition",
+        "width"
+      ],
+      "child_elements": [
+        "bucket",
+        "header",
+        "totalHeader"
+      ],
+      "child_elements_ranked": [
+        "bucket",
+        "header",
+        "totalHeader"
+      ]
+    },
+    "sample.app.name": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "sample.base.name": {
+      "count": 69,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "sample.report.name": {
+      "count": 20,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "scope": {
+      "count": 67,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "sectionHyperlink": {
+      "count": 2,
+      "attributes": [
+        "linkTarget",
+        "linkType"
+      ],
+      "attributes_ranked": [
+        "linkTarget",
+        "linkType"
+      ],
+      "child_elements": [
+        "hyperlinkReferenceExpression",
+        "hyperlinkTooltipExpression"
+      ],
+      "child_elements_ranked": [
+        "hyperlinkReferenceExpression",
+        "hyperlinkTooltipExpression"
+      ]
+    },
+    "series": {
+      "count": 76,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "categoryExpression",
+        "colorExpression",
+        "endDateExpression",
+        "itemHyperlink",
+        "keyExpression",
+        "labelExpression",
+        "percentExpression",
+        "sectionHyperlink",
+        "seriesExpression",
+        "startDateExpression",
+        "subtaskExpression",
+        "taskExpression",
+        "timePeriodExpression",
+        "valueExpression",
+        "xvalueExpression",
+        "yvalueExpression",
+        "zvalueExpression"
+      ],
+      "child_elements_ranked": [
+        "seriesExpression",
+        "valueExpression",
+        "categoryExpression",
+        "labelExpression",
+        "xvalueExpression",
+        "yvalueExpression",
+        "timePeriodExpression",
+        "endDateExpression",
+        "keyExpression",
+        "startDateExpression",
+        "itemHyperlink",
+        "zvalueExpression",
+        "sectionHyperlink",
+        "colorExpression",
+        "percentExpression",
+        "subtaskExpression",
+        "taskExpression"
+      ]
+    },
+    "seriesColor": {
+      "count": 6,
+      "attributes": [
+        "color",
+        "order"
+      ],
+      "attributes_ranked": [
+        "color",
+        "order"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "seriesExpression": {
+      "count": 74,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "servlet": {
+      "count": 13,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "servlet-class",
+        "servlet-name"
+      ],
+      "child_elements_ranked": [
+        "servlet-class",
+        "servlet-name"
+      ]
+    },
+    "servlet-class": {
+      "count": 13,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "servlet-mapping": {
+      "count": 13,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "servlet-name",
+        "url-pattern"
+      ],
+      "child_elements_ranked": [
+        "servlet-name",
+        "url-pattern"
+      ]
+    },
+    "servlet-name": {
+      "count": 26,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "session-factory": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "mapping",
+        "property"
+      ],
+      "child_elements_ranked": [
+        "property",
+        "mapping"
+      ]
+    },
+    "set": {
+      "count": 2,
+      "attributes": [
+        "inverse",
+        "name"
+      ],
+      "attributes_ranked": [
+        "inverse",
+        "name"
+      ],
+      "child_elements": [
+        "key",
+        "one-to-many"
+      ],
+      "child_elements_ranked": [
+        "key",
+        "one-to-many"
+      ]
+    },
+    "settings": {
+      "count": 2,
+      "attributes": [
+        "defaultResolver"
+      ],
+      "attributes_ranked": [
+        "defaultResolver"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "showWarnings": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "skip": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "sortField": {
+      "count": 26,
+      "attributes": [
+        "name",
+        "order"
+      ],
+      "attributes_ranked": [
+        "name",
+        "order"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "source": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "sourceDirectory": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "src": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "fileset"
+      ],
+      "child_elements_ranked": [
+        "fileset"
+      ]
+    },
+    "startDateExpression": {
+      "count": 5,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "stopKey": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "stopPort": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "style": {
+      "count": 390,
+      "attributes": [
+        "backcolor",
+        "bold",
+        "default",
+        "fontName",
+        "fontSize",
+        "forecolor",
+        "hImageAlign",
+        "hTextAlign",
+        "italic",
+        "mode",
+        "name",
+        "pdfEmbedded",
+        "pdfEncoding",
+        "pdfFontName",
+        "strikeThrough",
+        "style",
+        "underline",
+        "vImageAlign",
+        "vTextAlign"
+      ],
+      "attributes_ranked": [
+        "name",
+        "fontSize",
+        "fontName",
+        "bold",
+        "italic",
+        "underline",
+        "strikeThrough",
+        "default",
+        "style",
+        "mode",
+        "backcolor",
+        "forecolor",
+        "hTextAlign",
+        "hImageAlign",
+        "pdfFontName",
+        "vTextAlign",
+        "vImageAlign",
+        "pdfEmbedded",
+        "pdfEncoding"
+      ],
+      "child_elements": [
+        "box",
+        "conditionalStyle",
+        "paragraph"
+      ],
+      "child_elements_ranked": [
+        "box",
+        "conditionalStyle",
+        "paragraph"
+      ]
+    },
+    "subtaskExpression": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "subtitleExpression": {
+      "count": 21,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "subtitleFont": {
+      "count": 1,
+      "attributes": [
+        "bold",
+        "fontSize"
+      ],
+      "attributes_ranked": [
+        "bold",
+        "fontSize"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "summary": {
+      "count": 29,
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "attributes_ranked": [
+        "height",
+        "splitType"
+      ],
+      "child_elements": [
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element"
+      ]
+    },
+    "systemProperties": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "systemProperty"
+      ],
+      "child_elements_ranked": [
+        "systemProperty"
+      ]
+    },
+    "systemProperty": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "key",
+        "value"
+      ],
+      "child_elements_ranked": [
+        "key",
+        "value"
+      ]
+    },
+    "tabStop": {
+      "count": 12,
+      "attributes": [
+        "alignment",
+        "position"
+      ],
+      "attributes_ranked": [
+        "alignment",
+        "position"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "target": {
+      "count": 18,
+      "attributes": [
+        "depends",
+        "description",
+        "name"
+      ],
+      "attributes_ranked": [
+        "name",
+        "description",
+        "depends"
+      ],
+      "child_elements": [
+        "antcall",
+        "cachepath",
+        "configure",
+        "copy",
+        "delete",
+        "echo",
+        "javac",
+        "jrc",
+        "jrdc",
+        "jru",
+        "mkdir",
+        "resolve",
+        "taskdef"
+      ],
+      "child_elements_ranked": [
+        "antcall",
+        "mkdir",
+        "echo",
+        "taskdef",
+        "delete",
+        "jrc",
+        "cachepath",
+        "configure",
+        "copy",
+        "javac",
+        "jru",
+        "resolve",
+        "jrdc"
+      ]
+    },
+    "taskExpression": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "taskdef": {
+      "count": 5,
+      "attributes": [
+        "classname",
+        "name"
+      ],
+      "attributes_ranked": [
+        "classname",
+        "name"
+      ],
+      "child_elements": [
+        "classpath"
+      ],
+      "child_elements_ranked": [
+        "classpath"
+      ]
+    },
+    "template": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "text": {
+      "count": 860,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "timeAxisLabelExpression": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "timePeriodExpression": {
+      "count": 10,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "title": {
+      "count": 104,
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "attributes_ranked": [
+        "height",
+        "splitType"
+      ],
+      "child_elements": [
+        "element",
+        "printWhenExpression"
+      ],
+      "child_elements_ranked": [
+        "element",
+        "printWhenExpression"
+      ]
+    },
+    "titleExpression": {
+      "count": 21,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "titleFont": {
+      "count": 1,
+      "attributes": [
+        "fontSize",
+        "italic"
+      ],
+      "attributes_ranked": [
+        "fontSize",
+        "italic"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "topPen": {
+      "count": 78,
+      "attributes": [
+        "lineColor",
+        "lineStyle",
+        "lineWidth"
+      ],
+      "attributes_ranked": [
+        "lineWidth",
+        "lineColor",
+        "lineStyle"
+      ],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "totalHeader": {
+      "count": 24,
+      "attributes": [
+        "backcolor",
+        "mode",
+        "style"
+      ],
+      "attributes_ranked": [
+        "backcolor",
+        "mode",
+        "style"
+      ],
+      "child_elements": [
+        "box",
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element",
+        "box"
+      ]
+    },
+    "url-pattern": {
+      "count": 13,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "value": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "valueAxisLabelExpression": {
+      "count": 19,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "valueDisplay": {
+      "count": 3,
+      "attributes": [
+        "color",
+        "mask"
+      ],
+      "attributes_ranked": [
+        "color",
+        "mask"
+      ],
+      "child_elements": [
+        "font"
+      ],
+      "child_elements_ranked": [
+        "font"
+      ]
+    },
+    "valueExpression": {
+      "count": 56,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "variable": {
+      "count": 291,
+      "attributes": [
+        "calculation",
+        "class",
+        "incrementGroup",
+        "incrementType",
+        "name",
+        "resetGroup",
+        "resetType"
+      ],
+      "attributes_ranked": [
+        "class",
+        "name",
+        "calculation",
+        "resetType",
+        "resetGroup",
+        "incrementGroup",
+        "incrementType"
+      ],
+      "child_elements": [
+        "expression",
+        "initialValueExpression"
+      ],
+      "child_elements_ranked": [
+        "expression",
+        "initialValueExpression"
+      ]
+    },
+    "version": {
+      "count": 151,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "volumeExpression": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "web-app": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "display-name",
+        "servlet",
+        "servlet-mapping",
+        "welcome-file-list"
+      ],
+      "child_elements_ranked": [
+        "servlet",
+        "servlet-mapping",
+        "display-name",
+        "welcome-file-list"
+      ]
+    },
+    "webAppSourceDirectory": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "welcome-file": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "welcome-file-list": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "welcome-file"
+      ],
+      "child_elements_ranked": [
+        "welcome-file"
+      ]
+    },
+    "whenNoDataCell": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [
+        "element"
+      ],
+      "child_elements_ranked": [
+        "element"
+      ]
+    },
+    "workingDirectory": {
+      "count": 3,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "xaxisLabelExpression": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "xaxisTitleExpression": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "xvalueExpression": {
+      "count": 22,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "yaxisLabelExpression": {
+      "count": 2,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "yaxisTitleExpression": {
+      "count": 1,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "yvalueExpression": {
+      "count": 22,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    },
+    "zvalueExpression": {
+      "count": 4,
+      "attributes": [],
+      "attributes_ranked": [],
+      "child_elements": [],
+      "child_elements_ranked": []
+    }
+  },
+  "kinded_tags": {
+    "column": {
+      "kind_values": [
+        "group",
+        "single"
+      ],
+      "kinds": {
+        "group": {
+          "count": 7,
+          "attributes": [
+            "kind",
+            "uuid",
+            "width"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "uuid",
+            "width"
+          ],
+          "child_elements": [
+            "column",
+            "columnHeader"
+          ],
+          "child_elements_ranked": [
+            "column",
+            "columnHeader"
+          ]
+        },
+        "single": {
+          "count": 40,
+          "attributes": [
+            "kind",
+            "uuid",
+            "width"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "uuid",
+            "width"
+          ],
+          "child_elements": [
+            "columnFooter",
+            "columnHeader",
+            "detailCell",
+            "groupFooter",
+            "groupHeader"
+          ],
+          "child_elements_ranked": [
+            "detailCell",
+            "columnHeader",
+            "groupHeader",
+            "columnFooter",
+            "groupFooter"
+          ]
+        }
+      }
+    },
+    "component": {
+      "kind_values": [
+        "XYChart",
+        "barbecue",
+        "barcode4j:Codabar",
+        "barcode4j:Code128",
+        "barcode4j:Code39",
+        "barcode4j:DataMatrix",
+        "barcode4j:EAN128",
+        "barcode4j:EAN13",
+        "barcode4j:EAN8",
+        "barcode4j:Interleaved2Of5",
+        "barcode4j:PDF417",
+        "barcode4j:POSTNET",
+        "barcode4j:QRCode",
+        "barcode4j:RoyalMailCustomer",
+        "barcode4j:UPCA",
+        "barcode4j:UPCE",
+        "barcode4j:USPSIntelligentMail",
+        "iconLabel",
+        "list",
+        "spiderChart",
+        "subreportPart",
+        "table"
+      ],
+      "kinds": {
+        "XYChart": {
+          "count": 1,
+          "attributes": [
+            "evaluationTime",
+            "kind"
+          ],
+          "attributes_ranked": [
+            "evaluationTime",
+            "kind"
+          ],
+          "child_elements": [
+            "chartTitleExpression",
+            "dataset",
+            "xaxisTitleExpression",
+            "yaxisTitleExpression"
+          ],
+          "child_elements_ranked": [
+            "chartTitleExpression",
+            "dataset",
+            "xaxisTitleExpression",
+            "yaxisTitleExpression"
+          ]
+        },
+        "barbecue": {
+          "count": 4,
+          "attributes": [
+            "barHeight",
+            "barWidth",
+            "checksumRequired",
+            "drawText",
+            "kind",
+            "type"
+          ],
+          "attributes_ranked": [
+            "checksumRequired",
+            "drawText",
+            "kind",
+            "type",
+            "barHeight",
+            "barWidth"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:Codabar": {
+          "count": 1,
+          "attributes": [
+            "kind",
+            "moduleWidth",
+            "textPosition",
+            "wideFactor"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "moduleWidth",
+            "textPosition",
+            "wideFactor"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:Code128": {
+          "count": 1,
+          "attributes": [
+            "kind",
+            "moduleWidth"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "moduleWidth"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:Code39": {
+          "count": 1,
+          "attributes": [
+            "kind"
+          ],
+          "attributes_ranked": [
+            "kind"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:DataMatrix": {
+          "count": 1,
+          "attributes": [
+            "kind",
+            "moduleWidth"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "moduleWidth"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:EAN128": {
+          "count": 1,
+          "attributes": [
+            "checksumMode",
+            "kind",
+            "moduleWidth"
+          ],
+          "attributes_ranked": [
+            "checksumMode",
+            "kind",
+            "moduleWidth"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:EAN13": {
+          "count": 1,
+          "attributes": [
+            "kind"
+          ],
+          "attributes_ranked": [
+            "kind"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:EAN8": {
+          "count": 1,
+          "attributes": [
+            "kind"
+          ],
+          "attributes_ranked": [
+            "kind"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:Interleaved2Of5": {
+          "count": 1,
+          "attributes": [
+            "kind"
+          ],
+          "attributes_ranked": [
+            "kind"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:PDF417": {
+          "count": 1,
+          "attributes": [
+            "kind",
+            "moduleWidth"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "moduleWidth"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:POSTNET": {
+          "count": 1,
+          "attributes": [
+            "checksumMode",
+            "kind",
+            "shortBarHeight"
+          ],
+          "attributes_ranked": [
+            "checksumMode",
+            "kind",
+            "shortBarHeight"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:QRCode": {
+          "count": 1,
+          "attributes": [
+            "errorCorrectionLevel",
+            "kind",
+            "margin"
+          ],
+          "attributes_ranked": [
+            "errorCorrectionLevel",
+            "kind",
+            "margin"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:RoyalMailCustomer": {
+          "count": 1,
+          "attributes": [
+            "ascenderHeight",
+            "intercharGapWidth",
+            "kind",
+            "trackHeight"
+          ],
+          "attributes_ranked": [
+            "ascenderHeight",
+            "intercharGapWidth",
+            "kind",
+            "trackHeight"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:UPCA": {
+          "count": 1,
+          "attributes": [
+            "kind"
+          ],
+          "attributes_ranked": [
+            "kind"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:UPCE": {
+          "count": 1,
+          "attributes": [
+            "kind"
+          ],
+          "attributes_ranked": [
+            "kind"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "barcode4j:USPSIntelligentMail": {
+          "count": 1,
+          "attributes": [
+            "ascenderHeight",
+            "kind",
+            "trackHeight"
+          ],
+          "attributes_ranked": [
+            "ascenderHeight",
+            "kind",
+            "trackHeight"
+          ],
+          "child_elements": [
+            "codeExpression"
+          ],
+          "child_elements_ranked": [
+            "codeExpression"
+          ]
+        },
+        "iconLabel": {
+          "count": 12,
+          "attributes": [
+            "hAlign",
+            "iconPosition",
+            "kind",
+            "labelFill",
+            "style",
+            "vAlign"
+          ],
+          "attributes_ranked": [
+            "hAlign",
+            "iconPosition",
+            "kind",
+            "labelFill",
+            "style",
+            "vAlign"
+          ],
+          "child_elements": [
+            "iconTextField",
+            "labelTextField"
+          ],
+          "child_elements_ranked": [
+            "iconTextField",
+            "labelTextField"
+          ]
+        },
+        "list": {
+          "count": 6,
+          "attributes": [
+            "kind",
+            "printOrder"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "printOrder"
+          ],
+          "child_elements": [
+            "contents",
+            "datasetRun"
+          ],
+          "child_elements_ranked": [
+            "contents",
+            "datasetRun"
+          ]
+        },
+        "spiderChart": {
+          "count": 1,
+          "attributes": [
+            "kind"
+          ],
+          "attributes_ranked": [
+            "kind"
+          ],
+          "child_elements": [
+            "chartSettings",
+            "dataset",
+            "plot"
+          ],
+          "child_elements_ranked": [
+            "chartSettings",
+            "dataset",
+            "plot"
+          ]
+        },
+        "subreportPart": {
+          "count": 5,
+          "attributes": [
+            "kind",
+            "usingCache"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "usingCache"
+          ],
+          "child_elements": [
+            "expression",
+            "parameter"
+          ],
+          "child_elements_ranked": [
+            "parameter",
+            "expression"
+          ]
+        },
+        "table": {
+          "count": 8,
+          "attributes": [
+            "kind",
+            "whenNoDataType"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "whenNoDataType"
+          ],
+          "child_elements": [
+            "column",
+            "datasetRun"
+          ],
+          "child_elements_ranked": [
+            "column",
+            "datasetRun"
+          ]
+        }
+      }
+    },
+    "dataset": {
+      "kind_values": [
+        "category",
+        "gantt",
+        "highLow",
+        "pie",
+        "timePeriod",
+        "timeSeries",
+        "value",
+        "xy",
+        "xyz"
+      ],
+      "kinds": {
+        "category": {
+          "count": 18,
+          "attributes": [
+            "incrementGroup",
+            "incrementType",
+            "kind",
+            "resetGroup",
+            "resetType"
+          ],
+          "attributes_ranked": [
+            "incrementGroup",
+            "incrementType",
+            "kind",
+            "resetGroup",
+            "resetType"
+          ],
+          "child_elements": [
+            "datasetRun",
+            "series"
+          ],
+          "child_elements_ranked": [
+            "series",
+            "datasetRun"
+          ]
+        },
+        "gantt": {
+          "count": 1,
+          "attributes": [
+            "kind"
+          ],
+          "attributes_ranked": [
+            "kind"
+          ],
+          "child_elements": [
+            "series"
+          ],
+          "child_elements_ranked": [
+            "series"
+          ]
+        },
+        "highLow": {
+          "count": 3,
+          "attributes": [
+            "incrementGroup",
+            "incrementType",
+            "kind",
+            "resetGroup",
+            "resetType"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "incrementGroup",
+            "incrementType",
+            "resetGroup",
+            "resetType"
+          ],
+          "child_elements": [
+            "closeExpression",
+            "datasetRun",
+            "dateExpression",
+            "highExpression",
+            "lowExpression",
+            "openExpression",
+            "seriesExpression",
+            "volumeExpression"
+          ],
+          "child_elements_ranked": [
+            "closeExpression",
+            "dateExpression",
+            "highExpression",
+            "lowExpression",
+            "openExpression",
+            "seriesExpression",
+            "volumeExpression",
+            "datasetRun"
+          ]
+        },
+        "pie": {
+          "count": 5,
+          "attributes": [
+            "incrementGroup",
+            "incrementType",
+            "kind",
+            "resetGroup",
+            "resetType"
+          ],
+          "attributes_ranked": [
+            "incrementGroup",
+            "incrementType",
+            "kind",
+            "resetGroup",
+            "resetType"
+          ],
+          "child_elements": [
+            "datasetRun",
+            "series"
+          ],
+          "child_elements_ranked": [
+            "series",
+            "datasetRun"
+          ]
+        },
+        "timePeriod": {
+          "count": 2,
+          "attributes": [
+            "kind",
+            "resetGroup",
+            "resetType"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "resetGroup",
+            "resetType"
+          ],
+          "child_elements": [
+            "datasetRun",
+            "series"
+          ],
+          "child_elements_ranked": [
+            "series",
+            "datasetRun"
+          ]
+        },
+        "timeSeries": {
+          "count": 5,
+          "attributes": [
+            "incrementGroup",
+            "incrementType",
+            "kind",
+            "resetGroup",
+            "resetType",
+            "timePeriod"
+          ],
+          "attributes_ranked": [
+            "incrementGroup",
+            "incrementType",
+            "kind",
+            "timePeriod",
+            "resetGroup",
+            "resetType"
+          ],
+          "child_elements": [
+            "datasetRun",
+            "series"
+          ],
+          "child_elements_ranked": [
+            "series",
+            "datasetRun"
+          ]
+        },
+        "value": {
+          "count": 3,
+          "attributes": [
+            "incrementGroup",
+            "incrementType",
+            "kind",
+            "resetGroup",
+            "resetType"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "resetType",
+            "incrementGroup",
+            "incrementType",
+            "resetGroup"
+          ],
+          "child_elements": [
+            "datasetRun",
+            "valueExpression"
+          ],
+          "child_elements_ranked": [
+            "valueExpression",
+            "datasetRun"
+          ]
+        },
+        "xy": {
+          "count": 9,
+          "attributes": [
+            "incrementGroup",
+            "incrementType",
+            "kind",
+            "resetGroup",
+            "resetType"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "incrementGroup",
+            "incrementType",
+            "resetGroup",
+            "resetType"
+          ],
+          "child_elements": [
+            "datasetRun",
+            "incrementWhenExpression",
+            "series"
+          ],
+          "child_elements_ranked": [
+            "series",
+            "datasetRun",
+            "incrementWhenExpression"
+          ]
+        },
+        "xyz": {
+          "count": 2,
+          "attributes": [
+            "incrementGroup",
+            "incrementType",
+            "kind",
+            "resetGroup",
+            "resetType"
+          ],
+          "attributes_ranked": [
+            "kind",
+            "incrementGroup",
+            "incrementType",
+            "resetGroup",
+            "resetType"
+          ],
+          "child_elements": [
+            "datasetRun",
+            "series"
+          ],
+          "child_elements_ranked": [
+            "series",
+            "datasetRun"
+          ]
+        }
+      }
+    },
+    "element": {
+      "kind_values": [
+        "chart",
+        "component",
+        "crosstab",
+        "elementGroup",
+        "ellipse",
+        "frame",
+        "generic",
+        "image",
+        "line",
+        "rectangle",
+        "staticText",
+        "subreport",
+        "textField"
+      ],
+      "kinds": {
+        "chart": {
+          "count": 46,
+          "attributes": [
+            "chartType",
+            "customizerClass",
+            "evaluationGroup",
+            "evaluationTime",
+            "height",
+            "key",
+            "kind",
+            "positionType",
+            "showLegend",
+            "uuid",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "chartType",
+            "height",
+            "kind",
+            "uuid",
+            "width",
+            "x",
+            "y",
+            "evaluationTime",
+            "positionType",
+            "evaluationGroup",
+            "showLegend",
+            "customizerClass",
+            "key"
+          ],
+          "child_elements": [
+            "dataset",
+            "hyperlinkTooltipExpression",
+            "plot",
+            "property",
+            "propertyExpression",
+            "subtitleExpression",
+            "titleExpression"
+          ],
+          "child_elements_ranked": [
+            "plot",
+            "dataset",
+            "hyperlinkTooltipExpression",
+            "subtitleExpression",
+            "titleExpression",
+            "property",
+            "propertyExpression"
+          ]
+        },
+        "component": {
+          "count": 47,
+          "attributes": [
+            "backcolor",
+            "forecolor",
+            "height",
+            "kind",
+            "mode",
+            "stretchType",
+            "style",
+            "uuid",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "height",
+            "kind",
+            "uuid",
+            "width",
+            "y",
+            "x",
+            "style",
+            "stretchType",
+            "mode",
+            "backcolor",
+            "forecolor"
+          ],
+          "child_elements": [
+            "component",
+            "property"
+          ],
+          "child_elements_ranked": [
+            "component",
+            "property"
+          ]
+        },
+        "crosstab": {
+          "count": 9,
+          "attributes": [
+            "columnBreakOffset",
+            "height",
+            "kind",
+            "repeatColumnHeaders",
+            "uuid",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "columnBreakOffset",
+            "height",
+            "kind",
+            "uuid",
+            "width",
+            "x",
+            "y",
+            "repeatColumnHeaders"
+          ],
+          "child_elements": [
+            "cell",
+            "columnGroup",
+            "dataset",
+            "headerCell",
+            "measure",
+            "parameter",
+            "rowGroup",
+            "whenNoDataCell"
+          ],
+          "child_elements_ranked": [
+            "cell",
+            "rowGroup",
+            "measure",
+            "columnGroup",
+            "dataset",
+            "headerCell",
+            "parameter",
+            "whenNoDataCell"
+          ]
+        },
+        "elementGroup": {
+          "count": 31,
+          "attributes": [
+            "kind"
+          ],
+          "attributes_ranked": [
+            "kind"
+          ],
+          "child_elements": [
+            "element"
+          ],
+          "child_elements_ranked": [
+            "element"
+          ]
+        },
+        "ellipse": {
+          "count": 6,
+          "attributes": [
+            "backcolor",
+            "forecolor",
+            "height",
+            "kind",
+            "mode",
+            "positionType",
+            "uuid",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "height",
+            "kind",
+            "uuid",
+            "width",
+            "x",
+            "y",
+            "backcolor",
+            "forecolor",
+            "mode",
+            "positionType"
+          ],
+          "child_elements": [
+            "pen",
+            "property"
+          ],
+          "child_elements_ranked": [
+            "property",
+            "pen"
+          ]
+        },
+        "frame": {
+          "count": 81,
+          "attributes": [
+            "backcolor",
+            "forecolor",
+            "height",
+            "kind",
+            "mode",
+            "positionType",
+            "printWhenDetailOverflows",
+            "removeLineWhenBlank",
+            "stretchType",
+            "style",
+            "uuid",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "height",
+            "kind",
+            "uuid",
+            "width",
+            "x",
+            "y",
+            "mode",
+            "backcolor",
+            "positionType",
+            "forecolor",
+            "style",
+            "printWhenDetailOverflows",
+            "removeLineWhenBlank",
+            "stretchType"
+          ],
+          "child_elements": [
+            "borderSplitType",
+            "box",
+            "element",
+            "printWhenExpression",
+            "property"
+          ],
+          "child_elements_ranked": [
+            "element",
+            "box",
+            "property",
+            "borderSplitType",
+            "printWhenExpression"
+          ]
+        },
+        "generic": {
+          "count": 2,
+          "attributes": [
+            "height",
+            "kind",
+            "style",
+            "uuid",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "height",
+            "kind",
+            "uuid",
+            "width",
+            "x",
+            "y",
+            "style"
+          ],
+          "child_elements": [
+            "genericType",
+            "parameter"
+          ],
+          "child_elements_ranked": [
+            "genericType",
+            "parameter"
+          ]
+        },
+        "image": {
+          "count": 68,
+          "attributes": [
+            "backcolor",
+            "forecolor",
+            "hImageAlign",
+            "height",
+            "key",
+            "kind",
+            "lazy",
+            "linkTarget",
+            "linkType",
+            "mode",
+            "onErrorType",
+            "positionType",
+            "scaleImage",
+            "style",
+            "usingCache",
+            "uuid",
+            "vImageAlign",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "height",
+            "kind",
+            "uuid",
+            "width",
+            "x",
+            "y",
+            "scaleImage",
+            "vImageAlign",
+            "hImageAlign",
+            "backcolor",
+            "mode",
+            "linkType",
+            "lazy",
+            "onErrorType",
+            "forecolor",
+            "usingCache",
+            "style",
+            "positionType",
+            "key",
+            "linkTarget"
+          ],
+          "child_elements": [
+            "box",
+            "expression",
+            "hyperlinkReferenceExpression",
+            "hyperlinkTooltipExpression",
+            "printWhenExpression",
+            "property"
+          ],
+          "child_elements_ranked": [
+            "expression",
+            "box",
+            "hyperlinkTooltipExpression",
+            "hyperlinkReferenceExpression",
+            "property",
+            "printWhenExpression"
+          ]
+        },
+        "line": {
+          "count": 215,
+          "attributes": [
+            "direction",
+            "forecolor",
+            "height",
+            "key",
+            "kind",
+            "positionType",
+            "printWhenDetailOverflows",
+            "stretchType",
+            "uuid",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "height",
+            "kind",
+            "uuid",
+            "width",
+            "y",
+            "x",
+            "forecolor",
+            "positionType",
+            "printWhenDetailOverflows",
+            "stretchType",
+            "key",
+            "direction"
+          ],
+          "child_elements": [
+            "pen",
+            "property"
+          ],
+          "child_elements_ranked": [
+            "pen",
+            "property"
+          ]
+        },
+        "rectangle": {
+          "count": 152,
+          "attributes": [
+            "backcolor",
+            "forecolor",
+            "height",
+            "key",
+            "kind",
+            "mode",
+            "positionType",
+            "radius",
+            "uuid",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "height",
+            "kind",
+            "uuid",
+            "width",
+            "x",
+            "y",
+            "backcolor",
+            "forecolor",
+            "mode",
+            "key",
+            "positionType",
+            "radius"
+          ],
+          "child_elements": [
+            "pen",
+            "printWhenExpression"
+          ],
+          "child_elements_ranked": [
+            "pen",
+            "printWhenExpression"
+          ]
+        },
+        "staticText": {
+          "count": 860,
+          "attributes": [
+            "backcolor",
+            "bold",
+            "fontName",
+            "fontSize",
+            "forecolor",
+            "hTextAlign",
+            "height",
+            "italic",
+            "key",
+            "kind",
+            "markup",
+            "mode",
+            "pdfEmbedded",
+            "pdfFontName",
+            "positionType",
+            "printInFirstWholeBand",
+            "printRepeatedValues",
+            "printWhenDetailOverflows",
+            "printWhenGroupChanges",
+            "removeLineWhenBlank",
+            "rotation",
+            "strikeThrough",
+            "style",
+            "underline",
+            "uuid",
+            "vTextAlign",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "height",
+            "kind",
+            "uuid",
+            "width",
+            "y",
+            "x",
+            "style",
+            "hTextAlign",
+            "backcolor",
+            "mode",
+            "forecolor",
+            "fontSize",
+            "vTextAlign",
+            "bold",
+            "underline",
+            "positionType",
+            "key",
+            "fontName",
+            "printRepeatedValues",
+            "markup",
+            "rotation",
+            "pdfFontName",
+            "printWhenDetailOverflows",
+            "removeLineWhenBlank",
+            "italic",
+            "printInFirstWholeBand",
+            "printWhenGroupChanges",
+            "pdfEmbedded",
+            "strikeThrough"
+          ],
+          "child_elements": [
+            "box",
+            "paragraph",
+            "printWhenExpression",
+            "property",
+            "propertyExpression",
+            "text"
+          ],
+          "child_elements_ranked": [
+            "text",
+            "box",
+            "property",
+            "printWhenExpression",
+            "paragraph",
+            "propertyExpression"
+          ]
+        },
+        "subreport": {
+          "count": 10,
+          "attributes": [
+            "backcolor",
+            "height",
+            "kind",
+            "positionType",
+            "printRepeatedValues",
+            "removeLineWhenBlank",
+            "uuid",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "height",
+            "kind",
+            "removeLineWhenBlank",
+            "uuid",
+            "width",
+            "x",
+            "y",
+            "backcolor",
+            "positionType",
+            "printRepeatedValues"
+          ],
+          "child_elements": [
+            "connectionExpression",
+            "dataSourceExpression",
+            "expression",
+            "parameter",
+            "returnValue"
+          ],
+          "child_elements_ranked": [
+            "parameter",
+            "expression",
+            "dataSourceExpression",
+            "connectionExpression",
+            "returnValue"
+          ]
+        },
+        "textField": {
+          "count": 1372,
+          "attributes": [
+            "backcolor",
+            "blankWhenNull",
+            "bold",
+            "bookmarkLevel",
+            "evaluationGroup",
+            "evaluationTime",
+            "fontName",
+            "fontSize",
+            "forecolor",
+            "hTextAlign",
+            "height",
+            "italic",
+            "key",
+            "kind",
+            "linkTarget",
+            "linkType",
+            "markup",
+            "mode",
+            "pattern",
+            "pdfFontName",
+            "positionType",
+            "printWhenDetailOverflows",
+            "removeLineWhenBlank",
+            "rotation",
+            "stretchType",
+            "strikeThrough",
+            "style",
+            "textAdjust",
+            "underline",
+            "uuid",
+            "vTextAlign",
+            "width",
+            "x",
+            "y"
+          ],
+          "attributes_ranked": [
+            "height",
+            "kind",
+            "uuid",
+            "width",
+            "y",
+            "x",
+            "hTextAlign",
+            "style",
+            "textAdjust",
+            "pattern",
+            "mode",
+            "fontSize",
+            "backcolor",
+            "forecolor",
+            "positionType",
+            "vTextAlign",
+            "evaluationTime",
+            "stretchType",
+            "blankWhenNull",
+            "evaluationGroup",
+            "bookmarkLevel",
+            "bold",
+            "key",
+            "linkType",
+            "markup",
+            "fontName",
+            "removeLineWhenBlank",
+            "pdfFontName",
+            "printWhenDetailOverflows",
+            "italic",
+            "underline",
+            "linkTarget",
+            "strikeThrough",
+            "rotation"
+          ],
+          "child_elements": [
+            "anchorNameExpression",
+            "bookmarkLevelExpression",
+            "box",
+            "expression",
+            "hyperlinkAnchorExpression",
+            "hyperlinkPageExpression",
+            "hyperlinkReferenceExpression",
+            "hyperlinkTooltipExpression",
+            "paragraph",
+            "patternExpression",
+            "printWhenExpression",
+            "property",
+            "propertyExpression"
+          ],
+          "child_elements_ranked": [
+            "expression",
+            "box",
+            "property",
+            "anchorNameExpression",
+            "hyperlinkAnchorExpression",
+            "propertyExpression",
+            "hyperlinkReferenceExpression",
+            "paragraph",
+            "printWhenExpression",
+            "bookmarkLevelExpression",
+            "hyperlinkPageExpression",
+            "hyperlinkTooltipExpression",
+            "patternExpression"
+          ]
+        }
+      }
+    }
+  },
+  "parse_errors": [],
+  "files_scanned": [
+    "samples/accessible/pom.xml",
+    "samples/accessible/reports/AccessibleReport.jrxml",
+    "samples/alterdesign/pom.xml",
+    "samples/alterdesign/reports/AlterDesignReport.jrxml",
+    "samples/antcompile/build.xml",
+    "samples/antcompile/ivy.xml",
+    "samples/antcompile/ivysettings.xml",
+    "samples/antcompile/reports/com/bar/BarReport.jrxml",
+    "samples/antcompile/reports/com/foo/FooReport.jrxml",
+    "samples/antupdate/build.xml",
+    "samples/antupdate/ivy.xml",
+    "samples/antupdate/ivysettings.xml",
+    "samples/antupdate/reports/com/bar/BarReport.jrxml",
+    "samples/antupdate/reports/com/foo/FooReport.jrxml",
+    "samples/barbecue/pom.xml",
+    "samples/barbecue/reports/BarbecueReport.jrxml",
+    "samples/barcode4j/pom.xml",
+    "samples/barcode4j/reports/Barcode4JReport.jrxml",
+    "samples/batchexport/pom.xml",
+    "samples/batchexport/reports/Report1.jrxml",
+    "samples/batchexport/reports/Report2.jrxml",
+    "samples/batchexport/reports/Report3.jrxml",
+    "samples/book/pom.xml",
+    "samples/book/reports/BookReport.jrxml",
+    "samples/book/reports/OrdersReport.jrxml",
+    "samples/book/reports/PieChartReport.jrxml",
+    "samples/book/reports/TocReport.jrxml",
+    "samples/chartcustomizers/pom.xml",
+    "samples/chartcustomizers/reports/ChartCustomizersReport.jrxml",
+    "samples/charts/pom.xml",
+    "samples/charts/reports/AreaChartReport.jrxml",
+    "samples/charts/reports/Bar3DChartReport.jrxml",
+    "samples/charts/reports/BarChartReport.jrxml",
+    "samples/charts/reports/BubbleChartReport.jrxml",
+    "samples/charts/reports/CandlestickChartReport.jrxml",
+    "samples/charts/reports/GanttChartReport.jrxml",
+    "samples/charts/reports/HighLowChartReport.jrxml",
+    "samples/charts/reports/LineChartReport.jrxml",
+    "samples/charts/reports/MeterChartReport.jrxml",
+    "samples/charts/reports/MultipleAxisChartReport.jrxml",
+    "samples/charts/reports/Pie3DChartReport.jrxml",
+    "samples/charts/reports/PieChartReport.jrxml",
+    "samples/charts/reports/ScatterChartReport.jrxml",
+    "samples/charts/reports/StackedAreaChartReport.jrxml",
+    "samples/charts/reports/StackedBar3DChartReport.jrxml",
+    "samples/charts/reports/StackedBarChartReport.jrxml",
+    "samples/charts/reports/SubDatasetChartReport.jrxml",
+    "samples/charts/reports/ThermometerChartReport.jrxml",
+    "samples/charts/reports/TimeSeriesChartReport.jrxml",
+    "samples/charts/reports/XYAreaChartReport.jrxml",
+    "samples/charts/reports/XYBarChartReport.jrxml",
+    "samples/charts/reports/XYBarChartTimePeriodReport.jrxml",
+    "samples/charts/reports/XYBarChartTimeSeriesReport.jrxml",
+    "samples/charts/reports/XYLineChartReport.jrxml",
+    "samples/chartthemes/pom.xml",
+    "samples/chartthemes/reports/AllChartsReport.jrxml",
+    "samples/crosstabs/pom.xml",
+    "samples/crosstabs/reports/LateOrdersReport.jrxml",
+    "samples/crosstabs/reports/OrdersReport.jrxml",
+    "samples/crosstabs/reports/ProductsReport.jrxml",
+    "samples/crosstabs/reports/ShipmentsReport.jrxml",
+    "samples/csvdatasource/pom.xml",
+    "samples/csvdatasource/reports/CsvDataSourceReport.jrxml",
+    "samples/csvdatasource/reports/CsvQueryExecuterReport.jrxml",
+    "samples/datasource/pom.xml",
+    "samples/datasource/reports/DataSourceReport.jrxml",
+    "samples/daterange/pom.xml",
+    "samples/daterange/reports/DateRangeReport.jrxml",
+    "samples/ejbql-j2ee/pom.xml",
+    "samples/ejbql-j2ee/reports/JRMDbCastSubreport.jrxml",
+    "samples/ejbql-j2ee/reports/JRMDbReport.jrxml",
+    "samples/ejbql-j2ee/reports/JRMDbVariaSubreport.jrxml",
+    "samples/ejbql-j2ee/src/META-INF/persistence.xml",
+    "samples/ejbql/pom.xml",
+    "samples/ejbql/reports/JRMDbCastSubreport.jrxml",
+    "samples/ejbql/reports/JRMDbReport.jrxml",
+    "samples/ejbql/reports/JRMDbVariaSubreport.jrxml",
+    "samples/ejbql/src/META-INF/persistence.xml",
+    "samples/exceldataadapter/pom.xml",
+    "samples/exceldataadapter/reports/ExcelXlsDataAdapterReport.jrxml",
+    "samples/exceldataadapter/reports/ExcelXlsQeDataAdapterReport.jrxml",
+    "samples/exceldataadapter/reports/ExcelXlsxDataAdapterReport.jrxml",
+    "samples/exceldataadapter/reports/ExcelXlsxQeDataAdapterReport.jrxml",
+    "samples/exceldatasource/pom.xml",
+    "samples/exceldatasource/reports/ExcelDataSourceReport.jrxml",
+    "samples/fastexceldatasource/pom.xml",
+    "samples/fastexceldatasource/reports/FastExcelDataSourceReport.jrxml",
+    "samples/fonts/pom.xml",
+    "samples/fonts/reports/FontsReport.jrxml",
+    "samples/fonts/src/fonts/lobstertwo/fonts.xml",
+    "samples/forms/pom.xml",
+    "samples/forms/reports/FormsReport.jrxml",
+    "samples/functions/pom.xml",
+    "samples/functions/reports/FunctionsReport.jrxml",
+    "samples/genericelement/pom.xml",
+    "samples/genericelement/reports/GenericElementReport.jrxml",
+    "samples/genericelement/src/net/sf/jasperreports/ohloh/beans.xml",
+    "samples/groovy/pom.xml",
+    "samples/groovy/reports/GroovyReport.jrxml",
+    "samples/hibernate-j2ee/pom.xml",
+    "samples/hibernate-j2ee/reports/AddressesReport.jrxml",
+    "samples/hibernate-j2ee/reports/DocumentsReport.jrxml",
+    "samples/hibernate-j2ee/reports/HibernateQueryReport.jrxml",
+    "samples/hibernate-j2ee/src/Address.hbm.xml",
+    "samples/hibernate-j2ee/src/Document.hbm.xml",
+    "samples/hibernate-j2ee/src/hibernate.cfg.xml",
+    "samples/hibernate/pom.xml",
+    "samples/hibernate/reports/AddressesReport.jrxml",
+    "samples/hibernate/reports/DocumentsReport.jrxml",
+    "samples/hibernate/reports/HibernateQueryReport.jrxml",
+    "samples/hibernate/src/Address.hbm.xml",
+    "samples/hibernate/src/Document.hbm.xml",
+    "samples/hibernate/src/hibernate.cfg.xml",
+    "samples/horizontal/pom.xml",
+    "samples/horizontal/reports/HorizontalReport.jrxml",
+    "samples/httpdataadapter/pom.xml",
+    "samples/httpdataadapter/reports/JsonHttpDataAdapterReport.jrxml",
+    "samples/httpdataadapter/reports/XmlHttpDataAdapterReport.jrxml",
+    "samples/httpdataadapter/web/WEB-INF/data/animals.1.xml",
+    "samples/httpdataadapter/web/WEB-INF/data/animals.2.xml",
+    "samples/httpdataadapter/web/WEB-INF/data/animals.3.xml",
+    "samples/hyperlink/pom.xml",
+    "samples/hyperlink/reports/HyperlinkReport.jrxml",
+    "samples/i18n/pom.xml",
+    "samples/i18n/reports/I18nReport.jrxml",
+    "samples/iconlabel/pom.xml",
+    "samples/iconlabel/reports/IconLabelReport.jrxml",
+    "samples/images/pom.xml",
+    "samples/images/reports/ImagesReport.jrxml",
+    "samples/jasper/pom.xml",
+    "samples/jasper/reports/FirstJasper.jrxml",
+    "samples/java1.5/pom.xml",
+    "samples/java1.5/reports/Java5Report.jrxml",
+    "samples/javascript/pom.xml",
+    "samples/javascript/reports/JavaScriptReport.jrxml",
+    "samples/jfreechart/pom.xml",
+    "samples/jfreechart/reports/JFreeChartReport.jrxml",
+    "samples/jsondatasource/pom.xml",
+    "samples/jsondatasource/reports/JsonCustomersReport.jrxml",
+    "samples/jsondatasource/reports/JsonOrdersReport.jrxml",
+    "samples/jsonqldatasource/pom.xml",
+    "samples/jsonqldatasource/reports/NorthwindOrdersReport.jrxml",
+    "samples/landscape/pom.xml",
+    "samples/landscape/reports/LandscapeReport.jrxml",
+    "samples/list/pom.xml",
+    "samples/list/reports/HorizontalListReport.jrxml",
+    "samples/list/reports/ListReport.jrxml",
+    "samples/markup/pom.xml",
+    "samples/markup/reports/MarkupReport.jrxml",
+    "samples/mondrian/metadata/FoodMart.xml",
+    "samples/mondrian/metadata/schema.xml",
+    "samples/mondrian/pom.xml",
+    "samples/mondrian/reports/AdventureWorks-Olap4jXMLA-XJoinColumnsReport.jrxml",
+    "samples/mondrian/reports/AdventureWorks-Olap4jXMLAReport.jrxml",
+    "samples/mondrian/reports/AdventureWorks-XMLA-XJoinColumnsReport.jrxml",
+    "samples/mondrian/reports/AdventureWorks-XMLAReport.jrxml",
+    "samples/mondrian/reports/FoodMartSales-XMLAReport.jrxml",
+    "samples/mondrian/reports/FoodMartSalesWeekly-XMLAReport.jrxml",
+    "samples/mondrian/reports/MondrianFoodMartSalesOlap4jReport.jrxml",
+    "samples/mondrian/reports/MondrianFoodMartSalesReport.jrxml",
+    "samples/mondrian/reports/MondrianReport.jrxml",
+    "samples/nopagebreak/pom.xml",
+    "samples/nopagebreak/reports/NoPageBreakReport.jrxml",
+    "samples/noreport/pom.xml",
+    "samples/noxmldesign/pom.xml",
+    "samples/paragraphs/pom.xml",
+    "samples/paragraphs/reports/ParagraphsReport.jrxml",
+    "samples/pdfa/pom.xml",
+    "samples/pdfa/reports/PdfA1Report.jrxml",
+    "samples/pdfa/reports/PdfA2Report.jrxml",
+    "samples/pdfa/reports/PdfA3Report.jrxml",
+    "samples/pdfa/reports/TabularPdfA1Report.jrxml",
+    "samples/pdfa/reports/TaggedPdfA1Report.jrxml",
+    "samples/pdfa/src/liberationsans/fonts.xml",
+    "samples/pdfencrypt/pom.xml",
+    "samples/pdfencrypt/reports/PdfEncryptReport.jrxml",
+    "samples/pom-common.xml",
+    "samples/pom-parent.xml",
+    "samples/pom.xml",
+    "samples/printservice/pom.xml",
+    "samples/query/pom.xml",
+    "samples/query/reports/QueryReport.jrxml",
+    "samples/query/reports/ReportStyles.jrtx",
+    "samples/rotation/pom.xml",
+    "samples/rotation/reports/RotationReport.jrxml",
+    "samples/scriptlet/pom.xml",
+    "samples/scriptlet/reports/ScriptletReport.jrxml",
+    "samples/shapes/pom.xml",
+    "samples/shapes/reports/ShapesReport.jrxml",
+    "samples/spiderchartcomponent/pom.xml",
+    "samples/spiderchartcomponent/reports/SpiderChart.jrxml",
+    "samples/stretch/pom.xml",
+    "samples/stretch/reports/StretchReport.jrxml",
+    "samples/styledtext/pom.xml",
+    "samples/styledtext/reports/StyledTextReport.jrxml",
+    "samples/subreport/pom-javaflow.xml",
+    "samples/subreport/pom.xml",
+    "samples/subreport/reports/AddressReport.jrxml",
+    "samples/subreport/reports/MasterReport.jrxml",
+    "samples/subreport/reports/ProductReport.jrxml",
+    "samples/table/pom.xml",
+    "samples/table/reports/TableReport.jrxml",
+    "samples/tableofcontents/pom.xml",
+    "samples/tableofcontents/reports/TableOfContentsReport.jrxml",
+    "samples/tableofcontents/reports/TablePart.jrxml",
+    "samples/tableofcontents/reports/TocPart.jrxml",
+    "samples/tabular/pom.xml",
+    "samples/tabular/reports/TabularReport.jrxml",
+    "samples/templates/pom.xml",
+    "samples/templates/reports/StylesReport.jrxml",
+    "samples/templates/reports/base_styles.jrtx",
+    "samples/templates/reports/styles.jrtx",
+    "samples/text/pom.xml",
+    "samples/text/reports/TextReport.jrxml",
+    "samples/unicode/pom.xml",
+    "samples/unicode/reports/UnicodeReport.jrxml",
+    "samples/unicode/src/fonts/arphic/fonts.xml",
+    "samples/unicode/src/fonts/noto/fonts.xml",
+    "samples/virtualizer/pom.xml",
+    "samples/virtualizer/reports/VirtualizerReport.jrxml",
+    "samples/webapp/pom.xml",
+    "samples/webapp/web/WEB-INF/web.xml",
+    "samples/webapp/web/reports/WebappReport.jrxml",
+    "samples/xchart/pom.xml",
+    "samples/xchart/reports/XChartReport.jrxml",
+    "samples/xchartcomponent/pom.xml",
+    "samples/xchartcomponent/reports/XYChart.jrxml",
+    "samples/xchartcomponent/src/xchart/xchart_beans.xml",
+    "samples/xlsfeatures/pom.xml",
+    "samples/xlsfeatures/reports/ExcelNames.jrxml",
+    "samples/xlsfeatures/reports/FormatPatternsMap.jrxml",
+    "samples/xlsfeatures/reports/MacroReport.jrxml",
+    "samples/xlsfeatures/reports/XlsFeaturesReport.jrxml",
+    "samples/xlsformula/pom.xml",
+    "samples/xlsformula/reports/XlsFormulaReport.jrxml",
+    "samples/xmldatasource/data/northwind.xml",
+    "samples/xmldatasource/pom.xml",
+    "samples/xmldatasource/reports/CustomersReport.jrxml",
+    "samples/xmldatasource/reports/OrdersReport.jrxml"
+  ]
+}

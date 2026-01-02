@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport bottomMargin="0" leftMargin="0" name="SaleFooter" rightMargin="0" topMargin="0">
+  <!--- Declared parameters in the report. -->
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="subreport.report"/>
+  <parameter class="java.lang.String" name="title"/>
+  <parameter class="java.lang.String" name="text"/>
+  <parameter class="java.lang.String" name="company.name"/>
+  <parameter class="java.lang.String" name="company.address1"/>
+  <parameter class="java.lang.String" name="company.address2"/>
+  <parameter class="java.lang.String" name="company.zipcode"/>
+  <parameter class="java.lang.String" name="company.city"/>
+  <parameter class="java.lang.String" name="company.country"/>
+  <parameter class="java.lang.String" name="company.phone"/>
+  <parameter class="java.lang.String" name="company.telefax"/>
+  <parameter class="java.lang.String" name="company.residence"/>
+  <parameter class="java.lang.String" name="company.email"/>
+  <parameter class="java.lang.String" name="company.homepage"/>
+  <parameter class="java.lang.Boolean" name="company.taxregistered"/>
+  <parameter class="java.lang.String" name="company.corporateid"/>
+  <parameter class="java.lang.String" name="company.vatnr"/>
+  <parameter class="java.lang.String" name="company.plusaccount"/>
+  <parameter class="java.lang.String" name="company.bankaccount"/>
+  <parameter class="java.lang.String" name="company.bic"/>
+  <parameter class="java.lang.String" name="company.iban"/>
+  <parameter class="java.lang.String" name="company.bank"/>
+  <pageFooter height="140" splitType="Prevent">
+    <!-- Text frame -->
+    <element height="40" kind="frame" width="510" x="40" y="10">
+      <box>
+        <pen lineColor="#000000" lineWidth="0.5"/>
+      </box>
+      <element blankWhenNull="true" hTextAlign="Left" height="36" kind="textField" width="500" x="5" y="4">
+        <expression><![CDATA[$P{text}]]></expression>
+      </element>
+    </element>
+    <element height="1" kind="line" width="510" x="40" y="58"/>
+    <!-- Company information frame -->
+    <element height="60" kind="frame" width="510" x="40" y="60">
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="0" y="0">
+        <expression><![CDATA[$P{company.name}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="0" y="10">
+        <expression><![CDATA[$P{company.address1}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="0" y="20">
+        <expression><![CDATA[$P{company.address2}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="0" y="30">
+        <expression><![CDATA[$P{company.zipcode} + " " + $P{company.city}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="0" y="40">
+        <expression><![CDATA[$P{company.country}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="30" x="90" y="0">
+        <expression><![CDATA[$R{company.phone}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="120" y="0">
+        <expression><![CDATA[$P{company.phone}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="30" x="90" y="10">
+        <expression><![CDATA[$R{company.telefax}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="120" y="10">
+        <expression><![CDATA[$P{company.telefax}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="30" x="90" y="20">
+        <expression><![CDATA[$R{company.residence}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="120" y="20">
+        <expression><![CDATA[$P{company.residence}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="150" x="90" y="40">
+        <expression><![CDATA[$R{company.taxregistered}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="40" x="200" y="0">
+        <expression><![CDATA[$R{company.email}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="240" y="0">
+        <expression><![CDATA[$P{company.email}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="40" x="200" y="10">
+        <expression><![CDATA[$R{company.homepage}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="240" y="10">
+        <expression><![CDATA[$P{company.homepage}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="40" x="200" y="30">
+        <expression><![CDATA[$R{company.corporateid}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="240" y="30">
+        <expression><![CDATA[$P{company.corporateid}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="40" x="200" y="40">
+        <expression><![CDATA[$R{company.vatnr}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="240" y="40">
+        <expression><![CDATA[$P{company.vatnr}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="45" x="350" y="0">
+        <expression><![CDATA[$R{company.plusaccount}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="115" x="395" y="0">
+        <expression><![CDATA[$P{company.plusaccount}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="45" x="350" y="10">
+        <expression><![CDATA[$R{company.bankaccount}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="115" x="395" y="10">
+        <expression><![CDATA[$P{company.bankaccount}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="45" x="350" y="20">
+        <expression><![CDATA[$R{company.bank}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="115" x="395" y="20">
+        <expression><![CDATA[$P{company.bank}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="45" x="350" y="30">
+        <expression><![CDATA[$R{company.bic}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="115" x="395" y="30">
+        <expression><![CDATA[$P{company.bic}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="45" x="350" y="40">
+        <expression><![CDATA[$R{company.iban}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="115" x="395" y="40">
+        <expression><![CDATA[$P{company.iban}]]></expression>
+      </element>
+    </element>
+  </pageFooter>
+</jasperReport>

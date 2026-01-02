@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="StockAccount" resourceBundle="book">
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.String" name="product.number"/>
+  <field class="java.lang.String" name="product.description"/>
+  <field class="java.lang.Integer" name="product.orderpoint"/>
+  <field class="java.lang.Integer" name="product.ordercount"/>
+  <field class="java.lang.Integer" name="product.quantity"/>
+  <field class="java.lang.Integer" name="product.reserved"/>
+  <field class="java.lang.Integer" name="product.ordered"/>
+  <variable calculation="Nothing" class="java.lang.Integer" name="product.avaiable" resetType="None">
+    <expression><![CDATA[new Integer($F{product.quantity}.intValue() -  $F{product.reserved}.intValue())]]></expression>
+  </variable>
+  <columnHeader height="15">
+    <element height="1" kind="line" width="510" x="20" y="12"/>
+    <!-- Column 1 -->
+    <element hTextAlign="Left" height="12" kind="textField" width="70" x="20" y="0">
+      <expression><![CDATA[$R{stockaccountreport.column.1}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="12" kind="textField" width="100" x="90" y="0">
+      <expression><![CDATA[$R{stockaccountreport.column.2}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="70" x="190" y="0">
+      <expression><![CDATA[$R{stockaccountreport.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="70" x="260" y="0">
+      <expression><![CDATA[$R{stockaccountreport.column.4}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="50" x="330" y="0">
+      <expression><![CDATA[$R{stockaccountreport.column.5}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="50" x="380" y="0">
+      <expression><![CDATA[$R{stockaccountreport.column.6}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="50" x="430" y="0">
+      <expression><![CDATA[$R{stockaccountreport.column.7}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="50" x="480" y="0">
+      <expression><![CDATA[$R{stockaccountreport.column.8}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="14">
+      <element height="12" kind="textField" width="70" x="20" y="0">
+        <expression><![CDATA[$F{product.number}]]></expression>
+      </element>
+      <element blankWhenNull="true" height="12" kind="textField" width="100" x="90" y="0">
+        <expression><![CDATA[$F{product.description}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="70" x="190" y="0">
+        <expression><![CDATA[$F{product.orderpoint}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="70" x="260" y="0">
+        <expression><![CDATA[$F{product.ordercount}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Right" height="12" kind="textField" width="50" x="330" y="0">
+        <expression><![CDATA[$F{product.quantity}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Right" height="12" kind="textField" width="50" x="380" y="0">
+        <expression><![CDATA[$F{product.reserved}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Right" height="12" kind="textField" width="50" x="430" y="0">
+        <expression><![CDATA[$F{product.ordered}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Right" height="12" kind="textField" width="50" x="480" y="0">
+        <expression><![CDATA[$V{product.avaiable}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

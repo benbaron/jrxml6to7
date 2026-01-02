@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="SupplierCreditInvoiceListRow" resourceBundle="book">
+  <parameter class="java.lang.Integer" name="suppliercreditinvoice.number"/>
+  <parameter class="java.math.BigDecimal" name="suppliercreditinvoice.sum"/>
+  <parameter class="java.math.BigDecimal" name="suppliercreditinvoice.tax"/>
+  <field class="java.lang.String" name="row.number"/>
+  <field class="java.lang.String" name="row.description"/>
+  <field class="java.lang.Integer" name="row.count"/>
+  <field class="java.lang.String" name="row.unit"/>
+  <field class="java.math.BigDecimal" name="row.unitprice"/>
+  <field class="java.math.BigDecimal" name="row.sum"/>
+  <!-- The sum. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="sum" resetType="Report">
+    <expression><![CDATA[$F{row.sum}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <detail>
+    <band height="12" splitType="Stretch">
+      <!-- Number -->
+      <element blankWhenNull="true" height="12" kind="textField" width="80" x="60" y="0">
+        <expression><![CDATA[$F{row.number}]]></expression>
+      </element>
+      <!-- Description -->
+      <element blankWhenNull="true" height="12" kind="textField" width="250" x="120" y="0">
+        <expression><![CDATA[$F{row.description}]]></expression>
+      </element>
+      <!-- Unitprice -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="70" x="300" y="0">
+        <expression><![CDATA[$F{row.unitprice}]]></expression>
+      </element>
+      <!-- Count -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="70" x="360" y="0">
+        <expression><![CDATA[$F{row.count}]]></expression>
+      </element>
+      <!-- Unit -->
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="10" x="430" y="0">
+        <expression><![CDATA[$F{row.unit}]]></expression>
+      </element>
+      <!-- Row sum  -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="50" x="460" y="0">
+        <expression><![CDATA[$F{row.sum}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="24" splitType="Prevent">
+    <element height="1" kind="line" width="450" x="60" y="0"/>
+    <element height="12" kind="textField" width="250" x="60" y="0">
+      <expression><![CDATA[$R{suppliercreditinvoicelistreport.sum}]]></expression>
+    </element>
+    <element height="12" kind="textField" width="250" x="60" y="12">
+      <expression><![CDATA[$R{suppliercreditinvoicelistreport.tax}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="250" x="260" y="0">
+      <expression><![CDATA[$P{suppliercreditinvoice.sum}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="250" x="260" y="12">
+      <expression><![CDATA[$P{suppliercreditinvoice.tax}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

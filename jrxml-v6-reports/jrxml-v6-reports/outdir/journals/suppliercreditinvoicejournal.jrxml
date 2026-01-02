@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="suppliercreditinvoicejournal" resourceBundle="book">
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="Report"/>
+  <parameter class="java.util.HashMap" name="Parameters"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Integer" name="suppliercreditinvoice.number"/>
+  <field class="java.lang.String" name="suppliercreditinvoice.suppliernr"/>
+  <field class="java.lang.String" name="suppliercreditinvoice.suppliername"/>
+  <field class="java.lang.String" name="suppliercreditinvoice.date"/>
+  <field class="java.math.BigDecimal" name="suppliercreditinvoice.sum"/>
+  <field class="java.math.BigDecimal" name="suppliercreditinvoice.tax"/>
+  <field class="java.lang.String" name="suppliercreditinvoice.currency"/>
+  <field class="java.math.BigDecimal" name="suppliercreditinvoice.currencyrate"/>
+  <field class="java.math.BigDecimal" name="suppliercreditinvoice.localsum"/>
+  <field class="net.sf.jasperreports.engine.JRDataSource" name="journal.rows"/>
+  <!-- The sum. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="sum" resetType="Report">
+    <expression><![CDATA[$F{suppliercreditinvoice.localsum}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <columnHeader height="30">
+    <element height="1" kind="line" width="510" x="20" y="23"/>
+    <!-- Column 1 -->
+    <element height="24" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{suppliercreditinvoicejournal.column.1}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="80" x="80" y="0">
+      <expression><![CDATA[$R{suppliercreditinvoicejournal.column.2}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="70" x="140" y="0">
+      <expression><![CDATA[$R{suppliercreditinvoicejournal.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="24" kind="textField" width="50" x="270" y="0">
+      <expression><![CDATA[$R{suppliercreditinvoicejournal.column.4}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="24" kind="textField" width="50" x="320" y="0">
+      <expression><![CDATA[$R{suppliercreditinvoicejournal.column.5}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="80" x="370" y="0">
+      <expression><![CDATA[$R{suppliercreditinvoicejournal.column.6}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="80" x="450" y="0">
+      <expression><![CDATA[$R{suppliercreditinvoicejournal.column.7}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="75" splitType="Stretch">
+      <!-- Invoice number -->
+      <element height="14" kind="textField" width="30" x="20" y="0">
+        <expression><![CDATA[$F{suppliercreditinvoice.number}]]></expression>
+      </element>
+      <!-- Customer number -->
+      <element height="14" kind="textField" width="80" x="80" y="0">
+        <expression><![CDATA[$F{suppliercreditinvoice.suppliernr}]]></expression>
+      </element>
+      <!-- Customer name -->
+      <element height="14" kind="textField" width="150" x="140" y="0">
+        <expression><![CDATA[$F{suppliercreditinvoice.suppliername}]]></expression>
+      </element>
+      <!-- Invoice date -->
+      <element hTextAlign="Right" height="14" kind="textField" width="80" x="370" y="0">
+        <expression><![CDATA[$F{suppliercreditinvoice.date}]]></expression>
+      </element>
+      <!-- Invoice currency -->
+      <element hTextAlign="Right" height="14" kind="textField" width="80" x="450" y="0">
+        <expression><![CDATA[$F{suppliercreditinvoice.currency}]]></expression>
+      </element>
+      <!-- Order rows -->
+      <element height="0" kind="subreport" usingCache="false" width="555" x="0" y="12">
+        <parametersMapExpression><![CDATA[new java.util.HashMap() {{ put("suppliercreditinvoice.suppliernr", $F{suppliercreditinvoice.number}); }}]]></parametersMapExpression>
+        <dataSourceExpression><![CDATA[$F{journal.rows}]]></dataSourceExpression>
+        <expression><![CDATA[$P{Report}]]></expression>
+      </element>
+      <element height="50" kind="frame" width="555" x="0" y="12">
+        <element height="1" kind="line" width="450" x="80" y="0"/>
+        <element hTextAlign="Left" height="12" kind="textField" width="120" x="350" y="0">
+          <expression><![CDATA[$R{suppliercreditinvoicejournal.sum}]]></expression>
+        </element>
+        <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="60" x="470" y="0">
+          <expression><![CDATA[$F{suppliercreditinvoice.sum}]]></expression>
+        </element>
+        <element hTextAlign="Left" height="12" kind="textField" width="120" x="350" y="12">
+          <expression><![CDATA[$R{suppliercreditinvoicejournal.tax}]]></expression>
+        </element>
+        <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="60" x="470" y="12">
+          <expression><![CDATA[$F{suppliercreditinvoice.tax}]]></expression>
+        </element>
+        <element hTextAlign="Left" height="12" kind="textField" width="120" x="350" y="24">
+          <expression><![CDATA[$R{suppliercreditinvoicejournal.currencyrate}]]></expression>
+        </element>
+        <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00000" width="60" x="470" y="24">
+          <expression><![CDATA[$F{suppliercreditinvoice.currencyrate}]]></expression>
+        </element>
+        <element hTextAlign="Left" height="12" kind="textField" width="120" x="350" y="36">
+          <expression><![CDATA[$R{suppliercreditinvoicejournal.totalsum}]]></expression>
+        </element>
+        <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="60" x="470" y="36">
+          <expression><![CDATA[$F{suppliercreditinvoice.localsum}]]></expression>
+        </element>
+      </element>
+    </band>
+  </detail>
+  <summary height="20">
+    <element backcolor="#000000" height="2" kind="rectangle" width="510" x="20" y="0"/>
+    <element height="14" kind="textField" width="250" x="20" y="2">
+      <expression><![CDATA[$R{suppliercreditinvoicejournal.totalsum}]]></expression>
+    </element>
+    <!-- Total sum-->
+    <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="2">
+      <expression><![CDATA[$V{sum} != null ? $V{sum} : new BigDecimal(0.0)]]></expression>
+    </element>
+  </summary>
+</jasperReport>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="CustomerClaim" resourceBundle="book">
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.String" name="customer.number"/>
+  <field class="java.lang.String" name="customer.name"/>
+  <field class="java.lang.Integer" name="invoice.number"/>
+  <field class="java.lang.String" name="invoice.date"/>
+  <field class="java.math.BigDecimal" name="invoice.sum"/>
+  <field class="java.math.BigDecimal" name="invoice.saldo"/>
+  <field class="java.math.BigDecimal" name="invoice.localsaldo"/>
+  <field class="java.math.BigDecimal" name="invoice.currencyrate"/>
+  <field class="java.lang.String" name="invoice.currency"/>
+  <!-- The sum. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="sum" resetType="Report">
+    <expression><![CDATA[$F{invoice.localsaldo}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <columnHeader height="14">
+    <element height="1" kind="line" width="510" x="20" y="11"/>
+    <!-- Invoice nr  -->
+    <element height="12" kind="textField" width="45" x="20" y="0">
+      <expression><![CDATA[$R{customerclaimreport.column.1}]]></expression>
+    </element>
+    <!-- Customer nr -->
+    <element height="12" kind="textField" width="50" x="65" y="0">
+      <expression><![CDATA[$R{customerclaimreport.column.2}]]></expression>
+    </element>
+    <!-- Customer name -->
+    <element height="12" kind="textField" width="150" x="115" y="0">
+      <expression><![CDATA[$R{customerclaimreport.column.3}]]></expression>
+    </element>
+    <!-- Date  -->
+    <element hTextAlign="Left" height="12" kind="textField" width="45" x="265" y="0">
+      <expression><![CDATA[$R{customerclaimreport.column.4}]]></expression>
+    </element>
+    <!-- Sum  -->
+    <element hTextAlign="Right" height="12" kind="textField" width="60" x="310" y="0">
+      <expression><![CDATA[$R{customerclaimreport.column.5}]]></expression>
+    </element>
+    <!--Saldo -->
+    <element hTextAlign="Right" height="12" kind="textField" width="60" x="370" y="0">
+      <expression><![CDATA[$R{customerclaimreport.column.6}]]></expression>
+    </element>
+    <!-- Currency  -->
+    <element hTextAlign="Right" height="12" kind="textField" width="40" x="430" y="0">
+      <expression><![CDATA[$R{customerclaimreport.column.7}]]></expression>
+    </element>
+    <!-- Customer claim  -->
+    <element hTextAlign="Right" height="12" kind="textField" width="60" x="470" y="0">
+      <expression><![CDATA[$R{customerclaimreport.column.8}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="14" splitType="Stretch">
+      <printWhenExpression><![CDATA[new Boolean( $F{invoice.localsaldo}.signum() != 0) ]]></printWhenExpression>
+      <!-- Invoice number -->
+      <element height="12" kind="textField" width="45" x="20" y="0">
+        <expression><![CDATA[$F{invoice.number}]]></expression>
+      </element>
+      <!-- Customer nr -->
+      <element height="12" kind="textField" width="50" x="65" y="0">
+        <expression><![CDATA[$F{customer.number}]]></expression>
+      </element>
+      <!-- Customer name -->
+      <element height="12" kind="textField" width="150" x="115" y="0">
+        <expression><![CDATA[$F{customer.name}]]></expression>
+      </element>
+      <!-- Date -->
+      <element hTextAlign="Left" height="12" kind="textField" width="45" x="265" y="0">
+        <expression><![CDATA[$F{invoice.date}]]></expression>
+      </element>
+      <!-- Sum -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="60" x="310" y="0">
+        <expression><![CDATA[$F{invoice.sum}]]></expression>
+      </element>
+      <!-- Saldo  -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="60" x="370" y="0">
+        <expression><![CDATA[$F{invoice.saldo}]]></expression>
+      </element>
+      <!-- Curency -->
+      <element hTextAlign="Right" height="12" kind="textField" width="40" x="430" y="0">
+        <expression><![CDATA[$F{invoice.currency}]]></expression>
+      </element>
+      <!-- Customerclaim  -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="60" x="470" y="0">
+        <expression><![CDATA[$F{invoice.localsaldo}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="20">
+    <element backcolor="#000000" height="2" kind="rectangle" width="510" x="20" y="0"/>
+    <element height="14" kind="textField" width="250" x="20" y="2">
+      <expression><![CDATA[$R{customerclaimreport.totalsum}]]></expression>
+    </element>
+    <!-- Total sum-->
+    <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="2">
+      <expression><![CDATA[$V{sum} != null ? $V{sum} : new BigDecimal(0.0)]]></expression>
+    </element>
+  </summary>
+</jasperReport>

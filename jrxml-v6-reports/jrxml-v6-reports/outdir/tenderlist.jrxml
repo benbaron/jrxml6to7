@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="Tenderist" resourceBundle="book">
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="Report"/>
+  <parameter class="java.util.HashMap" name="Parameters"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Integer" name="tender.number"/>
+  <field class="java.lang.String" name="tender.customernr"/>
+  <field class="java.lang.String" name="tender.customername"/>
+  <field class="java.lang.String" name="tender.currency"/>
+  <field class="java.lang.String" name="tender.date"/>
+  <field class="java.math.BigDecimal" name="tender.sum"/>
+  <field class="net.sf.jasperreports.engine.JRDataSource" name="tender.rows"/>
+  <!-- The sum. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="sum" resetType="Report">
+    <expression><![CDATA[$F{tender.sum}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <columnHeader height="30">
+    <element height="1" kind="line" width="510" x="20" y="23"/>
+    <!-- Column 1 -->
+    <element height="24" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{tenderlistreport.column.1}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="70" x="80" y="0">
+      <expression><![CDATA[$R{tenderlistreport.column.2}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="80" x="140" y="0">
+      <expression><![CDATA[$R{tenderlistreport.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="70" x="270" y="0">
+      <expression><![CDATA[$R{tenderlistreport.column.4}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="70" x="320" y="0">
+      <expression><![CDATA[$R{tenderlistreport.column.5}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="70" x="380" y="0">
+      <expression><![CDATA[$R{tenderlistreport.column.6}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="50" x="480" y="0">
+      <expression><![CDATA[$R{tenderlistreport.column.7}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="30" splitType="Stretch">
+      <!-- Title -->
+      <element blankWhenNull="true" height="14" kind="textField" width="30" x="20" y="0">
+        <expression><![CDATA[$F{tender.number}]]></expression>
+      </element>
+      <!-- Customer nr -->
+      <element blankWhenNull="true" height="14" kind="textField" width="200" x="80" y="0">
+        <expression><![CDATA[$F{tender.customernr}]]></expression>
+      </element>
+      <!-- Customer name -->
+      <element blankWhenNull="true" height="14" kind="textField" width="200" x="140" y="0">
+        <expression><![CDATA[$F{tender.customername}]]></expression>
+      </element>
+      <!-- Currency -->
+      <element blankWhenNull="true" hTextAlign="Right" height="24" kind="textField" width="70" x="380" y="0">
+        <expression><![CDATA[$F{tender.currency}]]></expression>
+      </element>
+      <!-- Date -->
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" width="60" x="470" y="0">
+        <expression><![CDATA[$F{tender.date}]]></expression>
+      </element>
+      <!-- Order rows -->
+      <element height="0" kind="subreport" usingCache="false" width="555" x="20" y="12">
+        <parametersMapExpression><![CDATA[new java.util.HashMap() {{ put("order.number", $F{tender.number}); }}]]></parametersMapExpression>
+        <dataSourceExpression><![CDATA[$F{tender.rows}]]></dataSourceExpression>
+        <expression><![CDATA[$P{Report}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="20">
+    <element backcolor="#000000" height="2" kind="rectangle" width="510" x="20" y="0"/>
+    <element height="14" kind="textField" width="250" x="20" y="2">
+      <expression><![CDATA[$R{inpaymentlistreport.sum}]]></expression>
+    </element>
+    <!-- Total sum-->
+    <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="2">
+      <expression><![CDATA[$V{sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

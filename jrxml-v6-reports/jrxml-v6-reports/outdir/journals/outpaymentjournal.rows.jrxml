@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="InpaymentJournalRows" resourceBundle="book">
+  <parameter class="java.lang.Integer" name="inpayment.number"/>
+  <field class="java.lang.Integer" name="row.account"/>
+  <field class="java.lang.String" name="row.description"/>
+  <field class="java.math.BigDecimal" name="row.debet"/>
+  <field class="java.math.BigDecimal" name="row.credet"/>
+  <field class="java.lang.String" name="row.project"/>
+  <field class="java.lang.String" name="row.resultunit"/>
+  <!-- The sum. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="debet.sum" resetType="Report">
+    <expression><![CDATA[$F{row.debet}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="credet.sum" resetType="Report">
+    <expression><![CDATA[$F{row.credet}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <detail>
+    <band height="12" splitType="Stretch">
+      <!-- Account number -->
+      <element blankWhenNull="true" height="12" kind="textField" width="40" x="80" y="0">
+        <expression><![CDATA[$F{row.account}]]></expression>
+      </element>
+      <!-- Description -->
+      <element blankWhenNull="true" height="12" kind="textField" width="150" x="140" y="0">
+        <expression><![CDATA[$F{row.description}]]></expression>
+      </element>
+      <!-- Project -->
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="50" x="270" y="0">
+        <expression><![CDATA[$F{row.project}]]></expression>
+      </element>
+      <!-- Result unit -->
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="50" x="320" y="0">
+        <expression><![CDATA[$F{row.resultunit}]]></expression>
+      </element>
+      <!-- Debet -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="370" y="0">
+        <expression><![CDATA[$F{row.debet}]]></expression>
+      </element>
+      <!-- Credet -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="450" y="0">
+        <expression><![CDATA[$F{row.credet}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="12" splitType="Prevent">
+    <element height="1" kind="line" width="450" x="60" y="0"/>
+    <element height="12" kind="textField" width="250" x="80" y="0">
+      <expression><![CDATA[$R{invoicejournal.sum}]]></expression>
+    </element>
+    <!-- Debet -->
+    <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="370" y="0">
+      <expression><![CDATA[$V{debet.sum}]]></expression>
+    </element>
+    <!-- Credet -->
+    <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="470" y="0">
+      <expression><![CDATA[$V{credet.sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

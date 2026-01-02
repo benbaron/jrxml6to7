@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="OutpaymentRow" resourceBundle="book">
+  <parameter class="java.lang.Integer" name="outpayment.number  "/>
+  <parameter class="java.math.BigDecimal" name="outpayment.sum"/>
+  <field class="java.lang.Integer" name="invoice.number"/>
+  <field class="java.math.BigDecimal" name="invoice.currencyrate"/>
+  <field class="java.lang.String" name="invoice.currency"/>
+  <field class="java.math.BigDecimal" name="row.value"/>
+  <field class="java.math.BigDecimal" name="row.currencyrate"/>
+  <field class="java.math.BigDecimal" name="row.payed"/>
+  <detail>
+    <band height="12" splitType="Stretch">
+      <!-- Number -->
+      <element blankWhenNull="true" height="12" kind="textField" width="80" x="80" y="0">
+        <expression><![CDATA[$F{invoice.number}]]></expression>
+      </element>
+      <!-- Value -->
+      <element blankWhenNull="true" height="12" kind="textField" pattern="#,##0.00" width="70" x="180" y="0">
+        <expression><![CDATA[$F{row.value}]]></expression>
+      </element>
+      <!-- Invoice currency -->
+      <element blankWhenNull="true" height="12" kind="textField" width="70" x="250" y="0">
+        <expression><![CDATA[$F{invoice.currency}]]></expression>
+      </element>
+      <!-- Invoice currency rate -->
+      <element blankWhenNull="true" height="12" kind="textField" pattern="#,##0.00" width="70" x="320" y="0">
+        <expression><![CDATA[$F{invoice.currencyrate}]]></expression>
+      </element>
+      <!-- Inpayment currency rate -->
+      <element blankWhenNull="true" height="12" kind="textField" pattern="#,##0.00" width="70" x="390" y="0">
+        <expression><![CDATA[$F{row.currencyrate}]]></expression>
+      </element>
+      <!-- Inpayment sum  -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="50" x="480" y="0">
+        <expression><![CDATA[$F{row.payed}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="14" splitType="Prevent">
+    <element height="1" kind="line" width="450" x="80" y="0"/>
+    <element height="12" kind="textField" width="250" x="80" y="0">
+      <expression><![CDATA[$R{inpaymentlistreport.sum}]]></expression>
+    </element>
+    <element blankWhenNull="false" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="250" x="280" y="0">
+      <expression><![CDATA[$P{outpayment.sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

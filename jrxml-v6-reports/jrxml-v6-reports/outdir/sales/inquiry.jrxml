@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport bottomMargin="0" leftMargin="0" name="PurchaseOrder" rightMargin="0" topMargin="0">
+  <!--- Declared parameters in the report. -->
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="subreport.report"/>
+  <parameter class="java.lang.String" name="title"/>
+  <parameter class="java.awt.Image" name="company.logo"/>
+  <parameter class="java.lang.String" name="company.name"/>
+  <parameter class="java.lang.String" name="company.address1"/>
+  <parameter class="java.lang.String" name="company.address2"/>
+  <parameter class="java.lang.String" name="company.zipcode"/>
+  <parameter class="java.lang.String" name="company.city"/>
+  <parameter class="java.lang.String" name="company.country"/>
+  <parameter class="java.lang.String" name="company.phone"/>
+  <parameter class="java.lang.String" name="company.telefax"/>
+  <parameter class="java.lang.String" name="company.residence"/>
+  <parameter class="java.lang.String" name="company.email"/>
+  <parameter class="java.lang.String" name="company.homepage"/>
+  <parameter class="java.lang.String" name="company.plusaccount"/>
+  <parameter class="java.lang.String" name="company.bankaccount"/>
+  <parameter class="java.lang.String" name="company.bic"/>
+  <parameter class="java.lang.String" name="company.iban"/>
+  <parameter class="java.lang.String" name="company.bank"/>
+  <parameter class="java.lang.Integer" name="number"/>
+  <parameter class="java.lang.String" name="date"/>
+  <parameter class="java.lang.String" name="text"/>
+  <parameter class="java.lang.String" name="purchaseorder.deliveryadress.name"/>
+  <parameter class="java.lang.String" name="purchaseorder.deliveryadress.address1"/>
+  <parameter class="java.lang.String" name="purchaseorder.deliveryadress.address2"/>
+  <parameter class="java.lang.String" name="purchaseorder.deliveryadress.zipcode"/>
+  <parameter class="java.lang.String" name="purchaseorder.deliveryadress.city"/>
+  <parameter class="java.lang.String" name="purchaseorder.deliveryadress.country"/>
+  <parameter class="java.lang.String" name="purchaseorder.supplieraddress.name"/>
+  <parameter class="java.lang.String" name="purchaseorder.supplieraddress.address1"/>
+  <parameter class="java.lang.String" name="purchaseorder.supplieraddress.address2"/>
+  <parameter class="java.lang.String" name="purchaseorder.supplieraddress.zipcode"/>
+  <parameter class="java.lang.String" name="purchaseorder.supplieraddress.city"/>
+  <parameter class="java.lang.String" name="purchaseorder.supplieraddress.country"/>
+  <parameter class="java.lang.String" name="purchaseorder.ourcontact"/>
+  <parameter class="java.lang.String" name="purchaseorder.yourcontact"/>
+  <parameter class="java.lang.String" name="purchaseorder.deliveryterm"/>
+  <parameter class="java.lang.String" name="purchaseorder.deliveryway"/>
+  <parameter class="java.lang.String" name="purchaseorder.paymentterm"/>
+  <parameter class="java.lang.String" name="purchaseorder.currency"/>
+  <parameter class="java.math.BigDecimal" name="purchaseorder.totalsum"/>
+  <field class="net.sf.jasperreports.engine.JRDataSource" name="subreport.datasource"/>
+  <field class="java.lang.String" name="row.number"/>
+  <field class="java.lang.String" name="row.description"/>
+  <field class="java.lang.Integer" name="row.count"/>
+  <field class="java.lang.String" name="row.unit"/>
+  <field class="java.math.BigDecimal" name="row.unitprice"/>
+  <field class="java.math.BigDecimal" name="row.discount"/>
+  <field class="java.math.BigDecimal" name="row.sum"/>
+  <columnHeader height="150">
+    <!-- delivery adress frame -->
+    <element height="86" kind="frame" width="250" x="40" y="0">
+      <box>
+        <pen lineColor="#000000" lineWidth="0.5"/>
+      </box>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="240" x="5" y="2">
+        <expression><![CDATA[$R{inquiryreport.deliveryadress}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="14">
+        <expression><![CDATA[$P{purchaseorder.deliveryadress.name}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="28">
+        <expression><![CDATA[$P{purchaseorder.deliveryadress.address1}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="42">
+        <expression><![CDATA[$P{purchaseorder.deliveryadress.address2}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="56">
+        <expression><![CDATA[$P{purchaseorder.deliveryadress.zipcode} + " " + $P{purchaseorder.deliveryadress.city}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="70">
+        <expression><![CDATA[$P{purchaseorder.deliveryadress.country}]]></expression>
+      </element>
+    </element>
+    <!-- invoice adress frame -->
+    <element height="86" kind="frame" width="250" x="300" y="0">
+      <box>
+        <pen lineColor="#000000" lineWidth="0.5"/>
+      </box>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="5" y="2">
+        <expression><![CDATA[$R{inquiryreport.supplieraddress}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="14">
+        <expression><![CDATA[$P{purchaseorder.supplieraddress.name}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="28">
+        <expression><![CDATA[$P{purchaseorder.supplieraddress.address1}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="42">
+        <expression><![CDATA[$P{purchaseorder.supplieraddress.address2}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="56">
+        <expression><![CDATA[$P{purchaseorder.supplieraddress.zipcode} + " " + $P{purchaseorder.supplieraddress.city}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="70">
+        <expression><![CDATA[$P{purchaseorder.supplieraddress.country}]]></expression>
+      </element>
+    </element>
+    <!-- Invoice details, Column 1 -->
+    <element height="60" kind="frame" width="250" x="45" y="90">
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="0">
+        <expression><![CDATA[$R{inquiryreport.ourcontact}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="0">
+        <expression><![CDATA[$P{purchaseorder.ourcontact}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="15">
+        <expression><![CDATA[$R{inquiryreport.deliveryterm}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="15">
+        <expression><![CDATA[$P{purchaseorder.deliveryterm}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="30">
+        <expression><![CDATA[$R{inquiryreport.deliveryway}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="30">
+        <expression><![CDATA[$P{purchaseorder.deliveryway}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="45">
+        <expression><![CDATA[$R{inquiryreport.paymentterm}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="45">
+        <expression><![CDATA[$P{purchaseorder.paymentterm}]]></expression>
+      </element>
+    </element>
+    <!-- Invoice details, Column 2 -->
+    <element height="60" kind="frame" width="250" x="305" y="90">
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="0">
+        <expression><![CDATA[$R{inquiryreport.yourcontact}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="0">
+        <expression><![CDATA[$P{purchaseorder.yourcontact}]]></expression>
+      </element>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="458" splitType="Stretch">
+      <!-- Subreport for the rows 385-->
+      <element height="458" kind="frame" width="510" x="40" y="0">
+        <box>
+          <pen lineColor="#000000" lineWidth="0.5"/>
+        </box>
+        <element height="458" kind="subreport" usingCache="false" width="510" x="0" y="0">
+          <parametersMapExpression><![CDATA[new java.util.HashMap(($P{REPORT_PARAMETERS_MAP}) == null ? java.util.Collections.emptyMap() : ($P{REPORT_PARAMETERS_MAP})) {{ put("REPORT_RESOURCE_BUNDLE", $P{REPORT_RESOURCE_BUNDLE}); }}]]></parametersMapExpression>
+          <dataSourceExpression><![CDATA[$F{subreport.datasource}]]></dataSourceExpression>
+          <expression><![CDATA[$P{subreport.report}]]></expression>
+        </element>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="Voucer" resourceBundle="book">
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="Report"/>
+  <parameter class="java.util.HashMap" name="Parameters"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Integer" name="voucher.number"/>
+  <field class="java.lang.String" name="voucher.date"/>
+  <field class="java.lang.String" name="voucher.description"/>
+  <field class="java.math.BigDecimal" name="voucher.debet"/>
+  <field class="java.math.BigDecimal" name="voucher.credet"/>
+  <field class="net.sf.jasperreports.engine.JRDataSource" name="voucher.rows"/>
+  <columnHeader height="63">
+    <element height="45" kind="frame" width="555" x="0" y="5">
+      <element hTextAlign="Left" height="14" kind="textField" width="340" x="20" y="0">
+        <expression><![CDATA[$R{voucherreport.verificationtext}]]></expression>
+      </element>
+      <element hTextAlign="Left" height="14" kind="textField" width="340" x="20" y="15">
+        <expression><![CDATA[$R{voucherreport.verificationdate}]]></expression>
+      </element>
+      <element hTextAlign="Left" height="14" kind="textField" width="340" x="20" y="30">
+        <expression><![CDATA[$R{voucherreport.verificationnumber}]]></expression>
+      </element>
+      <element hTextAlign="Left" height="12" kind="textField" width="340" x="120" y="0">
+        <expression><![CDATA[$F{voucher.description}]]></expression>
+      </element>
+      <element hTextAlign="Left" height="14" kind="textField" width="340" x="120" y="15">
+        <expression><![CDATA[$F{voucher.date}]]></expression>
+      </element>
+      <element hTextAlign="Left" height="14" kind="textField" width="340" x="120" y="30">
+        <expression><![CDATA[$F{voucher.number}]]></expression>
+      </element>
+    </element>
+    <element height="13" kind="frame" width="555" x="0" y="50">
+      <element height="1" kind="line" width="510" x="20" y="0"/>
+      <element height="1" kind="line" width="510" x="20" y="12"/>
+      <element hTextAlign="Left" height="12" kind="textField" width="80" x="20" y="0">
+        <expression><![CDATA[$R{voucherreport.column.1}]]></expression>
+      </element>
+      <element hTextAlign="Left" height="12" kind="textField" width="220" x="80" y="0">
+        <expression><![CDATA[$R{voucherreport.column.2}]]></expression>
+      </element>
+      <element hTextAlign="Left" height="12" kind="textField" width="50" x="270" y="0">
+        <expression><![CDATA[$R{voucherreport.column.3}]]></expression>
+      </element>
+      <element hTextAlign="Left" height="12" kind="textField" width="70" x="320" y="0">
+        <expression><![CDATA[$R{voucherreport.column.4}]]></expression>
+      </element>
+      <element hTextAlign="Right" height="12" kind="textField" width="70" x="380" y="0">
+        <expression><![CDATA[$R{voucherreport.column.5}]]></expression>
+      </element>
+      <element hTextAlign="Right" height="12" kind="textField" width="70" x="460" y="0">
+        <expression><![CDATA[$R{voucherreport.column.6}]]></expression>
+      </element>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="14">
+      <!-- Voucher rows -->
+      <element height="0" kind="subreport" usingCache="false" width="555" x="0" y="0">
+        <parametersMapExpression><![CDATA[new java.util.HashMap() {{ put("invoice.customernr", $F{voucher.number}); }}]]></parametersMapExpression>
+        <dataSourceExpression><![CDATA[$F{voucher.rows}]]></dataSourceExpression>
+        <expression><![CDATA[$P{Report}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport bottomMargin="0" leftMargin="0" name="VoucherRows" rightMargin="0" topMargin="0">
+  <field class="java.lang.Integer" name="voucherrow.account"/>
+  <field class="java.lang.String" name="voucherrow.description"/>
+  <field class="java.math.BigDecimal" name="voucherrow.debet"/>
+  <field class="java.math.BigDecimal" name="voucherrow.credet"/>
+  <field class="java.lang.String" name="voucherrow.project"/>
+  <field class="java.lang.String" name="voucherrow.resultunit"/>
+  <field class="java.lang.Boolean" name="voucherrow.isadded"/>
+  <field class="java.lang.Boolean" name="voucherrow.iscrossed"/>
+  <!-- The sum. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="debet.sum" resetType="Report">
+    <expression><![CDATA[$F{voucherrow.iscrossed}.booleanValue() ? new BigDecimal(0.0) : $F{voucherrow.debet}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="credet.sum" resetType="Report">
+    <expression><![CDATA[$F{voucherrow.iscrossed}.booleanValue() ? new BigDecimal(0.0) : $F{voucherrow.credet}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <detail>
+    <band height="14">
+      <!-- Crossed row -->
+      <element height="1" kind="line" width="470" x="60" y="5"/>
+      <!-- added row -->
+      <element height="1" kind="line" width="470" x="60" y="10"/>
+      <element blankWhenNull="true" height="14" kind="textField" width="80" x="60" y="0">
+        <expression><![CDATA[$F{voucherrow.account}]]></expression>
+      </element>
+      <element blankWhenNull="true" height="14" kind="textField" width="200" x="120" y="0">
+        <expression><![CDATA[$F{voucherrow.description}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="0" width="50" x="270" y="0">
+        <expression><![CDATA[$F{voucherrow.project}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="0" width="50" x="320" y="0">
+        <expression><![CDATA[$F{voucherrow.resultunit}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="370" y="0">
+        <expression><![CDATA[$F{voucherrow.debet}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="0">
+        <expression><![CDATA[$F{voucherrow.credet}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="12" splitType="Prevent">
+    <element height="1" kind="line" width="470" x="60" y="0"/>
+    <!-- Debet -->
+    <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="370" y="0">
+      <expression><![CDATA[$V{debet.sum}]]></expression>
+    </element>
+    <!-- Credet -->
+    <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="450" y="0">
+      <expression><![CDATA[$V{credet.sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

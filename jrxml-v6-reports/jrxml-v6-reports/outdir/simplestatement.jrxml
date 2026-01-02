@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<jasperReport name="SimpleStatement" resourceBundle="book">
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="Report"/>
+  <parameter class="java.util.HashMap" name="Parameters"/>
+  <parameter class="java.lang.String" name="date.from"/>
+  <parameter class="java.lang.String" name="date.to"/>
+  <parameter class="java.lang.String" name="company.name"/>
+  <parameter class="java.lang.String" name="company.corporateid"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Integer" name="group.number"/>
+  <field class="java.lang.Integer" name="group.section"/>
+  <field class="java.lang.String" name="group.description"/>
+  <field class="net.sf.jasperreports.engine.JRDataSource" name="group.rows"/>
+  <pageHeader height="120">
+    <element height="16" kind="textField" width="150" x="300" y="0">
+      <expression><![CDATA["Förenklat årsbokslut"]]></expression>
+    </element>
+    <element height="16" kind="textField" width="150" x="300" y="12">
+      <expression><![CDATA["Enskilda näringsidkare"]]></expression>
+    </element>
+    <element height="78" kind="rectangle" radius="3" width="555" x="0" y="42"/>
+    <element height="78" kind="line" width="1" x="450" y="42"/>
+    <element height="26" kind="textField" width="150" x="5" y="42">
+      <expression><![CDATA["Namn"]]></expression>
+    </element>
+    <element height="24" kind="textField" vTextAlign="Bottom" width="450" x="5" y="42">
+      <expression><![CDATA[$P{company.name}]]></expression>
+    </element>
+    <element height="26" kind="textField" width="105" x="455" y="42">
+      <expression><![CDATA["Organisationsnummer"]]></expression>
+    </element>
+    <element height="24" kind="textField" vTextAlign="Bottom" width="105" x="455" y="42">
+      <expression><![CDATA[$P{company.corporateid}]]></expression>
+    </element>
+    <element height="1" kind="line" width="555" x="0" y="66"/>
+    <element height="11" kind="frame" width="13" x="0" y="79">
+      <box>
+        <rightPen lineWidth="0.5"/>
+        <topPen lineWidth="0.5"/>
+      </box>
+    </element>
+    <element height="24" kind="textField" vTextAlign="Bottom" width="75" x="15" y="66">
+      <expression><![CDATA["Kalenderår"]]></expression>
+    </element>
+    <element height="11" kind="frame" width="13" x="75" y="79">
+      <box>
+        <rightPen lineWidth="0.5"/>
+        <leftPen lineWidth="0.5"/>
+        <topPen lineWidth="0.5"/>
+      </box>
+    </element>
+    <element height="24" kind="textField" vTextAlign="Bottom" width="75" x="90" y="66">
+      <expression><![CDATA["Räkenskapsår"]]></expression>
+    </element>
+    <element height="25" kind="line" width="1" x="150" y="66"/>
+    <element height="26" kind="textField" width="150" x="155" y="66">
+      <expression><![CDATA["F.o.m"]]></expression>
+    </element>
+    <element height="24" kind="textField" vTextAlign="Bottom" width="150" x="155" y="66">
+      <expression><![CDATA[$P{date.from}]]></expression>
+    </element>
+    <element height="25" kind="line" width="1" x="300" y="66"/>
+    <element height="26" kind="textField" width="150" x="305" y="66">
+      <expression><![CDATA["T.o.m"]]></expression>
+    </element>
+    <element height="24" kind="textField" vTextAlign="Bottom" width="150" x="305" y="66">
+      <expression><![CDATA[$P{date.to}]]></expression>
+    </element>
+    <element hTextAlign="Center" height="52" kind="textField" width="105" x="450" y="66">
+      <expression><![CDATA["Bokföringsnämndens regler\nför förenklat årsbokslut\n(BFNAR 2006:1)\noch broschyr hittar du\npå www.bfn.se"]]></expression>
+    </element>
+    <element height="1" kind="line" width="450" x="0" y="90"/>
+    <element height="26" kind="textField" width="150" x="5" y="90">
+      <expression><![CDATA["Verksamhetens art"]]></expression>
+    </element>
+  </pageHeader>
+  <detail>
+    <band height="52" splitType="Prevent">
+      <element height="14" kind="textField" width="275" x="0" y="0">
+        <expression><![CDATA[$F{group.section}.intValue() == 1 ? $R{simplestatement.section.1} : $R{simplestatement.section.2}]]></expression>
+      </element>
+      <element height="26" kind="textField" vTextAlign="Bottom" width="275" x="0" y="0">
+        <expression><![CDATA[$F{group.description}]]></expression>
+      </element>
+      <element height="26" kind="rectangle" radius="3" width="275" x="0" y="26"/>
+      <!-- Mainbook rows -->
+      <element height="26" kind="subreport" usingCache="false" width="275" x="0" y="26">
+        <parametersMapExpression><![CDATA[new java.util.HashMap() {{ put("section.number", $F{group.number}); }}]]></parametersMapExpression>
+        <dataSourceExpression><![CDATA[$F{group.rows}]]></dataSourceExpression>
+        <expression><![CDATA[$P{Report}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <pageFooter height="60">
+    <element height="25" kind="textField" width="555" x="0" y="0">
+      <expression><![CDATA["Underskrift"]]></expression>
+    </element>
+    <element height="14" kind="textField" width="555" x="0" y="12">
+      <expression><![CDATA["enligt bokföringslagen och Bokföringsnämndens regler för förenklat bokslut"]]></expression>
+    </element>
+    <element height="35" kind="rectangle" radius="3" width="275" x="0" y="25"/>
+    <element height="25" kind="textField" width="555" x="4" y="25">
+      <expression><![CDATA["Namnteckning"]]></expression>
+    </element>
+    <element height="35" kind="rectangle" radius="3" width="275" x="280" y="25"/>
+    <element hTextAlign="Center" height="35" kind="textField" vTextAlign="Middle" width="275" x="280" y="25">
+      <expression><![CDATA["Spara detta årsbokslut i 7 år tillsammans med bokföringen och\n bokslutsunderlagen.\nÅrsbokslutet ska inte skickas in till Skatteverket."]]></expression>
+    </element>
+  </pageFooter>
+</jasperReport>

@@ -1,0 +1,1098 @@
+package jrxml6to7;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.StringReader;
+import java.nio.file.FileVisitResult;
+import java.nio.file.FileVisitOption;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.StandardCopyOption;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import org.w3c.dom.DocumentType;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.EntityResolver;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+
+public class Jrxml6To7Converter
+{
+    /** Enable verbose debug logging with -v/--debug or -Djrxml6to7.debug=true. */
+    private static boolean DEBUG = Boolean.getBoolean("jrxml6to7.debug");
+    
+    private static void debug(String msg)
+    {
+        if (DEBUG)
+        {
+            System.err.println("[jrxml6to7] " + msg);
+        }
+    }
+    
+    public static void main(String[] args) throws Exception
+    {
+        if (args.length < 2 || args.length > 3)
+        {
+            System.err.println("Usage: Jrxml6To7Converter <inputDir> <outputDir> [-v|--debug]");
+            System.exit(1);
+        }
+        
+        Path inDir = Paths.get(args[0]);
+        Path outDir = Paths.get(args[1]);
+        
+        if (args.length == 3 && ("-v".equals(args[2]) || "--debug".equals(args[2])))
+        {
+            DEBUG = true;
+        }
+        
+        if (!Files.isDirectory(inDir))
+        {
+            System.err.println("Input directory does not exist or is not a directory: " + inDir);
+            System.exit(1);
+        }
+        
+        Files.createDirectories(outDir);
+        
+        debug("Input:  " + inDir.toAbsolutePath());
+        debug("Output: " + outDir.toAbsolutePath());
+        
+        convertTree(inDir, outDir);
+    }
+    
+    private static void convertTree(Path inputDir, Path outputDir)
+        throws IOException
+    {
+        Files.walkFileTree(
+            inputDir,
+            EnumSet.noneOf(FileVisitOption.class),
+            Integer.MAX_VALUE,
+            new SimpleFileVisitor<Path>()
+            {
+                @Override
+                public FileVisitResult preVisitDirectory(Path dir,
+                    BasicFileAttributes attrs) throws IOException
+                {
+                    Path rel = inputDir.relativize(dir);
+                    Path targetDir = outputDir.resolve(rel);
+                    
+                    if (!Files.exists(targetDir))
+                    {
+                        Files.createDirectories(targetDir);
+                    }
+                    
+                    return FileVisitResult.CONTINUE;
+                }
+                
+                @Override
+                public FileVisitResult visitFile(Path file,
+                    BasicFileAttributes attrs) throws IOException
+                {
+                    Path rel = inputDir.relativize(file);
+                    Path out = outputDir.resolve(rel);
+                    
+                    if (file.toString().toLowerCase().endsWith(".jrxml"))
+                    {
+                        if (DEBUG)
+                        {
+                            System.out.println("Converting " + file + " -> " + out);
+                        }
+                        
+                        if (!Files.exists(out.getParent()))
+                        {
+                            Files.createDirectories(out.getParent());
+                        }
+                        
+                        try (InputStream in = Files.newInputStream(file);
+                             OutputStream os = Files.newOutputStream(out))
+                        {
+                            convertSingle(in, os, file.toString());
+                        }
+                        catch (Exception ex)
+                        {
+                            System.err.println("Failed to convert " + file +
+                                ": " + ex.getMessage());
+                            ex.printStackTrace(System.err);
+                        }
+                    }
+                    else
+                    {
+                        // Copy non-jrxml files unchanged
+                        if (!Files.exists(out.getParent()))
+                        {
+                            Files.createDirectories(out.getParent());
+                        }
+                        
+                        Files.copy(file, out,
+                            StandardCopyOption.REPLACE_EXISTING);
+                    }
+                    
+                    return FileVisitResult.CONTINUE;
+                }
+            }
+        );
+    }
+    
+    private static void convertSingle(InputStream in, OutputStream out,
+        String debugName)
+        throws IOException, ParserConfigurationException, SAXException,
+        TransformerException
+    {
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        dbf.setNamespaceAware(false);
+        dbf.setValidating(false);
+        
+        DocumentBuilder builder = dbf.newDocumentBuilder();
+        builder.setEntityResolver(new EntityResolver()
+        {
+            @Override
+            public InputSource resolveEntity(String publicId, String systemId)
+                throws SAXException, IOException
+            {
+                // Always short-circuit the external DTD; Jasper's hosted DTD is
+                // sometimes not well-formed.
+                if (systemId != null && systemId.contains("jasperreport.dtd"))
+                {
+                    if (DEBUG)
+                    {
+                        System.out.println("Ignoring external DTD " + systemId +
+                            " for " + debugName);
+                    }
+                    
+                    // Minimal, well-formed DTD stub.
+                    return new InputSource(
+                        new StringReader("<!ELEMENT jasperReport ANY>"));
+                }
+                
+                return null; // default processing
+            }
+        });
+        
+        Document doc = builder.parse(in);
+        
+        // Drop any DOCTYPE that may have been created
+        DocumentType doctype = doc.getDoctype();
+        
+        if (doctype != null && doctype.getParentNode() != null)
+        {
+            doctype.getParentNode().removeChild(doctype);
+        }
+        
+        Element root = doc.getDocumentElement();
+        
+        if (root == null)
+        {
+            throw new IllegalStateException(
+                "No document element in " + debugName);
+        }
+        
+        stripNamespacesAndSchema(root);
+        
+        // 6.x style <variableExpression> -> 7.x <expression>
+        convertVariables(doc, root);
+        
+        // Convert all visual elements to 7.x <element kind="..."> form
+        convertElements(doc, root);
+        
+        writeDocument(doc, out);
+    }
+    
+    /**
+     * Remove xmlns/xsi/xsd related attributes from the root so we end up with
+     * something like:
+     *
+     *   <jasperReport name="SRUReport" resourceBundle="book" ...>
+     *
+     * i.e. no namespace declarations or schemaLocation/xsd references.
+     */
+    private static void stripNamespacesAndSchema(Element root)
+    {
+        NamedNodeMap attrs = root.getAttributes();
+        List<String> toRemove = new ArrayList<>();
+        
+        for (int i = 0; i < attrs.getLength(); i++)
+        {
+            Node n = attrs.item(i);
+            if (n.getNodeType() != Node.ATTRIBUTE_NODE)
+            {
+                continue;
+            }
+            
+            String name = n.getNodeName();
+            
+            // Remove any xmlns*, xsi:*, xsd:* attributes.
+            if (name.equals("xmlns") ||
+                name.startsWith("xmlns:") ||
+                name.startsWith("xsi:") ||
+                name.startsWith("xsd:"))
+            {
+                toRemove.add(name);
+            }
+        }
+        
+        for (String name : toRemove)
+        {
+            if (DEBUG)
+            {
+                System.out.println("Removing root attribute: " + name + "=\""
+                    + root.getAttribute(name) + "\"");
+            }
+            root.removeAttribute(name);
+        }
+    }
+    
+    private static void writeDocument(Document doc, OutputStream out)
+        throws TransformerException
+    {
+        TransformerFactory tf = TransformerFactory.newInstance();
+        Transformer transformer = tf.newTransformer();
+        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty(
+            "{http://xml.apache.org/xslt}indent-amount", "2");
+        transformer.transform(new DOMSource(doc), new StreamResult(out));
+    }
+    
+    /**
+     * Convert legacy &lt;variableExpression&gt; to the JR 7 &lt;expression&gt; tag
+     * used on JRDesignVariable.
+     */
+    private static void convertVariables(Document doc, Element root)
+    {
+        NodeList vars = root.getElementsByTagName("variable");
+        
+        for (int i = 0; i < vars.getLength(); i++)
+        {
+            Node n = vars.item(i);
+            
+            if (n.getNodeType() != Node.ELEMENT_NODE)
+            {
+                continue;
+            }
+            
+            Element var = (Element) n;
+            Element varExpr = firstChildElement(var, "variableExpression");
+            
+            if (varExpr != null)
+            {
+                Element expr = doc.createElement("expression");
+                
+                if (varExpr.hasAttribute("class"))
+                {
+                    expr.setAttribute("class", varExpr.getAttribute("class"));
+                }
+                
+                moveAllChildren(varExpr, expr);
+                var.replaceChild(expr, varExpr);
+                
+                if (DEBUG)
+                {
+                    System.out.println(
+                        "Converted <variableExpression> to <expression> on variable " +
+                            var.getAttribute("name"));
+                }
+            }
+        }
+    }
+    
+    /**
+     * Recursively walk the DOM tree and convert v6-style elements (textField, staticText,
+     * line, rectangle, frame, image, subreport, groupExpression, variableExpression, etc.)
+     * to JR 7 element-based syntax.
+     */
+    private static void convertElements(Document doc, Element parent)
+    {
+        Node child = parent.getFirstChild();
+        
+        while (child != null)
+        {
+            Node next = child.getNextSibling();
+            
+            if (child.getNodeType() == Node.ELEMENT_NODE)
+            {
+                Element el = (Element) child;
+                String tag = el.getTagName();
+                
+                if ("staticText".equals(tag))
+                {
+                    debug("Converting <staticText> under <" + parent.getTagName() + ">");
+                    convertStaticText(doc, el);
+                }
+                else if ("textField".equals(tag))
+                {
+                    debug("Converting <textField> under <" + parent.getTagName() + ">");
+                    convertTextField(doc, el);
+                }
+                else if ("line".equals(tag) || "rectangle".equals(tag))
+                {
+                    debug("Converting <" + tag + "> under <" + parent.getTagName() + ">");
+                    convertGraphicElement(doc, el);
+                }
+                else if ("frame".equals(tag))
+                {
+                    debug("Converting <frame> under <" + parent.getTagName() + ">");
+                    convertFrameElement(doc, el);
+                }
+                else if ("image".equals(tag))
+                {
+                    debug("Converting <image> under <" + parent.getTagName() + ">");
+                    convertImageElement(doc, el);
+                }
+                else if ("subreport".equals(tag))
+                {
+                    debug("Converting <subreport> under <" + parent.getTagName() + ">");
+                    convertSubreportElement(doc, el);
+                }
+                else if ("group".equals(tag))
+                {
+                    // v6 uses <groupExpression>; v7 uses <expression>.
+                    debug("Normalizing <groupExpression> inside <group " + el.getAttribute("name") + ">");
+                    convertGroupExpressions(doc, el);
+                    // Recurse into header/footer bands etc.
+                    convertElements(doc, el);
+                }
+                else if ("variable".equals(tag))
+                {
+                    // v6 uses <variableExpression>; v7 uses <expression>.
+                    debug("Normalizing <variableExpression> inside <variable " + el.getAttribute("name") + ">");
+                    convertVariableExpression(doc, el);
+                    // Recurse in case there are nested things (rare).
+                    convertElements(doc, el);
+                }
+                else
+                {
+                    // No structural change for this node; just recurse into its children.
+                    convertElements(doc, el);
+                }
+            }
+            
+            child = next;
+        }
+    }
+    
+    /**
+     * v6: <group><groupExpression>...</groupExpression>...</group>
+     * v7: <group><expression>...</expression>...</group>
+     */
+    private static void convertGroupExpressions(Document doc, Element group)
+    {
+        Element groupExpr = firstChildElement(group, "groupExpression");
+        if (groupExpr == null)
+        {
+            return;
+        }
+        
+        Element expr = doc.createElement("expression");
+        
+        if (groupExpr.hasAttribute("class"))
+        {
+            expr.setAttribute("class", groupExpr.getAttribute("class"));
+        }
+        
+        // Move all children (usually a single CDATA node).
+        Node child = groupExpr.getFirstChild();
+        while (child != null)
+        {
+            Node next = child.getNextSibling();
+            groupExpr.removeChild(child);
+            expr.appendChild(child);
+            child = next;
+        }
+        
+        group.insertBefore(expr, groupExpr);
+        group.removeChild(groupExpr);
+    }
+    
+    /**
+     * v6: <variable><variableExpression>...</variableExpression><initialValueExpression>...</initialValueExpression></variable>
+     * v7: <variable><expression>...</expression><initialValueExpression>...</initialValueExpression></variable>
+     */
+    private static void convertVariableExpression(Document doc, Element variable)
+    {
+        Element varExpr = firstChildElement(variable, "variableExpression");
+        if (varExpr == null)
+        {
+            return;
+        }
+        
+        Element expr = doc.createElement("expression");
+        
+        if (varExpr.hasAttribute("class"))
+        {
+            expr.setAttribute("class", varExpr.getAttribute("class"));
+        }
+        
+        Node child = varExpr.getFirstChild();
+        while (child != null)
+        {
+            Node next = child.getNextSibling();
+            varExpr.removeChild(child);
+            expr.appendChild(child);
+            child = next;
+        }
+        
+        // Insert the new <expression> before the old <variableExpression>,
+        // so that it still comes before <initialValueExpression>.
+        variable.insertBefore(expr, varExpr);
+        variable.removeChild(varExpr);
+    }
+    
+    private static void convertStaticText(Document doc, Element staticText)
+    {
+        Element element = doc.createElement("element");
+        element.setAttribute("kind", "staticText");
+        
+        // Copy any direct attributes from the legacy element.
+        copyAttributes(staticText, element);
+        
+        Element reportElement = firstChildElement(staticText, "reportElement");
+        
+        if (reportElement != null)
+        {
+            copyAttributes(reportElement, element);
+            moveChildElementsByTag(reportElement, element,
+                "printWhenExpression");
+            moveChildElementsByTag(reportElement, element, "property");
+        }
+        
+        Element textElement = firstChildElement(staticText, "textElement");
+        
+        if (textElement != null)
+        {
+            copyTextElementFormatting(textElement, element);
+        }
+        
+        // v6 staticText typically has a <text> child with the literal
+        // contents, or direct text nodes. Wrap into a <text> element either
+        // way.
+        Element textNode = firstChildElement(staticText, "text");
+        
+        if (textNode != null)
+        {
+            staticText.removeChild(textNode);
+        }
+        else
+        {
+            String value = collectText(staticText);
+            
+            if (value != null && !value.isEmpty())
+            {
+                textNode = doc.createElement("text");
+                textNode.appendChild(doc.createCDATASection(value));
+            }
+        }
+        
+        if (textNode != null)
+        {
+            element.appendChild(textNode);
+        }
+        
+        // Move any remaining children (hyperlink, box, etc.) except the ones
+        // we purposefully consumed.
+        moveRemainingChildren(staticText, element, reportElement, textElement,
+            textNode);
+        
+        Node parent = staticText.getParentNode();
+        parent.replaceChild(element, staticText);
+    }
+    
+    private static void convertTextField(Document doc, Element textField)
+    {
+        Element element = doc.createElement("element");
+        element.setAttribute("kind", "textField");
+        
+        copyAttributes(textField, element);
+        
+        Element reportElement = firstChildElement(textField, "reportElement");
+        
+        if (reportElement != null)
+        {
+            copyAttributes(reportElement, element);
+            moveChildElementsByTag(reportElement, element,
+                "printWhenExpression");
+            moveChildElementsByTag(reportElement, element, "property");
+        }
+        
+        Element textElement = firstChildElement(textField, "textElement");
+        
+        if (textElement != null)
+        {
+            copyTextElementFormatting(textElement, element);
+        }
+        
+        Element oldExpr = firstChildElement(textField, "textFieldExpression");
+        
+        if (oldExpr != null)
+        {
+            Element expr = doc.createElement("expression");
+            
+            if (oldExpr.hasAttribute("class"))
+            {
+                expr.setAttribute("class", oldExpr.getAttribute("class"));
+            }
+            
+            moveAllChildren(oldExpr, expr);
+            element.appendChild(expr);
+        }
+        
+        moveRemainingChildren(textField, element, reportElement, textElement,
+            oldExpr);
+        
+        Node parent = textField.getParentNode();
+        parent.replaceChild(element, textField);
+    }
+    
+    private static void convertGraphicElement(Document doc, Element graphic)
+    {
+        String kind = graphic.getTagName(); // "line", "rectangle"
+        
+        Element element = doc.createElement("element");
+        element.setAttribute("kind", kind);
+        
+        copyAttributes(graphic, element);
+        
+        Element reportElement = firstChildElement(graphic, "reportElement");
+        
+        if (reportElement != null)
+        {
+            copyAttributes(reportElement, element);
+            moveChildElementsByTag(reportElement, element,
+                "printWhenExpression");
+            moveChildElementsByTag(reportElement, element, "property");
+        }
+        
+        // Move any children other than reportElement / graphicElement into the
+        // new <element>. Drop graphicElement nodes (JR 7 samples use <pen>,
+        // etc).
+        Node child = graphic.getFirstChild();
+        
+        while (child != null)
+        {
+            Node next = child.getNextSibling();
+            
+            if (child == reportElement)
+            {
+                graphic.removeChild(child);
+            }
+            else if (child.getNodeType() == Node.ELEMENT_NODE &&
+                "graphicElement".equals(((Element) child).getTagName()))
+            {
+                graphic.removeChild(child); // drop
+            }
+            else
+            {
+                graphic.removeChild(child);
+                element.appendChild(child);
+            }
+            
+            child = next;
+        }
+        
+        Node parent = graphic.getParentNode();
+        parent.replaceChild(element, graphic);
+    }
+    
+    private static void convertFrameElement(Document doc, Element frame)
+    {
+        Element element = doc.createElement("element");
+        element.setAttribute("kind", "frame");
+        
+        copyAttributes(frame, element);
+        
+        Element reportElement = firstChildElement(frame, "reportElement");
+        
+        if (reportElement != null)
+        {
+            copyAttributes(reportElement, element);
+            moveChildElementsByTag(reportElement, element,
+                "printWhenExpression");
+            moveChildElementsByTag(reportElement, element, "property");
+        }
+        
+        // Move everything else inside the frame into the new element.
+        Node child = frame.getFirstChild();
+        
+        while (child != null)
+        {
+            Node next = child.getNextSibling();
+            
+            if (child == reportElement)
+            {
+                frame.removeChild(child);
+            }
+            else
+            {
+                frame.removeChild(child);
+                element.appendChild(child);
+            }
+            
+            child = next;
+        }
+        
+        Node parent = frame.getParentNode();
+        parent.replaceChild(element, frame);
+        
+        // Convert the contents of the new frame to element-kind as well.
+        convertElements(doc, element);
+    }
+    
+    private static void convertImageElement(Document doc, Element image)
+    {
+        Element parent = (Element) image.getParentNode();
+        Element reportElement = firstChildElement(image, "reportElement");
+        Element imageExpr = firstChildElement(image, "imageExpression");
+        
+        Element element = doc.createElement("element");
+        element.setAttribute("kind", "image");
+        
+        copyAttributes(image, element);
+        if (reportElement != null)
+        {
+            copyAttributes(reportElement, element);
+            moveChildElementsByTag(reportElement, element,
+                "printWhenExpression");
+            moveChildElementsByTag(reportElement, element, "property");
+        }
+        
+        if (imageExpr != null)
+        {
+            Element expr = doc.createElement("expression");
+            
+            if (imageExpr.hasAttribute("class"))
+            {
+                expr.setAttribute("class", imageExpr.getAttribute("class"));
+            }
+            
+            Node child = imageExpr.getFirstChild();
+            while (child != null)
+            {
+                Node next = child.getNextSibling();
+                imageExpr.removeChild(child);
+                expr.appendChild(child);
+                child = next;
+            }
+            
+            element.appendChild(expr);
+        }
+        
+        // Move any other children (<hyperlinkTooltipExpression>, etc.) across.
+        Node child = image.getFirstChild();
+        while (child != null)
+        {
+            Node next = child.getNextSibling();
+            if (child != reportElement && child != imageExpr)
+            {
+                image.removeChild(child);
+                element.appendChild(child);
+            }
+            child = next;
+        }
+        
+        parent.replaceChild(element, image);
+        
+        convertElements(doc, element);
+    }
+    
+    /**
+     * v6 subreport snippet:
+     *
+     * <subreport isUsingCache="true">
+     *   <reportElement x="0" y="15" width="555" height="16"/>
+     *   <parametersMapExpression>...</parametersMapExpression>
+     *   <subreportParameter name="...">
+     *     <subreportParameterExpression>...</subreportParameterExpression>
+     *   </subreportParameter>
+     *   <dataSourceExpression>...</dataSourceExpression>
+     *   <returnValue .../>
+     *   <subreportExpression>...</subreportExpression>
+     * </subreport>
+     *
+     * v7 equivalent:
+     *
+     * <element kind="subreport" x="0" y="15" width="555" height="16" usingCache="true">
+     *   <parametersMapExpression>...</parametersMapExpression>
+     *   <dataSourceExpression>...</dataSourceExpression>
+     *   <returnValue .../>
+     *   <expression>...</expression>  <!-- from subreportExpression -->
+     *   <parameter name="..."><expression>...</expression></parameter>
+     * </element>
+     */
+    private static void convertSubreportElement(Document doc, Element subreport)
+    {
+        Element parent = (Element) subreport.getParentNode();
+        Element reportElement = firstChildElement(subreport, "reportElement");
+        Element subreportExpr = firstChildElement(subreport, "subreportExpression");
+        
+        Element element = doc.createElement("element");
+        element.setAttribute("kind", "subreport");
+        
+        // Copy attributes from <subreport> itself (isUsingCache, etc.)
+        copyAttributes(subreport, element);
+        
+        // Copy positioning and styling attributes from <reportElement>.
+        if (reportElement != null)
+        {
+            copyAttributes(reportElement, element);
+            moveChildElements(reportElement, element, "printWhenExpression");
+            moveChildElements(reportElement, element, "property");
+        }
+        
+        // Move parametersMapExpression, dataSourceExpression, returnValue as-is.
+        moveChildElements(subreport, element, "parametersMapExpression");
+        moveChildElements(subreport, element, "dataSourceExpression");
+        moveChildElements(subreport, element, "connectionExpression"); // just in case
+        moveChildElements(subreport, element, "returnValue");
+        
+        // Convert <subreportParameter> to <parameter>.
+        Node child = subreport.getFirstChild();
+        while (child != null)
+        {
+            Node next = child.getNextSibling();
+            if (child.getNodeType() == Node.ELEMENT_NODE
+                && "subreportParameter".equals(((Element) child).getTagName()))
+            {
+                Element oldParam = (Element) child;
+                Element newParam = doc.createElement("parameter");
+                
+                if (oldParam.hasAttribute("name"))
+                {
+                    newParam.setAttribute("name", oldParam.getAttribute("name"));
+                }
+                
+                Element oldExpr = firstChildElement(oldParam, "subreportParameterExpression");
+                if (oldExpr != null)
+                {
+                    Element expr = doc.createElement("expression");
+                    if (oldExpr.hasAttribute("class"))
+                    {
+                        expr.setAttribute("class", oldExpr.getAttribute("class"));
+                    }
+                    
+                    Node eChild = oldExpr.getFirstChild();
+                    while (eChild != null)
+                    {
+                        Node eNext = eChild.getNextSibling();
+                        oldExpr.removeChild(eChild);
+                        expr.appendChild(eChild);
+                        eChild = eNext;
+                    }
+                    
+                    newParam.appendChild(expr);
+                }
+                
+                subreport.removeChild(oldParam);
+                element.appendChild(newParam);
+            }
+            child = next;
+        }
+        
+        // Convert <subreportExpression> to generic <expression>.
+        if (subreportExpr != null)
+        {
+            Element expr = doc.createElement("expression");
+            
+            if (subreportExpr.hasAttribute("class"))
+            {
+                expr.setAttribute("class", subreportExpr.getAttribute("class"));
+            }
+            
+            Node eChild = subreportExpr.getFirstChild();
+            while (eChild != null)
+            {
+                Node eNext = eChild.getNextSibling();
+                subreportExpr.removeChild(eChild);
+                expr.appendChild(eChild);
+                eChild = eNext;
+            }
+            
+            element.appendChild(expr);
+        }
+        
+        // Replace the old <subreport> with the new element.
+        parent.replaceChild(element, subreport);
+        
+        convertElements(doc, element);
+    }
+    
+    /**
+     * Move all direct child elements with the given tag name from 'from' to 'to',
+     * preserving their order.
+     */
+    private static void moveChildElements(Element from, Element to, String tagName)
+    {
+        Node child = from.getFirstChild();
+        while (child != null)
+        {
+            Node next = child.getNextSibling();
+            if (child.getNodeType() == Node.ELEMENT_NODE
+                && tagName.equals(((Element) child).getTagName()))
+            {
+                from.removeChild(child);
+                to.appendChild(child);
+            }
+            child = next;
+        }
+    }
+    
+    /**
+     * v6 elementGroup is not used in JR 7.x samples; instead the samples either
+     * flatten the children into the band or wrap them in an element
+     * kind="elementGroup". For your corpus, elementGroup merely wraps positioned
+     * children, so we can safely flatten it.
+     */
+    private static void flattenElementGroup(Element group)
+    {
+        Node parent = group.getParentNode();
+        
+        if (parent == null)
+        {
+            return;
+        }
+        
+        Node ref = group.getNextSibling();
+        
+        while (group.getFirstChild() != null)
+        {
+            Node child = group.getFirstChild();
+            group.removeChild(child);
+            parent.insertBefore(child, ref);
+        }
+        
+        parent.removeChild(group);
+    }
+    
+    // ----- small helpers ---------------------------------------------------
+    
+    private static Element firstChildElement(Element parent, String name)
+    {
+        Node child = parent.getFirstChild();
+        
+        while (child != null)
+        {
+            if (child.getNodeType() == Node.ELEMENT_NODE &&
+                name.equals(((Element) child).getTagName()))
+            {
+                return (Element) child;
+            }
+            
+            child = child.getNextSibling();
+        }
+        
+        return null;
+    }
+    
+    private static void moveAllChildren(Element from, Element to)
+    {
+        Node child = from.getFirstChild();
+        
+        while (child != null)
+        {
+            Node next = child.getNextSibling();
+            from.removeChild(child);
+            to.appendChild(child);
+            child = next;
+        }
+    }
+    
+    private static void moveChildElementsByTag(Element from, Element to,
+        String tagName)
+    {
+        Node child = from.getFirstChild();
+        
+        while (child != null)
+        {
+            Node next = child.getNextSibling();
+            
+            if (child.getNodeType() == Node.ELEMENT_NODE &&
+                tagName.equals(((Element) child).getTagName()))
+            {
+                from.removeChild(child);
+                to.appendChild(child);
+            }
+            
+            child = next;
+        }
+    }
+    
+    private static void moveRemainingChildren(Element from, Element to,
+        Element... consumed)
+    {
+        Node child = from.getFirstChild();
+        
+        while (child != null)
+        {
+            Node next = child.getNextSibling();
+            boolean skip = false;
+            
+            if (child.getNodeType() == Node.ELEMENT_NODE)
+            {
+                for (Element e : consumed)
+                {
+                    if (e != null && child == e)
+                    {
+                        skip = true;
+                        break;
+                    }
+                }
+            }
+            
+            from.removeChild(child);
+            
+            if (!skip)
+            {
+                to.appendChild(child);
+            }
+            
+            child = next;
+        }
+    }
+    
+    /**
+     * Copy attributes from one element to another.
+     *
+     * In addition to skipping namespace/schema attributes, this normalizes
+     * v6-style boolean attributes like isBlankWhenNull -> blankWhenNull,
+     * isUsingCache -> usingCache, etc., which matches the JRDesign* property
+     * names shown in the error message.
+     */
+    private static void copyAttributes(Element from, Element to)
+    {
+        NamedNodeMap attrs = from.getAttributes();
+        
+        for (int i = 0; i < attrs.getLength(); i++)
+        {
+            Node n = attrs.item(i);
+            
+            if (n.getNodeType() == Node.ATTRIBUTE_NODE)
+            {
+                Attr a = (Attr) n;
+                String name = a.getName();
+                
+                // Skip any namespace / schema hints entirely.
+                if ("xmlns".equals(name) || name.startsWith("xmlns:") ||
+                    name.startsWith("xsi:") || name.startsWith("xsd:") ||
+                    "schemaLocation".equals(name))
+                {
+                    continue;
+                }
+                
+                String outName = name;
+                
+                // Normalize isXxx -> xxx (lowercased first letter).
+                // Example: isBlankWhenNull -> blankWhenNull
+                //          isUsingCache    -> usingCache
+                if (name.startsWith("is") && name.length() > 2 &&
+                    Character.isUpperCase(name.charAt(2)))
+                {
+                    String base = name.substring(2); // "BlankWhenNull"
+                    outName = Character.toLowerCase(base.charAt(0)) +
+                        base.substring(1);           // "blankWhenNull"
+                }
+                
+                // Last writer wins - child attributes override parent attributes.
+                to.setAttribute(outName, a.getValue());
+            }
+        }
+    }
+    
+    private static void copyTextElementFormatting(Element textElement,
+        Element element)
+    {
+        if (textElement.hasAttribute("textAlignment"))
+        {
+            element.setAttribute("hTextAlign",
+                textElement.getAttribute("textAlignment"));
+        }
+        
+        if (textElement.hasAttribute("verticalAlignment"))
+        {
+            element.setAttribute("vTextAlign",
+                textElement.getAttribute("verticalAlignment"));
+        }
+        
+        if (textElement.hasAttribute("rotation"))
+        {
+            element.setAttribute("rotation",
+                textElement.getAttribute("rotation"));
+        }
+        
+        if (textElement.hasAttribute("markup"))
+        {
+            element.setAttribute("markup", textElement.getAttribute("markup"));
+        }
+        
+        Element font = firstChildElement(textElement, "font");
+        
+        if (font != null)
+        {
+            if (font.hasAttribute("fontName"))
+            {
+                element.setAttribute("fontName", font.getAttribute("fontName"));
+            }
+            
+            if (font.hasAttribute("size"))
+            {
+                element.setAttribute("fontSize", font.getAttribute("size"));
+            }
+            
+            if ("true".equals(font.getAttribute("isBold")))
+            {
+                element.setAttribute("bold", "true");
+            }
+            
+            if ("true".equals(font.getAttribute("isItalic")))
+            {
+                element.setAttribute("italic", "true");
+            }
+            
+            if ("true".equals(font.getAttribute("isUnderline")))
+            {
+                element.setAttribute("underline", "true");
+            }
+            
+            if ("true".equals(font.getAttribute("isStrikeThrough")))
+            {
+                element.setAttribute("strikeThrough", "true");
+            }
+        }
+    }
+    
+    private static String collectText(Element element)
+    {
+        StringBuilder sb = new StringBuilder();
+        Node child = element.getFirstChild();
+        
+        while (child != null)
+        {
+            if (child.getNodeType() == Node.TEXT_NODE ||
+                child.getNodeType() == Node.CDATA_SECTION_NODE)
+            {
+                sb.append(child.getNodeValue());
+            }
+            
+            child = child.getNextSibling();
+        }
+        
+        return sb.toString().trim();
+    }
+}

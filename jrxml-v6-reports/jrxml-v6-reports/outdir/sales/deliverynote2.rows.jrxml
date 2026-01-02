@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="PickingslipRows">
+  <field class="java.lang.String" name="product.number"/>
+  <field class="java.lang.String" name="product.description"/>
+  <field class="java.lang.Integer" name="product.count"/>
+  <field class="java.math.BigDecimal" name="product.unitprice"/>
+  <field class="java.lang.String" name="product.unit"/>
+  <field class="java.math.BigDecimal" name="product.weight"/>
+  <field class="java.math.BigDecimal" name="product.volume"/>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="totalweight" resetType="Report">
+    <expression><![CDATA[$F{product.weight}.multiply( new BigDecimal( $F{product.count}.doubleValue() ) )]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="totalvolume" resetType="Report">
+    <expression><![CDATA[$F{product.volume}.multiply( new BigDecimal( $F{product.count}.doubleValue() ) )]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <columnHeader height="16">
+    <element height="1" kind="line" width="510" x="0" y="0"/>
+    <element height="1" kind="line" width="510" x="0" y="13"/>
+    <!-- Product number -->
+    <element hTextAlign="Left" height="12" kind="textField" width="70" x="10" y="2">
+      <expression><![CDATA[$R{deliverynotereport.column.1}]]></expression>
+    </element>
+    <!-- Description -->
+    <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="90" x="80" y="2">
+      <expression><![CDATA[$R{deliverynotereport.column.2}]]></expression>
+    </element>
+    <!-- Num picked -->
+    <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="80" x="400" y="2">
+      <expression><![CDATA[$R{deliverynotereport.column.4}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="12" splitType="Stretch">
+      <!-- Number -->
+      <element blankWhenNull="true" height="12" kind="textField" width="70" x="10" y="0">
+        <expression><![CDATA[$F{product.number}]]></expression>
+      </element>
+      <!-- Description -->
+      <element blankWhenNull="true" height="12" kind="textField" width="250" x="80" y="0">
+        <expression><![CDATA[$F{product.description}]]></expression>
+      </element>
+      <!-- Count -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="70" x="400" y="0">
+        <expression><![CDATA[$F{product.count}]]></expression>
+      </element>
+      <!-- Unit -->
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="18" x="472" y="0">
+        <expression><![CDATA[$F{product.unit}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <pageFooter height="13">
+    <!-- Number -->
+    <element hTextAlign="Right" height="13" kind="textField" vTextAlign="Bottom" width="510" x="0" y="0">
+      <expression><![CDATA[$R{deliverynotereport.continuing}]]></expression>
+    </element>
+  </pageFooter>
+  <lastPageFooter height="0"/>
+</jasperReport>

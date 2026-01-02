@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="AccountsRecievable" resourceBundle="book">
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="Report"/>
+  <parameter class="java.util.HashMap" name="Parameters"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.String" name="customer.number"/>
+  <field class="java.lang.String" name="customer.name"/>
+  <field class="java.math.BigDecimal" name="customer.saldosum"/>
+  <field class="net.sf.jasperreports.engine.JRDataSource" name="customer.invoices"/>
+  <!-- The sum. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="sum" resetType="Report">
+    <expression><![CDATA[$F{customer.saldosum}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <columnHeader height="30">
+    <element height="1" kind="line" width="510" x="20" y="23"/>
+    <!-- Column 1 -->
+    <element height="24" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{accountsrecievablereport.column.1}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="80" x="80" y="0">
+      <expression><![CDATA[$R{accountsrecievablereport.column.2}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="70" x="140" y="0">
+      <expression><![CDATA[$R{accountsrecievablereport.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="60" x="210" y="0">
+      <expression><![CDATA[$R{accountsrecievablereport.column.4}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="60" x="270" y="0">
+      <expression><![CDATA[$R{accountsrecievablereport.column.5}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="60" x="330" y="0">
+      <expression><![CDATA[$R{accountsrecievablereport.column.6}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="40" x="390" y="0">
+      <expression><![CDATA[$R{accountsrecievablereport.column.7}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="40" x="430" y="0">
+      <expression><![CDATA[$R{accountsrecievablereport.column.8}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="60" x="470" y="0">
+      <expression><![CDATA[$R{accountsrecievablereport.column.9}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="30" splitType="Stretch">
+      <printWhenExpression><![CDATA[new Boolean($F{customer.saldosum}.signum() != 0)]]></printWhenExpression>
+      <!-- Customer number -->
+      <element height="14" kind="textField" width="30" x="20" y="0">
+        <expression><![CDATA[$F{customer.number}]]></expression>
+      </element>
+      <!-- Customer name -->
+      <element height="14" kind="textField" width="200" x="80" y="0">
+        <expression><![CDATA[$F{customer.name}]]></expression>
+      </element>
+      <!--
+             <line>
+                <reportElement x="80" y="12" width="450" height="1"/>
+                 <graphicElement pen="Dotted"/>
+            </line>
+                    -->
+      <!-- Order rows -->
+      <element height="0" kind="subreport" usingCache="false" width="555" x="20" y="12">
+        <parametersMapExpression><![CDATA[new java.util.HashMap() {{ put("customer.number", $F{customer.number}); }}]]></parametersMapExpression>
+        <dataSourceExpression><![CDATA[$F{customer.invoices}]]></dataSourceExpression>
+        <expression><![CDATA[$P{Report}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="20">
+    <element backcolor="#000000" height="2" kind="rectangle" width="510" x="20" y="0"/>
+    <element height="14" kind="textField" width="250" x="20" y="2">
+      <expression><![CDATA[$R{accountsrecievablereport.totalsum}]]></expression>
+    </element>
+    <!-- Total sum-->
+    <element blankWhenNull="true" evaluationTime="Report" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="2">
+      <expression><![CDATA[$V{sum} != null ? $V{sum} : new BigDecimal(0.0)]]></expression>
+    </element>
+  </summary>
+</jasperReport>

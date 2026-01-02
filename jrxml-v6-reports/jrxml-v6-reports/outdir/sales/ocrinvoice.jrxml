@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport bottomMargin="0" leftMargin="0" name="Invoice" rightMargin="0" topMargin="0">
+  <!--- Declared parameters in the report. -->
+  <parameter class="java.lang.String" name="title"/>
+  <parameter class="java.awt.Image" name="company.logo"/>
+  <parameter class="java.lang.String" name="company.name"/>
+  <parameter class="java.lang.String" name="company.address1"/>
+  <parameter class="java.lang.String" name="company.address2"/>
+  <parameter class="java.lang.String" name="company.zipcode"/>
+  <parameter class="java.lang.String" name="company.city"/>
+  <parameter class="java.lang.String" name="company.country"/>
+  <parameter class="java.lang.String" name="company.phone"/>
+  <parameter class="java.lang.String" name="company.telefax"/>
+  <parameter class="java.lang.String" name="company.residence"/>
+  <parameter class="java.lang.String" name="company.email"/>
+  <parameter class="java.lang.String" name="company.homepage"/>
+  <parameter class="java.lang.String" name="company.plusaccount"/>
+  <parameter class="java.lang.String" name="company.bankaccount"/>
+  <parameter class="java.lang.String" name="company.bic"/>
+  <parameter class="java.lang.String" name="company.iban"/>
+  <parameter class="java.lang.String" name="company.bank"/>
+  <parameter class="java.lang.Boolean" name="company.taxregistered"/>
+  <parameter class="java.lang.String" name="company.corporateid"/>
+  <parameter class="java.lang.String" name="company.vatnr"/>
+  <parameter class="java.lang.Integer" name="number"/>
+  <parameter class="java.lang.String" name="date"/>
+  <parameter class="java.lang.String" name="text"/>
+  <parameter class="java.lang.String" name="invoice.deliveryadress.name"/>
+  <parameter class="java.lang.String" name="invoice.deliveryadress.address1"/>
+  <parameter class="java.lang.String" name="invoice.deliveryadress.address2"/>
+  <parameter class="java.lang.String" name="invoice.deliveryadress.zipcode"/>
+  <parameter class="java.lang.String" name="invoice.deliveryadress.city"/>
+  <parameter class="java.lang.String" name="invoice.deliveryadress.country"/>
+  <parameter class="java.lang.String" name="invoice.invoiceadress.name"/>
+  <parameter class="java.lang.String" name="invoice.invoiceadress.address1"/>
+  <parameter class="java.lang.String" name="invoice.invoiceadress.address2"/>
+  <parameter class="java.lang.String" name="invoice.invoiceadress.zipcode"/>
+  <parameter class="java.lang.String" name="invoice.invoiceadress.city"/>
+  <parameter class="java.lang.String" name="invoice.invoiceadress.country"/>
+  <parameter class="java.lang.String" name="invoice.ourcontact"/>
+  <parameter class="java.lang.String" name="invoice.deliveryterm"/>
+  <parameter class="java.lang.String" name="invoice.deliveryway"/>
+  <parameter class="java.lang.String" name="invoice.paymentterm"/>
+  <parameter class="java.lang.String" name="invoice.delayinterest"/>
+  <parameter class="java.lang.String" name="invoice.customernr"/>
+  <parameter class="java.lang.String" name="invoice.yourcontact"/>
+  <parameter class="java.lang.String" name="invoice.yourordernumber"/>
+  <parameter class="java.lang.String" name="invoice.paymentday"/>
+  <parameter class="java.lang.String" name="invoice.vatnumber"/>
+  <parameter class="java.lang.String" name="invoice.currency"/>
+  <parameter class="java.lang.String" name="invoice.taxrate1"/>
+  <parameter class="java.lang.String" name="invoice.taxrate2"/>
+  <parameter class="java.lang.String" name="invoice.taxrate3"/>
+  <parameter class="java.lang.Boolean" name="invoice.hasdiscount"/>
+  <parameter class="java.math.BigDecimal" name="invoice.netsum"/>
+  <parameter class="java.math.BigDecimal" name="invoice.taxsum1"/>
+  <parameter class="java.math.BigDecimal" name="invoice.taxsum2"/>
+  <parameter class="java.math.BigDecimal" name="invoice.taxsum3"/>
+  <parameter class="java.math.BigDecimal" name="invoice.rounding"/>
+  <parameter class="java.math.BigDecimal" name="invoice.totalsum"/>
+  <parameter class="java.lang.String" name="invoicereport.totalsum"/>
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="subreport.report"/>
+  <parameter class="net.sf.jasperreports.engine.JRDataSource" name="subreport.datasource"/>
+  <parameter class="java.lang.String" name="ocrinvoice.coderow"/>
+  <parameter class="java.awt.Image" name="ocrinvoice.background"/>
+  <parameter class="java.awt.Image" name="invoice.qrcode"/>
+  <background height="842" splitType="Prevent">
+    <!-- Logo -->
+    <element height="842" kind="image" onErrorType="Icon" width="595" x="0" y="0">
+      <expression><![CDATA[$P{ocrinvoice.background}]]></expression>
+    </element>
+  </background>
+  <columnHeader height="172">
+    <!-- delivery adress frame -->
+    <element height="86" kind="frame" width="250" x="40" y="0">
+      <box>
+        <pen lineColor="#000000" lineWidth="0.5"/>
+      </box>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="240" x="5" y="2">
+        <expression><![CDATA[$R{invoicereport.deliveryadress}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="14">
+        <expression><![CDATA[$P{invoice.deliveryadress.name}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="28">
+        <expression><![CDATA[$P{invoice.deliveryadress.address1}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="42">
+        <expression><![CDATA[$P{invoice.deliveryadress.address2}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="56">
+        <expression><![CDATA[$P{invoice.deliveryadress.zipcode} + " " + $P{invoice.deliveryadress.city}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="70">
+        <expression><![CDATA[$P{invoice.deliveryadress.country}]]></expression>
+      </element>
+    </element>
+    <!-- invoice adress frame -->
+    <element height="86" kind="frame" width="250" x="300" y="0">
+      <box>
+        <pen lineColor="#000000" lineWidth="0.5"/>
+      </box>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="5" y="2">
+        <expression><![CDATA[$R{invoicereport.invoiceadress}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="14">
+        <expression><![CDATA[$P{invoice.invoiceadress.name}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="28">
+        <expression><![CDATA[$P{invoice.invoiceadress.address1}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="42">
+        <expression><![CDATA[$P{invoice.invoiceadress.address2}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="56">
+        <expression><![CDATA[$P{invoice.invoiceadress.zipcode} + " " + $P{invoice.invoiceadress.city}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="70">
+        <expression><![CDATA[$P{invoice.invoiceadress.country}]]></expression>
+      </element>
+    </element>
+    <!-- Invoice details, Column 1 -->
+    <element height="72" kind="frame" width="250" x="45" y="90">
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="0">
+        <expression><![CDATA[$R{invoicereport.ourcontact}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="0">
+        <expression><![CDATA[$P{invoice.ourcontact}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="15">
+        <expression><![CDATA[$R{invoicereport.deliveryterm}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="15">
+        <expression><![CDATA[$P{invoice.deliveryterm}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="30">
+        <expression><![CDATA[$R{invoicereport.deliveryway}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="30">
+        <expression><![CDATA[$P{invoice.deliveryway}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="45">
+        <expression><![CDATA[$R{invoicereport.paymentterm}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="45">
+        <expression><![CDATA[$P{invoice.paymentterm}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="60">
+        <expression><![CDATA[$R{invoicereport.delayinterest}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="60">
+        <expression><![CDATA[$P{invoice.delayinterest} != null ? $P{invoice.delayinterest} + "%" : null]]></expression>
+      </element>
+    </element>
+    <!-- Invoice details, Column 2 -->
+    <element height="72" kind="frame" width="250" x="305" y="90">
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="0">
+        <expression><![CDATA[$R{invoicereport.customernr}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="0">
+        <expression><![CDATA[$P{invoice.customernr}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="15">
+        <expression><![CDATA[$R{invoicereport.yourcontact}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="15">
+        <expression><![CDATA[$P{invoice.yourcontact}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="30">
+        <expression><![CDATA[$R{invoicereport.yourordernumber}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="30">
+        <expression><![CDATA[$P{invoice.yourordernumber}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="45">
+        <expression><![CDATA[$R{invoicereport.vatnumber}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="45">
+        <expression><![CDATA[$P{invoice.vatnumber}]]></expression>
+      </element>
+      <element blankWhenNull="false" hTextAlign="Left" height="12" kind="textField" width="100" x="0" y="60">
+        <expression><![CDATA[$R{invoicereport.paymentday}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="150" x="100" y="60">
+        <expression><![CDATA[$P{invoice.paymentday}]]></expression>
+      </element>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="168" splitType="Stretch">
+      <!-- 180 -->
+      <!-- Subreport for the rows 385-->
+      <element height="143" kind="frame" width="510" x="40" y="0">
+        <box>
+          <pen lineColor="#000000" lineWidth="0.5"/>
+        </box>
+        <element height="143" kind="subreport" usingCache="false" width="510" x="0" y="0">
+          <parametersMapExpression><![CDATA[new java.util.HashMap(($P{REPORT_PARAMETERS_MAP}) == null ? java.util.Collections.emptyMap() : ($P{REPORT_PARAMETERS_MAP})) {{ put("REPORT_RESOURCE_BUNDLE", $P{REPORT_RESOURCE_BUNDLE}); }}]]></parametersMapExpression>
+          <dataSourceExpression><![CDATA[$P{subreport.datasource}]]></dataSourceExpression>
+          <expression><![CDATA[$P{subreport.report}]]></expression>
+        </element>
+      </element>
+      <!-- Summary fields   -->
+      <element height="25" kind="frame" width="510" x="40" y="143">
+        <box>
+          <pen lineColor="#000000" lineWidth="0.5"/>
+        </box>
+        <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="77" x="3" y="1">
+          <expression><![CDATA[$R{invoicereport.netsum}]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="77" x="0" y="10">
+          <expression><![CDATA[$P{invoice.netsum}]]></expression>
+        </element>
+        <element height="25" kind="line" width="1" x="80" y="0"/>
+        <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="77" x="83" y="1">
+          <expression><![CDATA[$R{invoicereport.tax}  + " " + $P{invoice.taxrate1} + "%"]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="77" x="80" y="10">
+          <expression><![CDATA[$P{invoice.taxsum1}]]></expression>
+        </element>
+        <element height="25" kind="line" width="1" x="160" y="0"/>
+        <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="77" x="163" y="1">
+          <expression><![CDATA[$R{invoicereport.tax}  + " " + $P{invoice.taxrate2} + "%"]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="77" x="160" y="10">
+          <expression><![CDATA[$P{invoice.taxsum2}]]></expression>
+        </element>
+        <element height="25" kind="line" width="1" x="240" y="0"/>
+        <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="77" x="243" y="1">
+          <expression><![CDATA[$R{invoicereport.tax}  + " " + $P{invoice.taxrate3} + "%"]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="77" x="240" y="10">
+          <expression><![CDATA[$P{invoice.taxsum3}]]></expression>
+        </element>
+        <element height="25" kind="line" width="1" x="320" y="0"/>
+        <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="77" x="323" y="1">
+          <expression><![CDATA[$R{invoicereport.rounding}]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="77" x="320" y="10">
+          <expression><![CDATA[$P{invoice.rounding}]]></expression>
+        </element>
+        <element height="25" kind="line" width="1" x="400" y="0"/>
+        <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="77" x="403" y="1">
+          <expression><![CDATA[$P{invoicereport.totalsum}]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="77" x="400" y="10">
+          <expression><![CDATA[$P{invoice.totalsum}]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" pattern="#,##0.00" width="27" x="483" y="10">
+          <expression><![CDATA[$P{invoice.currency}]]></expression>
+        </element>
+      </element>
+    </band>
+  </detail>
+  <pageFooter height="410" splitType="Prevent">
+    <!-- 410 -->
+    <!-- Text frame -->
+    <element height="40" kind="frame" width="510" x="40" y="10">
+      <box>
+        <pen lineColor="#000000" lineWidth="0.5"/>
+      </box>
+      <element blankWhenNull="true" hTextAlign="Left" height="36" kind="textField" width="500" x="5" y="4">
+        <expression><![CDATA[$P{text}]]></expression>
+      </element>
+    </element>
+    <element height="1" kind="line" width="510" x="40" y="58"/>
+    <!-- Company information frame -->
+    <element height="60" kind="frame" width="510" x="40" y="60">
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="0" y="0">
+        <expression><![CDATA[$P{company.name}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="0" y="10">
+        <expression><![CDATA[$P{company.address1}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="0" y="20">
+        <expression><![CDATA[$P{company.address2}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="0" y="30">
+        <expression><![CDATA[$P{company.zipcode} + " " + $P{company.city}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="0" y="40">
+        <expression><![CDATA[$P{company.country}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="30" x="90" y="0">
+        <expression><![CDATA[$R{company.phone}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="120" y="0">
+        <expression><![CDATA[$P{company.phone}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="30" x="90" y="10">
+        <expression><![CDATA[$R{company.telefax}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="120" y="10">
+        <expression><![CDATA[$P{company.telefax}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="30" x="90" y="20">
+        <expression><![CDATA[$R{company.residence}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="120" y="20">
+        <expression><![CDATA[$P{company.residence}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="150" x="90" y="40">
+        <expression><![CDATA[$R{company.taxregistered}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="40" x="200" y="0">
+        <expression><![CDATA[$R{company.email}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="240" y="0">
+        <expression><![CDATA[$P{company.email}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="40" x="200" y="10">
+        <expression><![CDATA[$R{company.homepage}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="240" y="10">
+        <expression><![CDATA[$P{company.homepage}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="40" x="200" y="30">
+        <expression><![CDATA[$R{company.corporateid}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="240" y="30">
+        <expression><![CDATA[$P{company.corporateid}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="40" x="200" y="40">
+        <expression><![CDATA[$R{company.vatnr}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="120" x="240" y="40">
+        <expression><![CDATA[$P{company.vatnr}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="45" x="350" y="0">
+        <expression><![CDATA[$R{company.plusaccount}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="115" x="395" y="0">
+        <expression><![CDATA[$P{company.plusaccount}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="45" x="350" y="10">
+        <expression><![CDATA[$R{company.bankaccount}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="115" x="395" y="10">
+        <expression><![CDATA[$P{company.bankaccount}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="45" x="350" y="20">
+        <expression><![CDATA[$R{company.bank}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="115" x="395" y="20">
+        <expression><![CDATA[$P{company.bank}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="45" x="350" y="30">
+        <expression><![CDATA[$R{company.bic}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="115" x="395" y="30">
+        <expression><![CDATA[$P{company.bic}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="45" x="350" y="40">
+        <expression><![CDATA[$R{company.iban}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="10" kind="textField" width="115" x="395" y="40">
+        <expression><![CDATA[$P{company.iban}]]></expression>
+      </element>
+    </element>
+    <!-- Ocr invoice  385-->
+    <element height="288" kind="frame" width="595" x="0" y="122">
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="56" y="111">
+        <expression><![CDATA[$P{invoice.invoiceadress.name}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="56" y="122">
+        <expression><![CDATA[$P{invoice.invoiceadress.address1}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="56" y="134">
+        <expression><![CDATA[$P{invoice.invoiceadress.address2}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="56" y="146">
+        <expression><![CDATA[$P{invoice.invoiceadress.zipcode} + " " + $P{invoice.invoiceadress.city}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="56" y="158">
+        <expression><![CDATA[$P{invoice.invoiceadress.country}]]></expression>
+      </element>
+      <element height="20" kind="textField" width="80" x="317" y="179">
+        <expression><![CDATA[$P{company.bankaccount}]]></expression>
+      </element>
+      <element height="20" kind="textField" width="198" x="397" y="179">
+        <expression><![CDATA[$P{company.name}]]></expression>
+      </element>
+      <element height="20" kind="textField" width="594" x="0" y="230">
+        <expression><![CDATA[$P{ocrinvoice.coderow}]]></expression>
+      </element>
+    </element>
+  </pageFooter>
+</jasperReport>

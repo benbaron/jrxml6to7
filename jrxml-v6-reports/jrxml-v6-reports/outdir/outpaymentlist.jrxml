@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="OutpaymentList" resourceBundle="book">
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="Report"/>
+  <parameter class="java.util.HashMap" name="Parameters"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Integer" name="outpayment.number"/>
+  <field class="java.lang.String" name="outpayment.date"/>
+  <field class="java.lang.String" name="outpayment.text"/>
+  <field class="java.math.BigDecimal" name="outpayment.sum"/>
+  <field class="net.sf.jasperreports.engine.JRDataSource" name="outpayment.rows"/>
+  <!-- The sum. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="sum" resetType="Report">
+    <expression><![CDATA[$F{outpayment.sum}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <columnHeader height="30">
+    <element height="1" kind="line" width="510" x="20" y="23"/>
+    <!-- Faktura nr -->
+    <element height="24" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{outpaymentlistreport.column.1}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="70" x="80" y="0">
+      <expression><![CDATA[$R{outpaymentlistreport.column.2}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="70" x="180" y="0">
+      <expression><![CDATA[$R{outpaymentlistreport.column.3}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="70" x="250" y="0">
+      <expression><![CDATA[$R{outpaymentlistreport.column.4}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="70" x="320" y="0">
+      <expression><![CDATA[$R{outpaymentlistreport.column.5}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="70" x="390" y="0">
+      <expression><![CDATA[$R{outpaymentlistreport.column.6}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="70" x="460" y="0">
+      <expression><![CDATA[$R{outpaymentlistreport.column.7}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="30" splitType="Stretch">
+      <!-- Title -->
+      <element height="14" kind="textField" width="30" x="20" y="0">
+        <expression><![CDATA[$F{outpayment.number}]]></expression>
+      </element>
+      <!-- Customer nr -->
+      <element height="14" kind="textField" width="200" x="80" y="0">
+        <expression><![CDATA[$F{outpayment.text}]]></expression>
+      </element>
+      <!-- Date -->
+      <element hTextAlign="Right" height="14" kind="textField" width="60" x="470" y="0">
+        <expression><![CDATA[$F{outpayment.date}]]></expression>
+      </element>
+      <!-- Order rows -->
+      <element height="0" kind="subreport" usingCache="false" width="575" x="0" y="12">
+        <parametersMapExpression><![CDATA[new java.util.HashMap() {{ put("outpayment.number", $F{outpayment.number}); put("outpayment.sum", $F{outpayment.sum}); }}]]></parametersMapExpression>
+        <dataSourceExpression><![CDATA[$F{outpayment.rows}]]></dataSourceExpression>
+        <expression><![CDATA[$P{Report}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="20">
+    <element backcolor="#000000" height="2" kind="rectangle" width="510" x="20" y="0"/>
+    <element height="14" kind="textField" width="250" x="20" y="2">
+      <expression><![CDATA[$R{inpaymentlistreport.sum}]]></expression>
+    </element>
+    <!-- Total sum-->
+    <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="2">
+      <expression><![CDATA[$V{sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="Projects" resourceBundle="book">
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="Report"/>
+  <parameter class="java.util.HashMap" name="Parameters"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Boolean" name="product.isparcel"/>
+  <field class="java.lang.String" name="product.number"/>
+  <field class="java.lang.String" name="product.description"/>
+  <field class="java.lang.String" name="product.unit"/>
+  <field class="java.math.BigDecimal" name="product.unitprice"/>
+  <field class="java.lang.String" name="product.warehouselocation"/>
+  <field class="net.sf.jasperreports.engine.JRDataSource" name="product.rows"/>
+  <columnHeader height="15">
+    <element height="1" kind="line" width="510" x="20" y="12"/>
+    <!-- Column 1 -->
+    <element hTextAlign="Left" height="12" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{productlistreport.column.1}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="12" kind="textField" width="230" x="100" y="0">
+      <expression><![CDATA[$R{productlistreport.column.2}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="70" x="230" y="0">
+      <expression><![CDATA[$R{productlistreport.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="70" x="375" y="0">
+      <expression><![CDATA[$R{productlistreport.column.5}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="80" x="450" y="0">
+      <expression><![CDATA[$R{productlistreport.column.6}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="14" splitType="Stretch">
+      <element height="14" kind="textField" width="80" x="20" y="0">
+        <expression><![CDATA[$F{product.number}]]></expression>
+      </element>
+      <element blankWhenNull="true" height="14" kind="textField" width="230" x="100" y="0">
+        <expression><![CDATA[$F{product.description}]]></expression>
+      </element>
+      <!-- warehouse location -->
+      <element hTextAlign="Right" height="12" kind="textField" width="70" x="230" y="0">
+        <expression><![CDATA[$F{product.warehouselocation}]]></expression>
+      </element>
+      <!-- Unit -->
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="18" x="362" y="0">
+        <expression><![CDATA[$F{product.unit}]]></expression>
+      </element>
+      <!-- product unitprice -->
+      <element hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="0">
+        <expression><![CDATA[$F{product.unitprice}]]></expression>
+      </element>
+      <!-- Subreport for the rows -->
+      <element height="0" kind="subreport" usingCache="false" width="530" x="0" y="14">
+        <parametersMapExpression><![CDATA[new java.util.HashMap(($P{REPORT_PARAMETERS_MAP}) == null ? java.util.Collections.emptyMap() : ($P{REPORT_PARAMETERS_MAP})) {{ put("REPORT_RESOURCE_BUNDLE", $P{REPORT_RESOURCE_BUNDLE}); }}]]></parametersMapExpression>
+        <dataSourceExpression><![CDATA[$F{product.rows}]]></dataSourceExpression>
+        <expression><![CDATA[$P{Report}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

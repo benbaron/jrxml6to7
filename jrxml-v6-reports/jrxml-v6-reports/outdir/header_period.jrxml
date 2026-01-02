@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="PeriodHeader" resourceBundle="book">
+  <!--- Declared parameters in the report. -->
+  <parameter class="java.lang.String" name="title"/>
+  <parameter class="java.lang.String" name="subtitle"/>
+  <parameter class="java.lang.String" name="company"/>
+  <parameter class="java.lang.Integer" name="lastvoucher"/>
+  <parameter class="java.util.Date" name="reportdate"/>
+  <parameter class="java.lang.String" name="dateFrom"/>
+  <parameter class="java.lang.String" name="dateTo"/>
+  <parameter class="java.lang.String" name="periodTitle"/>
+  <parameter class="java.lang.String" name="periodText"/>
+  <pageHeader height="85" splitType="Prevent">
+    <!-- title -->
+    <element hTextAlign="Center" height="30" kind="textField" width="395" x="80" y="12">
+      <expression><![CDATA[$P{title}]]></expression>
+    </element>
+    <!-- secondary title -->
+    <element blankWhenNull="true" hTextAlign="Center" height="30" kind="textField" width="395" x="80" y="42">
+      <expression><![CDATA[$P{subtitle}]]></expression>
+    </element>
+    <!-- last voucher -->
+    <element blankWhenNull="true" hTextAlign="Right" height="25" kind="textField" width="240" x="290" y="25">
+      <expression><![CDATA["Senaste verifikat: " + $P{lastvoucher}]]></expression>
+    </element>
+    <!-- company name -->
+    <element hTextAlign="Left" height="14" kind="textField" width="455" x="20" y="0">
+      <expression><![CDATA[$P{company}]]></expression>
+    </element>
+    <!-- date period label -->
+    <element hTextAlign="Left" height="13" kind="textField" width="250" x="20" y="45">
+      <expression><![CDATA[$R{report.period.label} + " " + $P{dateFrom} + " " + $R{report.period.separator} + " " + $P{dateTo}]]></expression>
+    </element>
+    <!-- second periond label -->
+    <element hTextAlign="Left" height="13" kind="textField" width="250" x="20" y="60">
+      <expression><![CDATA[$P{periodTitle} + " " + $P{periodText}]]></expression>
+    </element>
+    <!-- date of report -->
+    <element hTextAlign="Right" height="15" kind="textField" pattern="Short" width="450" x="80" y="50">
+      <expression><![CDATA[$P{reportdate}]]></expression>
+    </element>
+    <!-- page number-->
+    <element evaluationTime="Report" hTextAlign="Right" height="15" kind="textField" width="100" x="365" y="65">
+      <expression><![CDATA[$R{report.page}]]></expression>
+    </element>
+    <element evaluationTime="Now" hTextAlign="Right" height="15" kind="textField" width="25" x="465" y="65">
+      <expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+    </element>
+    <element evaluationTime="Report" hTextAlign="Right" height="15" kind="textField" width="15" x="490" y="65">
+      <expression><![CDATA[$R{report.page.of}]]></expression>
+    </element>
+    <element evaluationTime="Report" hTextAlign="Right" height="15" kind="textField" width="25" x="505" y="65">
+      <expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+    </element>
+    <element height="1" kind="line" width="510" x="20" y="84"/>
+  </pageHeader>
+</jasperReport>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="VoucherList" resourceBundle="book">
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="Report"/>
+  <parameter class="java.util.HashMap" name="Parameters"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Integer" name="voucher.number"/>
+  <field class="java.lang.String" name="voucher.date"/>
+  <field class="java.lang.String" name="voucher.description"/>
+  <field class="java.math.BigDecimal" name="voucher.debet"/>
+  <field class="java.math.BigDecimal" name="voucher.credet"/>
+  <field class="net.sf.jasperreports.engine.JRRewindableDataSource" name="voucher.rows"/>
+  <!-- The sum. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="debet.sum" resetType="Report">
+    <expression><![CDATA[$F{voucher.debet}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="credet.sum" resetType="Report">
+    <expression><![CDATA[$F{voucher.credet}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <columnHeader height="30">
+    <element height="1" kind="line" width="510" x="20" y="23"/>
+    <!-- Column 1 -->
+    <element hTextAlign="Left" height="24" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{voucherlistreport.column.1}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="24" kind="textField" width="220" x="60" y="0">
+      <expression><![CDATA[$R{voucherlistreport.column.2}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="24" kind="textField" width="220" x="120" y="0">
+      <expression><![CDATA[$R{voucherlistreport.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="50" x="270" y="0">
+      <expression><![CDATA[$R{voucherlistreport.column.4}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="50" x="320" y="0">
+      <expression><![CDATA[$R{voucherlistreport.column.5}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="80" x="370" y="0">
+      <expression><![CDATA[$R{voucherlistreport.column.6}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="80" x="450" y="0">
+      <expression><![CDATA[$R{voucherlistreport.column.7}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="14">
+      <element height="14" kind="textField" width="400" x="20" y="0">
+        <expression><![CDATA[$F{voucher.number}]]></expression>
+      </element>
+      <element height="14" kind="textField" width="60" x="60" y="0">
+        <expression><![CDATA[$F{voucher.date}]]></expression>
+      </element>
+      <element height="14" kind="textField" width="400" x="120" y="0">
+        <expression><![CDATA[$F{voucher.description}]]></expression>
+      </element>
+      <!-- Voucher rows -->
+      <element height="0" kind="subreport" usingCache="false" width="555" x="0" y="12">
+        <parametersMapExpression><![CDATA[new java.util.HashMap() {{ put("invoice.customernr", $F{voucher.number}); }}]]></parametersMapExpression>
+        <dataSourceExpression><![CDATA[$F{voucher.rows}]]></dataSourceExpression>
+        <expression><![CDATA[$P{Report}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="12" splitType="Prevent">
+    <element height="1" kind="line" width="510" x="20" y="0"/>
+    <!-- Debet -->
+    <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="370" y="0">
+      <expression><![CDATA[$V{debet.sum}]]></expression>
+    </element>
+    <!-- Credet -->
+    <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="450" y="0">
+      <expression><![CDATA[$V{credet.sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

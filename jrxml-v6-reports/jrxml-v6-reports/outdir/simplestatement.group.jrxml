@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="SimpleStatement_Groups" resourceBundle="book">
+  <parameter class="java.lang.Integer" name="section.number"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.String" name="group.number"/>
+  <field class="java.lang.String" name="group.description"/>
+  <field class="java.math.BigDecimal" name="group.value"/>
+  <field class="java.lang.String" name="group.sumtext"/>
+  <field class="java.math.BigDecimal" name="group.sum"/>
+  <field class="java.lang.Boolean" name="group.showseparator"/>
+  <detail>
+    <band height="26" splitType="Prevent">
+      <element height="26" kind="textField" vTextAlign="Middle" width="25" x="2" y="0">
+        <expression><![CDATA[$F{group.number}]]></expression>
+      </element>
+      <element height="26" kind="line" width="1" x="25" y="0"/>
+      <element height="24" kind="textField" vTextAlign="Bottom" width="200" x="27" y="0">
+        <expression><![CDATA[$F{group.description}]]></expression>
+      </element>
+      <element height="26" kind="line" width="1" x="200" y="0"/>
+      <element blankWhenNull="true" hTextAlign="Right" height="24" kind="textField" pattern="#,##0" vTextAlign="Bottom" width="68" x="202" y="0">
+        <expression><![CDATA[$F{group.value}]]></expression>
+      </element>
+      <element height="1" kind="line" width="275" x="0" y="25"/>
+    </band>
+  </detail>
+  <summary height="26">
+    <printWhenExpression><![CDATA[new Boolean($P{section.number}.intValue() == 2 || $P{section.number}.intValue() == 6) ]]></printWhenExpression>
+    <element height="24" kind="textField" vTextAlign="Bottom" width="200" x="6" y="0">
+      <expression><![CDATA[$F{group.sumtext}]]></expression>
+    </element>
+    <element height="26" kind="line" width="1" x="200" y="0"/>
+    <element blankWhenNull="true" hTextAlign="Right" height="24" kind="textField" pattern="#,##0" vTextAlign="Bottom" width="68" x="202" y="0">
+      <expression><![CDATA[$F{group.sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

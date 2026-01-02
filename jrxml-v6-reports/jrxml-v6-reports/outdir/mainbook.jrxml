@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="MainBook" resourceBundle="book">
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Boolean" name="isrow"/>
+  <field class="java.lang.Integer" name="account.number"/>
+  <field class="java.lang.String" name="account.description"/>
+  <field class="java.math.BigDecimal" name="account.insaldo"/>
+  <field class="java.math.BigDecimal" name="account.inbalance"/>
+  <field class="java.lang.Integer" name="voucher.number"/>
+  <field class="java.lang.String" name="voucher.description"/>
+  <field class="java.lang.String" name="voucher.date"/>
+  <field class="java.lang.Boolean" name="voucherrow.added"/>
+  <field class="java.lang.Boolean" name="voucherrow.crossed"/>
+  <field class="java.math.BigDecimal" name="voucherrow.debet"/>
+  <field class="java.math.BigDecimal" name="voucherrow.credit"/>
+  <field class="java.math.BigDecimal" name="voucherrow.sum"/>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="account.debet" resetGroup="account" resetType="Group">
+    <expression><![CDATA[$F{voucherrow.crossed}.booleanValue() ? new BigDecimal(0.0) : $F{voucherrow.debet}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="account.credit" resetGroup="account" resetType="Group">
+    <expression><![CDATA[$F{voucherrow.crossed}.booleanValue() ? new BigDecimal(0.0) : $F{voucherrow.credit}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="account.sum" resetGroup="account" resetType="Group">
+    <expression><![CDATA[$F{voucherrow.crossed}.booleanValue() ? new BigDecimal(0.0) : $F{voucherrow.sum}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <!-- Group the data by account group number. -->
+  <group minHeightToStartNewPage="60" name="account">
+    <expression><![CDATA[$F{account.number}]]></expression>
+    <groupHeader>
+      <band height="50">
+        <element blankWhenNull="true" height="14" kind="textField" width="400" x="20" y="0">
+          <expression><![CDATA[$F{account.number}]]></expression>
+        </element>
+        <element blankWhenNull="true" height="14" kind="textField" width="400" x="60" y="0">
+          <expression><![CDATA[$F{account.description}]]></expression>
+        </element>
+        <element blankWhenNull="true" height="14" kind="textField" pattern="#,##0.00" width="80" x="60" y="14">
+          <expression><![CDATA[$R{mainbookreport.account.inbalance}]]></expression>
+        </element>
+        <element blankWhenNull="true" height="14" kind="textField" pattern="#,##0.00" width="80" x="60" y="28">
+          <expression><![CDATA[$R{mainbookreport.account.insaldo}]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="14">
+          <expression><![CDATA[$F{account.inbalance} != null ? $F{account.inbalance} : new BigDecimal(0.0)]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="28">
+          <expression><![CDATA[$F{account.insaldo} != null ? $F{account.insaldo} : new BigDecimal(0.0)]]></expression>
+        </element>
+      </band>
+    </groupHeader>
+    <groupFooter>
+      <band height="35">
+        <element height="1" kind="line" width="470" x="60" y="0"/>
+        <element height="14" kind="textField" pattern="#,##0.00" width="80" x="60" y="5">
+          <expression><![CDATA[$R{mainbookreport.account.change}]]></expression>
+        </element>
+        <element height="14" kind="textField" pattern="#,##0.00" width="80" x="60" y="16">
+          <expression><![CDATA[$R{mainbookreport.account.outsaldo}]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="300" y="2">
+          <expression><![CDATA[$V{account.debet}]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="380" y="2">
+          <expression><![CDATA[$V{account.credit}]]></expression>
+        </element>
+        <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="16">
+          <expression><![CDATA[$F{account.insaldo} != null ? $F{account.insaldo}.add($V{account.sum}): $V{account.sum}]]></expression>
+        </element>
+      </band>
+    </groupFooter>
+  </group>
+  <columnHeader height="30">
+    <element height="1" kind="line" width="510" x="20" y="23"/>
+    <!-- Column 1 -->
+    <element height="24" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{mainbookreport.column.1}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="220" x="60" y="0">
+      <expression><![CDATA[$R{mainbookreport.column.2}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="220" x="100" y="0">
+      <expression><![CDATA[$R{mainbookreport.column.3}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="80" x="160" y="0">
+      <expression><![CDATA[$R{mainbookreport.column.4}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="80" x="300" y="0">
+      <expression><![CDATA[$R{mainbookreport.column.5}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="80" x="380" y="0">
+      <expression><![CDATA[$R{mainbookreport.column.6}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="80" x="450" y="0">
+      <expression><![CDATA[$R{mainbookreport.column.7}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="12">
+      <printWhenExpression><![CDATA[$F{isrow}]]></printWhenExpression>
+      <element height="1" kind="line" width="470" x="60" y="5"/>
+      <element height="1" kind="line" width="470" x="60" y="10"/>
+      <element height="12" kind="textField" width="80" x="60" y="0">
+        <expression><![CDATA[$F{voucher.number}]]></expression>
+      </element>
+      <element height="12" kind="textField" width="60" x="100" y="0">
+        <expression><![CDATA[$F{voucher.date}]]></expression>
+      </element>
+      <element height="12" kind="textField" width="135" x="160" y="0">
+        <expression><![CDATA[$F{voucher.description}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="300" y="0">
+        <expression><![CDATA[$F{voucherrow.debet}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="380" y="0">
+        <expression><![CDATA[$F{voucherrow.credit}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="450" y="0">
+        <expression><![CDATA[($F{account.insaldo} != null) ? $F{account.insaldo}.add($V{account.sum}) : $V{account.sum}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

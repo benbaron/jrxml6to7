@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="StartingAmmount" resourceBundle="book">
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Integer" name="account"/>
+  <field class="java.lang.String" name="description"/>
+  <field class="java.math.BigDecimal" name="inbalance"/>
+  <!-- The sum so far in the report. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="sum" resetType="Report">
+    <expression><![CDATA[$F{inbalance}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <columnHeader height="15">
+    <element height="1" kind="line" width="510" x="20" y="12"/>
+    <!-- Column 1 -->
+    <element hTextAlign="Left" height="12" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{inbalancereport.column.1}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="12" kind="textField" width="220" x="120" y="0">
+      <expression><![CDATA[$R{inbalancereport.column.2}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="80" x="450" y="0">
+      <expression><![CDATA[$R{inbalancereport.column.3}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="14">
+      <element height="14" kind="textField" width="70" x="20" y="0">
+        <expression><![CDATA[$F{account}]]></expression>
+      </element>
+      <element height="14" kind="textField" width="220" x="120" y="0">
+        <expression><![CDATA[$F{description}]]></expression>
+      </element>
+      <element hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="0">
+        <expression><![CDATA[$F{inbalance}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="15">
+    <element height="1" kind="line" width="510" x="20" y="0"/>
+    <element hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="1">
+      <expression><![CDATA[$V{sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

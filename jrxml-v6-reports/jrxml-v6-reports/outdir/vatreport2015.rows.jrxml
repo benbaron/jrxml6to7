@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<jasperReport name="VATReport2015Rows" resourceBundle="book">
+  <parameter class="java.lang.String" name="vatreport.group"/>
+  <field class="java.lang.Integer" name="group.number"/>
+  <field class="java.lang.String" name="group.description"/>
+  <field class="java.lang.String" name="group.vatcodes"/>
+  <field class="java.math.BigDecimal" name="group.value"/>
+  <detail>
+    <band height="12" splitType="Prevent">
+      <element height="12" kind="textField" width="300" x="40" y="0">
+        <expression><![CDATA[$F{group.description}]]></expression>
+      </element>
+      <element height="12" kind="textField" width="120" x="340" y="0">
+        <expression><![CDATA[$F{group.vatcodes}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0" width="70" x="460" y="0">
+        <expression><![CDATA[$F{group.value}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="ReminderRows">
+  <field class="java.lang.String" name="invoice.number"/>
+  <field class="java.util.Date" name="invoice.date"/>
+  <field class="java.util.Date" name="invoice.duedate"/>
+  <field class="java.lang.Integer" name="invoice.duedays"/>
+  <field class="java.lang.Integer" name="invoice.numreminders"/>
+  <field class="java.math.BigDecimal" name="invoice.delayinterest"/>
+  <field class="java.math.BigDecimal" name="invoice.saldo"/>
+  <field class="java.math.BigDecimal" name="invoice.delayfee"/>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="delayfee.sum" resetType="Report">
+    <expression><![CDATA[$F{invoice.delayfee}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="saldo.sum" resetType="Report">
+    <expression><![CDATA[$F{invoice.saldo}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <columnHeader height="16">
+    <element height="1" kind="line" width="510" x="0" y="0"/>
+    <element height="1" kind="line" width="510" x="0" y="13"/>
+    <!-- Invoice number -->
+    <element hTextAlign="Left" height="12" kind="textField" width="70" x="10" y="2">
+      <expression><![CDATA[$R{reminderreport.column.1}]]></expression>
+    </element>
+    <!-- Invoice date -->
+    <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="60" x="80" y="2">
+      <expression><![CDATA[$R{reminderreport.column.2}]]></expression>
+    </element>
+    <!-- Due date -->
+    <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="60" x="140" y="2">
+      <expression><![CDATA[$R{reminderreport.column.3}]]></expression>
+    </element>
+    <!-- Due days -->
+    <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="70" x="180" y="2">
+      <expression><![CDATA[$R{reminderreport.column.4}]]></expression>
+    </element>
+    <!-- Reminder no -->
+    <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="45" x="250" y="2">
+      <expression><![CDATA[$R{reminderreport.column.5}]]></expression>
+    </element>
+    <!-- Delay interest -->
+    <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="65" x="295" y="2">
+      <expression><![CDATA[$R{reminderreport.column.6}]]></expression>
+    </element>
+    <!-- Saldo -->
+    <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="80" x="340" y="2">
+      <expression><![CDATA[$R{reminderreport.column.7}]]></expression>
+    </element>
+    <!-- Interest sum -->
+    <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="80" x="420" y="2">
+      <expression><![CDATA[$R{reminderreport.column.8}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="12" splitType="Stretch">
+      <printWhenExpression><![CDATA[new Boolean( $F{invoice.duedays}.intValue() > 0) ]]></printWhenExpression>
+      <!-- Number -->
+      <element blankWhenNull="true" height="12" kind="textField" width="70" x="10" y="0">
+        <expression><![CDATA[$F{invoice.number}]]></expression>
+      </element>
+      <!-- Date -->
+      <element blankWhenNull="true" height="12" kind="textField" pattern="yyyy-MM-dd" width="60" x="80" y="0">
+        <expression><![CDATA[$F{invoice.date}]]></expression>
+      </element>
+      <!-- Due date -->
+      <element blankWhenNull="true" height="12" kind="textField" pattern="yyyy-MM-dd" width="60" x="140" y="0">
+        <expression><![CDATA[$F{invoice.duedate}]]></expression>
+      </element>
+      <!-- Due days -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="70" x="180" y="0">
+        <expression><![CDATA[$F{invoice.duedays}]]></expression>
+      </element>
+      <!-- Num reminders -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="45" x="250" y="0">
+        <expression><![CDATA[$F{invoice.numreminders}]]></expression>
+      </element>
+      <!-- Delay interest -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="65" x="295" y="0">
+        <expression><![CDATA[$F{invoice.delayinterest}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="12" x="362" y="0">
+        <expression><![CDATA["%"]]></expression>
+      </element>
+      <!-- Expired value  -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="340" y="0">
+        <expression><![CDATA[$F{invoice.saldo}]]></expression>
+      </element>
+      <!-- Delay fee -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="420" y="0">
+        <expression><![CDATA[$F{invoice.delayfee}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <pageFooter height="12">
+    <!-- Number -->
+    <element hTextAlign="Right" height="12" kind="textField" vTextAlign="Bottom" width="510" x="0" y="0">
+      <expression><![CDATA[$R{reminderreport.continuing}]]></expression>
+    </element>
+  </pageFooter>
+  <lastPageFooter height="0"/>
+</jasperReport>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="AccountsPayableRow" resourceBundle="book">
+  <parameter class="java.lang.String" name="supplier.number"/>
+  <field class="java.lang.Integer" name="supplierinvoice.number"/>
+  <field class="java.lang.String" name="supplierinvoice.date"/>
+  <field class="java.lang.String" name="supplierinvoice.currency"/>
+  <field class="java.math.BigDecimal" name="supplierinvoice.value"/>
+  <field class="java.math.BigDecimal" name="supplierinvoice.credited"/>
+  <field class="java.math.BigDecimal" name="supplierinvoice.payed"/>
+  <field class="java.math.BigDecimal" name="supplierinvoice.currencyrate"/>
+  <field class="java.math.BigDecimal" name="supplierinvoice.localsaldo"/>
+  <!-- The sum. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="sum" resetType="Report">
+    <expression><![CDATA[$F{supplierinvoice.localsaldo}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <detail>
+    <band height="12" splitType="Stretch">
+      <printWhenExpression><![CDATA[new Boolean( $F{supplierinvoice.localsaldo}.signum() != 0) ]]></printWhenExpression>
+      <!-- Number -->
+      <element height="12" kind="textField" width="80" x="60" y="0">
+        <expression><![CDATA[$F{supplierinvoice.number}]]></expression>
+      </element>
+      <!-- Date -->
+      <element height="12" kind="textField" width="70" x="120" y="0">
+        <expression><![CDATA[$F{supplierinvoice.date}]]></expression>
+      </element>
+      <!-- Value -->
+      <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="60" x="190" y="0">
+        <expression><![CDATA[$F{supplierinvoice.value}]]></expression>
+      </element>
+      <!-- Credited -->
+      <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="60" x="250" y="0">
+        <expression><![CDATA[$F{supplierinvoice.credited}]]></expression>
+      </element>
+      <!-- Payed -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="60" x="310" y="0">
+        <expression><![CDATA[$F{supplierinvoice.payed}]]></expression>
+      </element>
+      <!-- Currency -->
+      <element hTextAlign="Right" height="12" kind="textField" width="40" x="370" y="0">
+        <expression><![CDATA[$F{supplierinvoice.currency}]]></expression>
+      </element>
+      <!-- Currency rate -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00000" width="40" x="410" y="0">
+        <expression><![CDATA[$F{supplierinvoice.currencyrate}]]></expression>
+      </element>
+      <!-- supplierinvoice sum  -->
+      <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="60" x="450" y="0">
+        <expression><![CDATA[$F{supplierinvoice.localsaldo}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="12" splitType="Prevent">
+    <element height="1" kind="line" width="450" x="60" y="0"/>
+    <element height="12" kind="textField" width="250" x="60" y="0">
+      <expression><![CDATA[$R{accountsrecievablereport.sum}]]></expression>
+    </element>
+    <element blankWhenNull="false" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="250" x="260" y="0">
+      <expression><![CDATA[$V{sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

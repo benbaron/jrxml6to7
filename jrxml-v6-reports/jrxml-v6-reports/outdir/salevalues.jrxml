@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="MainBook" resourceBundle="book">
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="Report"/>
+  <parameter class="java.util.HashMap" name="Parameters"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.String" name="month.name"/>
+  <field class="java.lang.Double" name="month.tender"/>
+  <field class="java.lang.Double" name="month.order"/>
+  <field class="java.lang.Double" name="month.invoice"/>
+  <!-- The tender sum. -->
+  <variable calculation="Sum" class="java.lang.Double" name="sumtender" resetType="Report">
+    <expression><![CDATA[$F{month.tender}]]></expression>
+    <initialValueExpression><![CDATA[new Double(0.0)]]></initialValueExpression>
+  </variable>
+  <!-- The order sum. -->
+  <variable calculation="Sum" class="java.lang.Double" name="sumorder" resetType="Report">
+    <expression><![CDATA[$F{month.order}]]></expression>
+    <initialValueExpression><![CDATA[new Double(0.0)]]></initialValueExpression>
+  </variable>
+  <!-- The invoice sum. -->
+  <variable calculation="Sum" class="java.lang.Double" name="suminvoice" resetType="Report">
+    <expression><![CDATA[$F{month.invoice}]]></expression>
+    <initialValueExpression><![CDATA[new Double(0.0)]]></initialValueExpression>
+  </variable>
+  <columnHeader height="30">
+    <element height="1" kind="line" width="510" x="20" y="23"/>
+    <!-- Column 1 -->
+    <element height="14" kind="textField" width="100" x="20" y="0">
+      <expression><![CDATA[$R{salevalues.column.1}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="14" kind="textField" width="100" x="157" y="0">
+      <expression><![CDATA[$R{salevalues.column.2}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="14" kind="textField" width="100" x="294" y="0">
+      <expression><![CDATA[$R{salevalues.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="14" kind="textField" width="100" x="430" y="0">
+      <expression><![CDATA[$R{salevalues.column.4}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="12" splitType="Stretch">
+      <!-- Title -->
+      <element height="12" kind="textField" width="100" x="20" y="0">
+        <expression><![CDATA[$F{month.name}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="100" x="157" y="0">
+        <expression><![CDATA[$F{month.tender}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="100" x="294" y="0">
+        <expression><![CDATA[$F{month.order}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="100" x="430" y="0">
+        <expression><![CDATA[$F{month.invoice}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="20">
+    <element backcolor="#000000" height="2" kind="rectangle" width="510" x="20" y="0"/>
+    <element height="14" kind="textField" width="250" x="20" y="2">
+      <expression><![CDATA[$R{salevalues.sum}]]></expression>
+    </element>
+    <!-- Total sum-->
+    <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="100" x="157" y="2">
+      <expression><![CDATA[$V{sumtender}]]></expression>
+    </element>
+    <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="100" x="294" y="2">
+      <expression><![CDATA[$V{sumorder}]]></expression>
+    </element>
+    <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="100" x="430" y="2">
+      <expression><![CDATA[$V{suminvoice}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

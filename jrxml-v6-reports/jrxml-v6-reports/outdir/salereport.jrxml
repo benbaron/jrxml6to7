@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="SaleReport" resourceBundle="book">
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.String" name="product.number"/>
+  <field class="java.lang.String" name="product.description"/>
+  <field class="java.lang.Integer" name="product.count"/>
+  <field class="java.math.BigDecimal" name="product.monthly"/>
+  <field class="java.math.BigDecimal" name="product.weekly"/>
+  <field class="java.math.BigDecimal" name="product.unitprice"/>
+  <field class="java.math.BigDecimal" name="product.inprice"/>
+  <field class="java.math.BigDecimal" name="product.contribution"/>
+  <field class="java.math.BigDecimal" name="product.contributionrate"/>
+  <field class="java.math.BigDecimal" name="product.grossprofit"/>
+  <field class="java.math.BigDecimal" name="product.averagesellingprice"/>
+  <columnHeader height="30">
+    <element height="1" kind="line" width="510" x="20" y="23"/>
+    <!-- Faktura nr -->
+    <element height="24" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{salereport.column.1}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="70" x="80" y="0">
+      <expression><![CDATA[$R{salereport.column.2}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="80" x="140" y="0">
+      <expression><![CDATA[$R{salereport.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="70" x="180" y="0">
+      <expression><![CDATA[$R{salereport.column.4}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="70" x="250" y="0">
+      <expression><![CDATA[$R{salereport.column.5}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="70" x="320" y="0">
+      <expression><![CDATA[$R{salereport.column.6}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="70" x="390" y="0">
+      <expression><![CDATA[$R{salereport.column.7}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="70" x="460" y="0">
+      <expression><![CDATA[$R{salereport.column.8}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="30" splitType="Stretch">
+      <!-- Product number -->
+      <element height="14" kind="textField" width="120" x="20" y="0">
+        <expression><![CDATA[$F{product.number}]]></expression>
+      </element>
+      <!-- Product descriptionr -->
+      <element height="14" kind="textField" width="200" x="140" y="0">
+        <expression><![CDATA[$F{product.description}]]></expression>
+      </element>
+      <!-- Row #2 -->
+      <!-- Period sales -->
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="80" x="20" y="14">
+        <expression><![CDATA[$F{product.count}]]></expression>
+      </element>
+      <!-- Montly sales -->
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" pattern="#,##0.00" width="70" x="80" y="14">
+        <expression><![CDATA[$F{product.monthly}]]></expression>
+      </element>
+      <!-- Weekly sales -->
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" pattern="#,##0.00" width="60" x="140" y="14">
+        <expression><![CDATA[$F{product.weekly}]]></expression>
+      </element>
+      <!-- Unit price -->
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="70" x="180" y="14">
+        <expression><![CDATA[$F{product.unitprice}]]></expression>
+      </element>
+      <!-- Genomsnittligt pris -->
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="70" x="250" y="14">
+        <expression><![CDATA[$F{product.averagesellingprice}]]></expression>
+      </element>
+      <!-- Inprice -->
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="70" x="320" y="14">
+        <expression><![CDATA[$F{product.inprice}]]></expression>
+      </element>
+      <!-- TG% -->
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="70" x="390" y="14">
+        <expression><![CDATA[$F{product.contributionrate}]]></expression>
+      </element>
+      <!-- Bruttovinst -->
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="70" x="460" y="14">
+        <expression><![CDATA[$F{product.grossprofit}]]></expression>
+      </element>
+      <element hTextAlign="Right" height="12" kind="textField" width="210" x="320" y="14">
+        <expression><![CDATA[$R{salereport.noinprice}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

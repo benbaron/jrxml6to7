@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="Projects" resourceBundle="book">
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.String" name="project.number"/>
+  <field class="java.lang.String" name="project.name"/>
+  <field class="java.lang.String" name="project.description"/>
+  <field class="java.lang.String" name="project.concluded"/>
+  <columnHeader height="15">
+    <element height="1" kind="line" width="510" x="20" y="12"/>
+    <!-- Column 1 -->
+    <element hTextAlign="Left" height="12" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{projectreport.column.1}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="12" kind="textField" width="220" x="80" y="0">
+      <expression><![CDATA[$R{projectreport.column.2}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="12" kind="textField" width="400" x="260" y="0">
+      <expression><![CDATA[$R{projectreport.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="12" kind="textField" width="80" x="180" y="0">
+      <expression><![CDATA[$R{projectreport.column.4}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="14">
+      <element height="14" kind="textField" width="70" x="20" y="0">
+        <expression><![CDATA[$F{project.number}]]></expression>
+      </element>
+      <element blankWhenNull="true" height="14" kind="textField" width="220" x="80" y="0">
+        <expression><![CDATA[$F{project.name}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="400" x="260" y="0">
+        <expression><![CDATA[$F{project.description}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="80" x="180" y="0">
+        <expression><![CDATA[$F{project.concluded}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

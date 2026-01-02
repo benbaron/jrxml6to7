@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="ResultColumnHeader" resourceBundle="book">
+  <!-- Declared fields in the report. -->
+  <parameter class="java.lang.String" name="column.text.1"/>
+  <parameter class="java.lang.String" name="column.text.2"/>
+  <parameter class="java.lang.String" name="column.text.3"/>
+  <columnHeader height="15">
+    <element height="1" kind="line" width="510" x="20" y="12"/>
+    <!-- Number -->
+    <element height="12" kind="textField" width="30" x="40" y="0">
+      <expression><![CDATA[$R{resultreport.column.8}]]></expression>
+    </element>
+    <!-- Description -->
+    <element height="12" kind="textField" width="250" x="100" y="0">
+      <expression><![CDATA[$R{resultreport.column.9}]]></expression>
+    </element>
+    <!-- Column 1 -->
+    <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="80" x="290" y="0">
+      <expression><![CDATA[$P{column.text.1}]]></expression>
+    </element>
+    <!-- Column 2 -->
+    <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="80" x="370" y="0">
+      <expression><![CDATA[$P{column.text.2}]]></expression>
+    </element>
+    <!-- Column 3 -->
+    <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="80" x="450" y="0">
+      <expression><![CDATA[$P{column.text.3}]]></expression>
+    </element>
+  </columnHeader>
+</jasperReport>

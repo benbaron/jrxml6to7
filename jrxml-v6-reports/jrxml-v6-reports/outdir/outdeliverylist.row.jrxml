@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="OuteliveryListRow" resourceBundle="book">
+  <parameter class="java.lang.Integer" name="outdelivery.number"/>
+  <field class="java.lang.String" name="outdeliveryrow.product"/>
+  <field class="java.lang.String" name="outdeliveryrow.descripion"/>
+  <field class="java.lang.Integer" name="outdeliveryrow.change"/>
+  <detail>
+    <band height="12" splitType="Stretch">
+      <!-- Product number -->
+      <element blankWhenNull="true" height="12" kind="textField" width="80" x="80" y="0">
+        <expression><![CDATA[$F{outdeliveryrow.product}]]></expression>
+      </element>
+      <!-- Product description -->
+      <element blankWhenNull="true" height="12" kind="textField" width="70" x="180" y="0">
+        <expression><![CDATA[$F{outdeliveryrow.descripion}]]></expression>
+      </element>
+      <!-- Inpayment sum  -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0" width="50" x="480" y="0">
+        <expression><![CDATA[$F{outdeliveryrow.change}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

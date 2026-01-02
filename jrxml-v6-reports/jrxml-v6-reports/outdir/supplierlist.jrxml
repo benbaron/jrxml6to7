@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="Customers" resourceBundle="book">
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.String" name="supplier.number"/>
+  <field class="java.lang.String" name="supplier.name"/>
+  <field class="java.lang.String" name="supplier.phone"/>
+  <field class="java.lang.String" name="supplier.ourcustomernumber"/>
+  <field class="java.lang.String" name="supplier.contact"/>
+  <columnHeader height="15">
+    <element height="1" kind="line" width="510" x="20" y="12"/>
+    <!-- Column 1 -->
+    <element hTextAlign="Left" height="12" kind="textField" width="60" x="20" y="0">
+      <expression><![CDATA[$R{supplierlistreport.column.1}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="12" kind="textField" width="150" x="80" y="0">
+      <expression><![CDATA[$R{supplierlistreport.column.2}]]></expression>
+    </element>
+    <element height="12" kind="textField" width="100" x="230" y="0">
+      <expression><![CDATA[$R{supplierlistreport.column.3}]]></expression>
+    </element>
+    <element height="12" kind="textField" width="100" x="330" y="0">
+      <expression><![CDATA[$R{supplierlistreport.column.4}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="100" x="430" y="0">
+      <expression><![CDATA[$R{supplierlistreport.column.5}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="14" splitType="Stretch">
+      <!-- Number-->
+      <element blankWhenNull="true" height="14" kind="textField" width="60" x="20" y="0">
+        <expression><![CDATA[$F{supplier.number}]]></expression>
+      </element>
+      <!-- Name-->
+      <element blankWhenNull="true" height="14" kind="textField" width="150" x="80" y="0">
+        <expression><![CDATA[$F{supplier.name}]]></expression>
+      </element>
+      <!-- Our contact person-->
+      <element blankWhenNull="true" height="12" kind="textField" width="100" x="230" y="0">
+        <expression><![CDATA[$F{supplier.contact}]]></expression>
+      </element>
+      <!-- Registration number -->
+      <element blankWhenNull="true" height="12" kind="textField" width="100" x="330" y="0">
+        <expression><![CDATA[$F{supplier.ourcustomernumber}]]></expression>
+      </element>
+      <!-- Phone -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="100" x="430" y="0">
+        <expression><![CDATA[$F{supplier.phone}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

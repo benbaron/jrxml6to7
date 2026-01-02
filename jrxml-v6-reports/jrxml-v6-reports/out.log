@@ -1,0 +1,849 @@
+INFO  Found 116 .jrxml files under C:\Users\benba\eclipse-workspace\jrxml6tojrxml7\jrxml-v6-reports\jrxml-v6-reports\report
+INFO  Converting: accountdiagram.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: accountplan.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: accountspayable.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: accountspayable.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: accountsrecievable.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: accountsrecievable.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: balance.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: budget.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: budget.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: creditinvoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: creditinvoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: customerclaim.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: customerlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: customerrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: customerrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: header.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Converting: header_period.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Converting: indeliverylist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: indeliverylist.row.jrxml
+INFO  Converting: inpaymentlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: inpaymentlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: inventorybasis.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: inventorylist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: inventorylist.row.jrxml
+INFO  Converting: invoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: invoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\creditinvoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\creditinvoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\inpaymentjournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\inpaymentjournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\invoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\invoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\outpaymentjournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\outpaymentjournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\suppliercreditinvoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\suppliercreditinvoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\supplierinvoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\supplierinvoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: mainbook.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: multireport.jrxml
+INFO  Converting: orderlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: orderlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: outdeliverylist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: outdeliverylist.row.jrxml
+INFO  Converting: outpaymentlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: outpaymentlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: productlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: productlist.parcel.jrxml
+INFO  Converting: productlist_fakt.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: productrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: productrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: projectrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: projectrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: projects.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: purchaseorderlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: purchaseorderlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: purchasevalues.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: quarterreport.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: result.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: resultcolumns.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: resultown.jrxml
+INFO  Converting: resultunitrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: resultunitrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: resultunits.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: salereport.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\creditinvoice.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\creditinvoice.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\deliverynote.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\deliverynote.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\deliverynote2.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\deliverynote2.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\inquiry.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\inquiry.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\invoice.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\invoice.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\ocrinvoice.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <background><band .../></background> into band-like section
+INFO  Converting: sales\order.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <background><band .../></background> into band-like section
+INFO  Converting: sales\order.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\pickingslip.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\pickingslip.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\purchaseorder.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\purchaseorder.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\reminder.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\reminder.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\sale.footer.jrxml
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Converting: sales\sale.header.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Converting: sales\tender.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <background><band .../></background> into band-like section
+INFO  Converting: sales\tender.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: salevalues.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: simplestatement.group.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: simplestatement.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Converting: startingammount.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: stockaccount.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: stockvalue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: suppliercreditinvoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: suppliercreditinvoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierdebt.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierinvoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierinvoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: supplierrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: supplierrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: tenderlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: tenderlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatcontrol.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatcontrol2007.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatcontrol2015.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatreport.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatreport2007.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: vatreport2007.rows.jrxml
+INFO  Converting: vatreport2015.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: vatreport2015.rows.jrxml
+INFO  Converting: voucher.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: voucher.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: voucherlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: voucherlist.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Done. Converted=116 warnings=0 errors=0
+INFO  Found 116 .jrxml files under C:\Users\benba\eclipse-workspace\jrxml6tojrxml7\jrxml-v6-reports\jrxml-v6-reports\report
+INFO  Converting: accountdiagram.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: accountplan.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: accountspayable.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: accountspayable.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: accountsrecievable.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: accountsrecievable.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: balance.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: budget.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: budget.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: creditinvoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: creditinvoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: customerclaim.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: customerlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: customerrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: customerrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: header.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Converting: header_period.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Converting: indeliverylist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: indeliverylist.row.jrxml
+INFO  Converting: inpaymentlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: inpaymentlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: inventorybasis.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: inventorylist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: inventorylist.row.jrxml
+INFO  Converting: invoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: invoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\creditinvoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\creditinvoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\inpaymentjournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\inpaymentjournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\invoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\invoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\outpaymentjournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\outpaymentjournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\suppliercreditinvoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\suppliercreditinvoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\supplierinvoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\supplierinvoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: mainbook.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: multireport.jrxml
+INFO  Converting: orderlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: orderlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: outdeliverylist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: outdeliverylist.row.jrxml
+INFO  Converting: outpaymentlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: outpaymentlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: productlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: productlist.parcel.jrxml
+INFO  Converting: productlist_fakt.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: productrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: productrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: projectrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: projectrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: projects.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: purchaseorderlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: purchaseorderlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: purchasevalues.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: quarterreport.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: result.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: resultcolumns.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: resultown.jrxml
+INFO  Converting: resultunitrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: resultunitrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: resultunits.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: salereport.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\creditinvoice.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\creditinvoice.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\deliverynote.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\deliverynote.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\deliverynote2.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\deliverynote2.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\inquiry.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\inquiry.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\invoice.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\invoice.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\ocrinvoice.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <background><band .../></background> into band-like section
+INFO  Converting: sales\order.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <background><band .../></background> into band-like section
+INFO  Converting: sales\order.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\pickingslip.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\pickingslip.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\purchaseorder.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\purchaseorder.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\reminder.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\reminder.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\sale.footer.jrxml
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Converting: sales\sale.header.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Converting: sales\tender.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <background><band .../></background> into band-like section
+INFO  Converting: sales\tender.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: salevalues.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: simplestatement.group.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: simplestatement.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Converting: startingammount.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: stockaccount.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: stockvalue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: suppliercreditinvoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: suppliercreditinvoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierdebt.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierinvoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierinvoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: supplierrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: supplierrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: tenderlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: tenderlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatcontrol.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatcontrol2007.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatcontrol2015.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatreport.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatreport2007.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: vatreport2007.rows.jrxml
+INFO  Converting: vatreport2015.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: vatreport2015.rows.jrxml
+INFO  Converting: voucher.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: voucher.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: voucherlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: voucherlist.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Done. Converted=116 warnings=0 errors=0
+INFO  Found 116 .jrxml files under C:\Users\benba\eclipse-workspace\jrxml6tojrxml7\jrxml-v6-reports\jrxml-v6-reports\report
+INFO  Converting: accountdiagram.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: accountplan.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: accountspayable.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: accountspayable.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: accountsrecievable.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: accountsrecievable.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: balance.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: budget.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: budget.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: creditinvoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: creditinvoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: customerclaim.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: customerlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: customerrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: customerrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: header.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Converting: header_period.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Converting: indeliverylist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: indeliverylist.row.jrxml
+INFO  Converting: inpaymentlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: inpaymentlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: inventorybasis.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: inventorylist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: inventorylist.row.jrxml
+INFO  Converting: invoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: invoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\creditinvoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\creditinvoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\inpaymentjournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\inpaymentjournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\invoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\invoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\outpaymentjournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\outpaymentjournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\suppliercreditinvoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\suppliercreditinvoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\supplierinvoicejournal.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: journals\supplierinvoicejournal.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: mainbook.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: multireport.jrxml
+INFO  Converting: orderlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: orderlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: outdeliverylist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: outdeliverylist.row.jrxml
+INFO  Converting: outpaymentlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: outpaymentlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: productlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: productlist.parcel.jrxml
+INFO  Converting: productlist_fakt.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: productrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: productrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: projectrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: projectrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: projects.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: purchaseorderlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: purchaseorderlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: purchasevalues.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: quarterreport.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: result.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: resultcolumns.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: resultown.jrxml
+INFO  Converting: resultunitrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: resultunitrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: resultunits.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: salereport.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\creditinvoice.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\creditinvoice.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\deliverynote.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\deliverynote.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\deliverynote2.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\deliverynote2.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\inquiry.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\inquiry.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\invoice.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\invoice.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\ocrinvoice.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <background><band .../></background> into band-like section
+INFO  Converting: sales\order.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <background><band .../></background> into band-like section
+INFO  Converting: sales\order.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\pickingslip.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\pickingslip.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\purchaseorder.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\purchaseorder.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\reminder.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: sales\reminder.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: sales\sale.footer.jrxml
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Converting: sales\sale.header.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Converting: sales\tender.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <background><band .../></background> into band-like section
+INFO  Converting: sales\tender.rows.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Flattened <lastPageFooter><band .../></lastPageFooter> into band-like section
+INFO  Converting: salevalues.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: simplestatement.group.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: simplestatement.jrxml
+INFO  Flattened <pageHeader><band .../></pageHeader> into band-like section
+INFO  Flattened <pageFooter><band .../></pageFooter> into band-like section
+INFO  Converting: startingammount.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: stockaccount.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: stockvalue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: suppliercreditinvoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: suppliercreditinvoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierdebt.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierinvoicelist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierinvoicelist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: supplierlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: supplierrevenue.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: supplierrevenue.monthly.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: tenderlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: tenderlist.row.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatcontrol.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatcontrol2007.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatcontrol2015.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatreport.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: vatreport2007.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: vatreport2007.rows.jrxml
+INFO  Converting: vatreport2015.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: vatreport2015.rows.jrxml
+INFO  Converting: voucher.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Converting: voucher.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: voucherlist.jrxml
+INFO  Flattened <columnHeader><band .../></columnHeader> into band-like section
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Converting: voucherlist.rows.jrxml
+INFO  Flattened <summary><band .../></summary> into band-like section
+INFO  Done. Converted=116 warnings=0 errors=0

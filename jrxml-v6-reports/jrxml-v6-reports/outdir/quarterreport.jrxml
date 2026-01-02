@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="Invoice">
+  <!--- Declared parameters in the report. -->
+  <parameter class="java.lang.String" name="title"/>
+  <!--- Declared parameters in the report. -->
+  <parameter class="java.lang.String" name="number"/>
+  <parameter class="java.lang.String" name="date"/>
+  <parameter class="java.lang.String" name="quarter"/>
+  <parameter class="java.awt.Image" name="company.logo"/>
+  <parameter class="java.lang.String" name="company.name"/>
+  <parameter class="java.lang.String" name="company.address1"/>
+  <parameter class="java.lang.String" name="company.address2"/>
+  <parameter class="java.lang.String" name="company.zipcode"/>
+  <parameter class="java.lang.String" name="company.city"/>
+  <parameter class="java.lang.String" name="company.country"/>
+  <parameter class="java.lang.String" name="company.phone"/>
+  <parameter class="java.lang.String" name="company.telefax"/>
+  <parameter class="java.lang.String" name="company.residence"/>
+  <parameter class="java.lang.String" name="company.email"/>
+  <parameter class="java.lang.String" name="company.homepage"/>
+  <parameter class="java.lang.String" name="company.plusaccount"/>
+  <parameter class="java.lang.String" name="company.bankaccount"/>
+  <parameter class="java.lang.String" name="company.bic"/>
+  <parameter class="java.lang.String" name="company.iban"/>
+  <parameter class="java.lang.String" name="company.bank"/>
+  <field class="java.lang.String" name="customer.number"/>
+  <field class="java.lang.String" name="customer.name"/>
+  <field class="java.lang.String" name="customer.vatnumber"/>
+  <field class="java.math.BigDecimal" name="customer.eusalecommodity"/>
+  <field class="java.math.BigDecimal" name="customer.eusalethirdpartcommodity"/>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="eusalecommodity.sum" resetType="Report">
+    <expression><![CDATA[$F{customer.eusalecommodity}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="eusalethirdpartcommodity.sum" resetType="Report">
+    <expression><![CDATA[$F{customer.eusalethirdpartcommodity}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <pageHeader height="80" splitType="Prevent">
+    <!-- Logo -->
+    <element height="55" kind="image" onErrorType="Icon" width="180" x="20" y="0">
+      <expression><![CDATA[$P{company.logo}]]></expression>
+    </element>
+    <!-- Title -->
+    <element blankWhenNull="true" hTextAlign="Right" height="20" kind="textField" width="230" x="300" y="0">
+      <expression><![CDATA[$P{title}]]></expression>
+    </element>
+    <!-- Number and date frame -->
+    <element height="25" kind="frame" width="300" x="230" y="20">
+      <box>
+        <pen lineColor="#000000" lineWidth="1.0"/>
+      </box>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="140" x="5" y="1">
+        <expression><![CDATA[$R{quarterreport.title.date}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" width="140" x="5" y="11">
+        <expression><![CDATA[$P{date}]]></expression>
+      </element>
+      <element height="25" kind="line" width="1" x="150" y="0"/>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="140" x="155" y="1">
+        <expression><![CDATA[$R{quarterreport.title.number}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" width="140" x="155" y="11">
+        <expression><![CDATA[$P{number}]]></expression>
+      </element>
+    </element>
+    <!-- Quarter code -->
+    <element height="25" kind="frame" width="100" x="430" y="50">
+      <box>
+        <pen lineColor="#000000" lineWidth="1.0"/>
+      </box>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="90" x="5" y="1">
+        <expression><![CDATA[$R{quarterreport.title.quarter}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" width="90" x="5" y="11">
+        <expression><![CDATA[$P{quarter}]]></expression>
+      </element>
+    </element>
+  </pageHeader>
+  <columnHeader height="110">
+    <!-- company adress frame -->
+    <element height="86" kind="frame" width="250" x="280" y="0">
+      <box>
+        <pen lineColor="#000000" lineWidth="1.0"/>
+      </box>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="5" y="2">
+        <expression><![CDATA[$R{quarterreport.address}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="14">
+        <expression><![CDATA[$P{company.name}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="28">
+        <expression><![CDATA[$P{company.address1}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="42">
+        <expression><![CDATA[$P{company.address2}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="56">
+        <expression><![CDATA[$P{company.zipcode} + " " + $P{company.city}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="14" kind="textField" width="240" x="10" y="70">
+        <expression><![CDATA[$P{company.country}]]></expression>
+      </element>
+    </element>
+    <element height="15" kind="frame" width="530" x="0" y="95">
+      <element height="1" kind="line" width="510" x="20" y="0"/>
+      <element height="1" kind="line" width="510" x="20" y="12"/>
+      <element hTextAlign="Left" height="12" kind="textField" width="100" x="20" y="2">
+        <expression><![CDATA[$R{quarterreport.column.1}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="60" x="120" y="2">
+        <expression><![CDATA[$R{quarterreport.column.2}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="110" x="180" y="2">
+        <expression><![CDATA[$R{quarterreport.column.3}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="110" x="290" y="2">
+        <expression><![CDATA[$R{quarterreport.column.4}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" width="110" x="400" y="2">
+        <expression><![CDATA[$R{quarterreport.column.5}]]></expression>
+      </element>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="14" splitType="Stretch">
+      <printWhenExpression><![CDATA[new Boolean($F{customer.eusalecommodity}.signum() != 0 || $F{customer.eusalethirdpartcommodity}.signum() != 0 ) ]]></printWhenExpression>
+      <!-- Customer VAT-Number -->
+      <element blankWhenNull="true" height="12" kind="textField" width="100" x="20" y="0">
+        <expression><![CDATA[$F{customer.vatnumber}]]></expression>
+      </element>
+      <!-- Customer number -->
+      <element blankWhenNull="true" height="12" kind="textField" width="60" x="120" y="0">
+        <expression><![CDATA[$F{customer.number}]]></expression>
+      </element>
+      <!-- Customer name -->
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="110" x="180" y="0">
+        <expression><![CDATA[$F{customer.name}]]></expression>
+      </element>
+      <!-- EU Sale Commodity -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0" width="110" x="290" y="0">
+        <expression><![CDATA[$F{customer.eusalecommodity}]]></expression>
+      </element>
+      <!-- EU Sale Thirdpart Commodity -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0" width="110" x="400" y="0">
+        <expression><![CDATA[$F{customer.eusalethirdpartcommodity}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <pageFooter height="16">
+    <!-- page number-->
+    <element evaluationTime="Report" hTextAlign="Right" height="15" kind="textField" width="100" x="365" y="0">
+      <expression><![CDATA[$R{quarterreport.page}]]></expression>
+    </element>
+    <element evaluationTime="Now" hTextAlign="Right" height="15" kind="textField" width="25" x="465" y="0">
+      <expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+    </element>
+    <element evaluationTime="Report" hTextAlign="Right" height="15" kind="textField" width="15" x="490" y="0">
+      <expression><![CDATA[$R{quarterreport.page.of}]]></expression>
+    </element>
+    <element evaluationTime="Report" hTextAlign="Right" height="15" kind="textField" width="25" x="505" y="0">
+      <expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+    </element>
+  </pageFooter>
+  <summary height="16">
+    <element backcolor="#000000" height="2" kind="rectangle" width="510" x="20" y="0"/>
+    <element hTextAlign="Left" height="14" kind="textField" width="100" x="20" y="2">
+      <expression><![CDATA[$R{quarterreport.sum}]]></expression>
+    </element>
+    <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0" width="110" x="290" y="2">
+      <expression><![CDATA[$V{eusalecommodity.sum}]]></expression>
+    </element>
+    <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" pattern="#,##0" width="110" x="400" y="2">
+      <expression><![CDATA[$V{eusalethirdpartcommodity.sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

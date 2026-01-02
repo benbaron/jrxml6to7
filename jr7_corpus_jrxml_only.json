@@ -1,0 +1,1208 @@
+{
+  "meta": {
+    "generatedAt": "2025-12-28T22:28:51Z",
+    "source": "samples.tar (JRXML-only)",
+    "fileCount": 136,
+    "tagCount": 130
+  },
+  "tags": {
+    "jasperReport": {
+      "attributes": [
+        "bottomMargin",
+        "columnCount",
+        "columnSpacing",
+        "columnWidth",
+        "floatColumnFooter",
+        "ignorePagination",
+        "language",
+        "leftMargin",
+        "name",
+        "orientation",
+        "pageHeight",
+        "pageWidth",
+        "printOrder",
+        "resourceBundle",
+        "rightMargin",
+        "scriptletClass",
+        "sectionType",
+        "summaryNewPage",
+        "titleNewPage",
+        "topMargin",
+        "uuid",
+        "whenNoDataType",
+        "whenResourceMissingType"
+      ],
+      "child_elements": [
+        "background",
+        "columnFooter",
+        "columnHeader",
+        "dataset",
+        "detail",
+        "field",
+        "filterExpression",
+        "group",
+        "import",
+        "lastPageFooter",
+        "noData",
+        "pageFooter",
+        "pageHeader",
+        "parameter",
+        "property",
+        "query",
+        "sortField",
+        "style",
+        "summary",
+        "template",
+        "title",
+        "variable"
+      ]
+    },
+    "background": {
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "child_elements": [
+        "element"
+      ]
+    },
+    "group": {
+      "attributes": [
+        "minHeightToStartNewPage",
+        "name",
+        "reprintHeaderOnEachPage",
+        "startNewColumn",
+        "startNewPage"
+      ],
+      "child_elements": [
+        "expression",
+        "groupFooter",
+        "groupHeader"
+      ]
+    },
+    "groupHeader": {
+      "attributes": [
+        "groupName"
+      ],
+      "child_elements": [
+        "band",
+        "cell",
+        "part"
+      ]
+    },
+    "band": {
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "child_elements": [
+        "element",
+        "printWhenExpression"
+      ]
+    },
+    "element": {
+      "attributes": [
+        "backcolor",
+        "blankWhenNull",
+        "bold",
+        "bookmarkLevel",
+        "chartType",
+        "columnBreakOffset",
+        "customizerClass",
+        "direction",
+        "evaluationGroup",
+        "evaluationTime",
+        "fontName",
+        "fontSize",
+        "forecolor",
+        "hImageAlign",
+        "hTextAlign",
+        "height",
+        "italic",
+        "key",
+        "kind",
+        "lazy",
+        "linkTarget",
+        "linkType",
+        "markup",
+        "mode",
+        "onErrorType",
+        "pattern",
+        "pdfEmbedded",
+        "pdfFontName",
+        "positionType",
+        "printInFirstWholeBand",
+        "printRepeatedValues",
+        "printWhenDetailOverflows",
+        "printWhenGroupChanges",
+        "radius",
+        "removeLineWhenBlank",
+        "repeatColumnHeaders",
+        "rotation",
+        "scaleImage",
+        "showLegend",
+        "stretchType",
+        "strikeThrough",
+        "style",
+        "textAdjust",
+        "underline",
+        "usingCache",
+        "uuid",
+        "vImageAlign",
+        "vTextAlign",
+        "width",
+        "x",
+        "y"
+      ],
+      "child_elements": [
+        "anchorNameExpression",
+        "bookmarkLevelExpression",
+        "borderSplitType",
+        "box",
+        "cell",
+        "columnGroup",
+        "component",
+        "connectionExpression",
+        "dataSourceExpression",
+        "dataset",
+        "element",
+        "expression",
+        "genericType",
+        "headerCell",
+        "hyperlinkAnchorExpression",
+        "hyperlinkPageExpression",
+        "hyperlinkReferenceExpression",
+        "hyperlinkTooltipExpression",
+        "measure",
+        "paragraph",
+        "parameter",
+        "patternExpression",
+        "pen",
+        "plot",
+        "printWhenExpression",
+        "property",
+        "propertyExpression",
+        "returnValue",
+        "rowGroup",
+        "subtitleExpression",
+        "text",
+        "titleExpression",
+        "whenNoDataCell"
+      ]
+    },
+    "component": {
+      "attributes": [
+        "ascenderHeight",
+        "barHeight",
+        "barWidth",
+        "checksumMode",
+        "checksumRequired",
+        "drawText",
+        "errorCorrectionLevel",
+        "evaluationTime",
+        "hAlign",
+        "iconPosition",
+        "intercharGapWidth",
+        "kind",
+        "labelFill",
+        "margin",
+        "moduleWidth",
+        "printOrder",
+        "shortBarHeight",
+        "style",
+        "textPosition",
+        "trackHeight",
+        "type",
+        "usingCache",
+        "vAlign",
+        "whenNoDataType",
+        "wideFactor"
+      ],
+      "child_elements": [
+        "chartSettings",
+        "chartTitleExpression",
+        "codeExpression",
+        "column",
+        "contents",
+        "dataset",
+        "datasetRun",
+        "expression",
+        "iconTextField",
+        "labelTextField",
+        "parameter",
+        "plot",
+        "xaxisTitleExpression",
+        "yaxisTitleExpression"
+      ]
+    },
+    "column": {
+      "attributes": [
+        "kind",
+        "uuid",
+        "width"
+      ],
+      "child_elements": [
+        "column",
+        "columnFooter",
+        "columnHeader",
+        "detailCell",
+        "groupFooter",
+        "groupHeader"
+      ]
+    },
+    "detailCell": {
+      "attributes": [
+        "height",
+        "style"
+      ],
+      "child_elements": [
+        "element"
+      ]
+    },
+    "expression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "columnHeader": {
+      "attributes": [
+        "height",
+        "rowSpan",
+        "style"
+      ],
+      "child_elements": [
+        "element"
+      ]
+    },
+    "datasetRun": {
+      "attributes": [
+        "subDataset",
+        "uuid"
+      ],
+      "child_elements": [
+        "connectionExpression",
+        "dataSourceExpression",
+        "parameter"
+      ]
+    },
+    "box": {
+      "attributes": [
+        "bottomPadding",
+        "leftPadding",
+        "padding",
+        "rightPadding",
+        "style",
+        "topPadding"
+      ],
+      "child_elements": [
+        "bottomPen",
+        "leftPen",
+        "pen",
+        "rightPen",
+        "topPen"
+      ]
+    },
+    "cell": {
+      "attributes": [
+        "columnTotalGroup",
+        "height",
+        "rowTotalGroup",
+        "style",
+        "width"
+      ],
+      "child_elements": [
+        "contents",
+        "element"
+      ]
+    },
+    "contents": {
+      "attributes": [
+        "backcolor",
+        "height",
+        "mode",
+        "style",
+        "width"
+      ],
+      "child_elements": [
+        "box",
+        "element"
+      ]
+    },
+    "measure": {
+      "attributes": [
+        "calculation",
+        "class",
+        "name"
+      ],
+      "child_elements": [
+        "expression"
+      ]
+    },
+    "columnGroup": {
+      "attributes": [
+        "height",
+        "name",
+        "position",
+        "totalPosition"
+      ],
+      "child_elements": [
+        "bucket",
+        "header",
+        "totalHeader"
+      ]
+    },
+    "totalHeader": {
+      "attributes": [
+        "backcolor",
+        "mode",
+        "style"
+      ],
+      "child_elements": [
+        "box",
+        "element"
+      ]
+    },
+    "header": {
+      "attributes": [
+        "style"
+      ],
+      "child_elements": [
+        "box",
+        "element"
+      ]
+    },
+    "bucket": {
+      "attributes": [
+        "class",
+        "order"
+      ],
+      "child_elements": [
+        "expression",
+        "orderByExpression"
+      ]
+    },
+    "rowGroup": {
+      "attributes": [
+        "name",
+        "totalPosition",
+        "width"
+      ],
+      "child_elements": [
+        "bucket",
+        "header",
+        "totalHeader"
+      ]
+    },
+    "headerCell": {
+      "attributes": [],
+      "child_elements": [
+        "box",
+        "element"
+      ]
+    },
+    "dataset": {
+      "attributes": [
+        "incrementGroup",
+        "incrementType",
+        "kind",
+        "name",
+        "resetGroup",
+        "resetType",
+        "timePeriod",
+        "uuid"
+      ],
+      "child_elements": [
+        "closeExpression",
+        "datasetRun",
+        "dateExpression",
+        "field",
+        "group",
+        "highExpression",
+        "incrementWhenExpression",
+        "lowExpression",
+        "openExpression",
+        "parameter",
+        "property",
+        "query",
+        "series",
+        "seriesExpression",
+        "sortField",
+        "valueExpression",
+        "variable",
+        "volumeExpression"
+      ]
+    },
+    "pen": {
+      "attributes": [
+        "lineColor",
+        "lineStyle",
+        "lineWidth"
+      ],
+      "child_elements": []
+    },
+    "hyperlinkTooltipExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "property": {
+      "attributes": [
+        "name",
+        "value"
+      ],
+      "child_elements": []
+    },
+    "sortField": {
+      "attributes": [
+        "name",
+        "order"
+      ],
+      "child_elements": []
+    },
+    "field": {
+      "attributes": [
+        "class",
+        "name"
+      ],
+      "child_elements": [
+        "description",
+        "property",
+        "propertyExpression"
+      ]
+    },
+    "description": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "style": {
+      "attributes": [
+        "backcolor",
+        "bold",
+        "default",
+        "fontName",
+        "fontSize",
+        "forecolor",
+        "hImageAlign",
+        "hTextAlign",
+        "italic",
+        "mode",
+        "name",
+        "strikeThrough",
+        "style",
+        "underline",
+        "vImageAlign",
+        "vTextAlign"
+      ],
+      "child_elements": [
+        "box",
+        "conditionalStyle",
+        "paragraph"
+      ]
+    },
+    "bottomPen": {
+      "attributes": [
+        "lineColor",
+        "lineStyle",
+        "lineWidth"
+      ],
+      "child_elements": []
+    },
+    "title": {
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "child_elements": [
+        "element",
+        "printWhenExpression"
+      ]
+    },
+    "text": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "printWhenExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "codeExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "hyperlinkReferenceExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "parameter": {
+      "attributes": [
+        "class",
+        "forPrompting",
+        "name"
+      ],
+      "child_elements": [
+        "defaultValueExpression",
+        "expression",
+        "property"
+      ]
+    },
+    "defaultValueExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "pageFooter": {
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "child_elements": [
+        "element",
+        "printWhenExpression"
+      ]
+    },
+    "detail": {
+      "attributes": [],
+      "child_elements": [
+        "band",
+        "part"
+      ]
+    },
+    "pageHeader": {
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "child_elements": [
+        "element",
+        "printWhenExpression"
+      ]
+    },
+    "part": {
+      "attributes": [
+        "evaluationTime",
+        "uuid"
+      ],
+      "child_elements": [
+        "component",
+        "partNameExpression",
+        "property"
+      ]
+    },
+    "partNameExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "query": {
+      "attributes": [
+        "language"
+      ],
+      "child_elements": []
+    },
+    "summary": {
+      "attributes": [
+        "height",
+        "splitType"
+      ],
+      "child_elements": [
+        "element"
+      ]
+    },
+    "rightPen": {
+      "attributes": [
+        "lineColor",
+        "lineStyle",
+        "lineWidth"
+      ],
+      "child_elements": []
+    },
+    "orderByExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "anchorNameExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "conditionalStyle": {
+      "attributes": [
+        "backcolor",
+        "bold",
+        "forecolor",
+        "mode"
+      ],
+      "child_elements": [
+        "conditionExpression",
+        "pen"
+      ]
+    },
+    "conditionExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "columnFooter": {
+      "attributes": [
+        "height",
+        "style"
+      ],
+      "child_elements": [
+        "element"
+      ]
+    },
+    "plot": {
+      "attributes": [
+        "axisLineColor",
+        "axisLineWidth",
+        "backcolor",
+        "circular",
+        "depthFactor",
+        "foregroundAlpha",
+        "headPercent",
+        "interiorGap",
+        "labelFormat",
+        "labelGap",
+        "labelRotation",
+        "legendLabelFormat",
+        "mercuryColor",
+        "meterColor",
+        "needleColor",
+        "rotation",
+        "scaleType",
+        "showLabels",
+        "showLines",
+        "showShapes",
+        "showTickLabels",
+        "showTickMarks",
+        "showVolume",
+        "startAngle",
+        "tableOrder",
+        "tickColor",
+        "tickInterval",
+        "units",
+        "valueAxisLabelColor",
+        "valueAxisLineColor",
+        "valueAxisTickLabelColor",
+        "valueAxisTickLabelMask",
+        "valueLocation"
+      ],
+      "child_elements": [
+        "axis",
+        "categoryAxisLabelExpression",
+        "dataRange",
+        "highRange",
+        "interval",
+        "itemLabel",
+        "labelFont",
+        "lowRange",
+        "maxValueExpression",
+        "mediumRange",
+        "seriesColor",
+        "timeAxisLabelExpression",
+        "valueAxisLabelExpression",
+        "valueDisplay",
+        "xaxisLabelExpression",
+        "yaxisLabelExpression"
+      ]
+    },
+    "itemLabel": {
+      "attributes": [
+        "backgroundColor",
+        "color"
+      ],
+      "child_elements": [
+        "font"
+      ]
+    },
+    "font": {
+      "attributes": [
+        "bold",
+        "fontSize"
+      ],
+      "child_elements": []
+    },
+    "series": {
+      "attributes": [],
+      "child_elements": [
+        "categoryExpression",
+        "colorExpression",
+        "endDateExpression",
+        "itemHyperlink",
+        "keyExpression",
+        "labelExpression",
+        "percentExpression",
+        "sectionHyperlink",
+        "seriesExpression",
+        "startDateExpression",
+        "subtaskExpression",
+        "taskExpression",
+        "timePeriodExpression",
+        "valueExpression",
+        "xvalueExpression",
+        "yvalueExpression",
+        "zvalueExpression"
+      ]
+    },
+    "sectionHyperlink": {
+      "attributes": [
+        "linkTarget",
+        "linkType"
+      ],
+      "child_elements": [
+        "hyperlinkReferenceExpression",
+        "hyperlinkTooltipExpression"
+      ]
+    },
+    "valueExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "keyExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "topPen": {
+      "attributes": [
+        "lineColor",
+        "lineStyle",
+        "lineWidth"
+      ],
+      "child_elements": []
+    },
+    "groupFooter": {
+      "attributes": [
+        "groupName"
+      ],
+      "child_elements": [
+        "band",
+        "cell"
+      ]
+    },
+    "variable": {
+      "attributes": [
+        "calculation",
+        "class",
+        "incrementGroup",
+        "incrementType",
+        "name",
+        "resetGroup",
+        "resetType"
+      ],
+      "child_elements": [
+        "expression",
+        "initialValueExpression"
+      ]
+    },
+    "hyperlinkAnchorExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "valueAxisLabelExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "categoryAxisLabelExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "yvalueExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "xvalueExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "seriesExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "subtitleExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "titleExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "propertyExpression": {
+      "attributes": [
+        "name",
+        "type"
+      ],
+      "child_elements": []
+    },
+    "categoryExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "import": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "labelExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "zvalueExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "volumeExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "closeExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "openExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "lowExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "highExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "dateExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "percentExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "endDateExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "startDateExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "subtaskExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "taskExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "seriesColor": {
+      "attributes": [
+        "color",
+        "order"
+      ],
+      "child_elements": []
+    },
+    "interval": {
+      "attributes": [
+        "alpha",
+        "backgroundColor",
+        "label"
+      ],
+      "child_elements": [
+        "dataRange"
+      ]
+    },
+    "dataRange": {
+      "attributes": [],
+      "child_elements": [
+        "highExpression",
+        "lowExpression"
+      ]
+    },
+    "valueDisplay": {
+      "attributes": [
+        "color",
+        "mask"
+      ],
+      "child_elements": [
+        "font"
+      ]
+    },
+    "axis": {
+      "attributes": [],
+      "child_elements": [
+        "chart",
+        "position"
+      ]
+    },
+    "chart": {
+      "attributes": [
+        "backcolor",
+        "chartType",
+        "evaluationGroup",
+        "evaluationTime",
+        "height",
+        "key",
+        "legendBackgroundColor",
+        "legendColor",
+        "positionType",
+        "showLegend",
+        "subtitleColor",
+        "titleColor",
+        "uuid",
+        "width",
+        "x",
+        "y"
+      ],
+      "child_elements": [
+        "dataset",
+        "plot"
+      ]
+    },
+    "position": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "initialValueExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "itemHyperlink": {
+      "attributes": [
+        "linkTarget",
+        "linkType"
+      ],
+      "child_elements": [
+        "hyperlinkAnchorExpression",
+        "hyperlinkReferenceExpression",
+        "hyperlinkTooltipExpression"
+      ]
+    },
+    "timePeriodExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "highRange": {
+      "attributes": [],
+      "child_elements": [
+        "highExpression",
+        "lowExpression"
+      ]
+    },
+    "mediumRange": {
+      "attributes": [],
+      "child_elements": [
+        "highExpression",
+        "lowExpression"
+      ]
+    },
+    "lowRange": {
+      "attributes": [],
+      "child_elements": [
+        "highExpression",
+        "lowExpression"
+      ]
+    },
+    "incrementWhenExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "dataSourceExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "timeAxisLabelExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "yaxisLabelExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "xaxisLabelExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "whenNoDataCell": {
+      "attributes": [],
+      "child_elements": [
+        "element"
+      ]
+    },
+    "lastPageFooter": {
+      "attributes": [
+        "height"
+      ],
+      "child_elements": [
+        "element"
+      ]
+    },
+    "bookmarkLevelExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "leftPen": {
+      "attributes": [
+        "lineColor",
+        "lineStyle",
+        "lineWidth"
+      ],
+      "child_elements": []
+    },
+    "filterExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "connectionExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "genericType": {
+      "attributes": [
+        "name",
+        "namespace"
+      ],
+      "child_elements": []
+    },
+    "paragraph": {
+      "attributes": [
+        "firstLineIndent",
+        "leftIndent",
+        "lineSpacing",
+        "lineSpacingSize",
+        "rightIndent"
+      ],
+      "child_elements": [
+        "tabStop"
+      ]
+    },
+    "hyperlinkPageExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "iconTextField": {
+      "attributes": [
+        "height",
+        "style",
+        "textAdjust",
+        "uuid",
+        "width",
+        "x",
+        "y"
+      ],
+      "child_elements": [
+        "expression"
+      ]
+    },
+    "labelTextField": {
+      "attributes": [
+        "fontSize",
+        "height",
+        "style",
+        "textAdjust",
+        "uuid",
+        "vTextAlign",
+        "width",
+        "x",
+        "y"
+      ],
+      "child_elements": [
+        "box",
+        "expression"
+      ]
+    },
+    "patternExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "tabStop": {
+      "attributes": [
+        "alignment",
+        "position"
+      ],
+      "child_elements": []
+    },
+    "template": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "maxValueExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "labelFont": {
+      "attributes": [
+        "bold",
+        "fontSize",
+        "italic"
+      ],
+      "child_elements": []
+    },
+    "chartSettings": {
+      "attributes": [
+        "backcolor",
+        "customizerClass",
+        "legendBackgroundColor",
+        "showLegend",
+        "subtitleColor",
+        "titlePosition"
+      ],
+      "child_elements": [
+        "hyperlinkTooltipExpression",
+        "legendFont",
+        "subtitleExpression",
+        "subtitleFont",
+        "titleExpression",
+        "titleFont"
+      ]
+    },
+    "legendFont": {
+      "attributes": [
+        "fontSize"
+      ],
+      "child_elements": []
+    },
+    "subtitleFont": {
+      "attributes": [
+        "bold",
+        "fontSize"
+      ],
+      "child_elements": []
+    },
+    "titleFont": {
+      "attributes": [
+        "fontSize",
+        "italic"
+      ],
+      "child_elements": []
+    },
+    "borderSplitType": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "returnValue": {
+      "attributes": [
+        "calculation",
+        "subreportVariable",
+        "toVariable"
+      ],
+      "child_elements": []
+    },
+    "noData": {
+      "attributes": [
+        "height"
+      ],
+      "child_elements": [
+        "element"
+      ]
+    },
+    "yaxisTitleExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "xaxisTitleExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "colorExpression": {
+      "attributes": [],
+      "child_elements": []
+    },
+    "chartTitleExpression": {
+      "attributes": [],
+      "child_elements": []
+    }
+  }
+}

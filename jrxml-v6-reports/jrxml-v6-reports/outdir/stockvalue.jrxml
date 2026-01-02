@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="StockValue" resourceBundle="book">
+  <parameter class="java.awt.Image" name="image.check"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.String" name="product.number"/>
+  <field class="java.lang.String" name="product.description"/>
+  <field class="java.lang.Integer" name="product.stockquantity"/>
+  <field class="java.lang.Boolean" name="product.expired"/>
+  <field class="java.lang.String" name="product.unit"/>
+  <field class="java.math.BigDecimal" name="product.inprice"/>
+  <variable calculation="Nothing" class="java.math.BigDecimal" name="product.stockvalue">
+    <expression><![CDATA[$F{product.inprice}.multiply( new BigDecimal( $F{product.stockquantity}.intValue() ) )]]></expression>
+  </variable>
+  <variable calculation="Sum" class="java.math.BigDecimal" name="product.stockvalue.sum" resetType="Report">
+    <expression><![CDATA[($V{product.stockvalue} == null) ? new BigDecimal(0) : $V{product.stockvalue}]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0)]]></initialValueExpression>
+  </variable>
+  <columnHeader height="15">
+    <element height="1" kind="line" width="510" x="20" y="12"/>
+    <!-- Column 1 -->
+    <element hTextAlign="Left" height="12" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{stockvaluereport.column.1}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="12" kind="textField" width="100" x="90" y="0">
+      <expression><![CDATA[$R{stockvaluereport.column.2}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="40" x="260" y="0">
+      <expression><![CDATA[$R{stockvaluereport.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="70" x="300" y="0">
+      <expression><![CDATA[$R{stockvaluereport.column.4}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="70" x="390" y="0">
+      <expression><![CDATA[$R{stockvaluereport.column.5}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="70" x="460" y="0">
+      <expression><![CDATA[$R{stockvaluereport.column.6}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="14">
+      <element height="12" kind="textField" width="70" x="20" y="0">
+        <expression><![CDATA[$F{product.number}]]></expression>
+      </element>
+      <element blankWhenNull="true" height="12" kind="textField" width="100" x="90" y="0">
+        <expression><![CDATA[$F{product.description}]]></expression>
+      </element>
+      <element hImageAlign="Center" height="10" kind="image" onErrorType="Icon" vImageAlign="Middle" width="60" x="260" y="1">
+        <expression><![CDATA[$P{image.check}]]></expression>
+      </element>
+      <element hTextAlign="Right" height="12" kind="textField" width="70" x="300" y="0">
+        <expression><![CDATA[$F{product.stockquantity}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="20" x="370" y="0">
+        <expression><![CDATA[$F{product.unit}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="70" x="390" y="0">
+        <expression><![CDATA[$F{product.inprice}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="70" x="460" y="0">
+        <expression><![CDATA[$V{product.stockvalue}]]></expression>
+      </element>
+      <element hTextAlign="Right" height="12" kind="textField" width="140" x="390" y="0">
+        <expression><![CDATA[$R{stockvaluereport.noinprice}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="12">
+    <element height="1" kind="line" width="510" x="20" y="0"/>
+    <element hTextAlign="Left" height="12" kind="textField" width="70" x="20" y="0">
+      <expression><![CDATA[$R{stockvaluereport.sum}]]></expression>
+    </element>
+    <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="70" x="460" y="0">
+      <expression><![CDATA[$V{product.stockvalue.sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

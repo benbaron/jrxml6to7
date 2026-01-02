@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="VATReport" resourceBundle="book">
+  <field class="java.lang.Integer" name="group.1.number"/>
+  <field class="java.lang.String" name="group.1.description"/>
+  <field class="java.lang.Integer" name="group.2.number"/>
+  <field class="java.lang.String" name="group.2.description"/>
+  <field class="java.math.BigDecimal" name="group.2.sum"/>
+  <field class="java.math.BigDecimal" name="sum"/>
+  <!-- Sums the result from fields 32 - 37. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="vatreport.sum" resetType="Report">
+    <expression><![CDATA[( $F{group.2.number}.intValue() >= 32 && $F{group.2.number}.intValue() <= 37) ? ($F{group.2.number}.intValue() < 37) ? $F{group.2.sum} : $F{group.2.sum}.negate() : new BigDecimal(0.0)]]></expression>
+    <initialValueExpression><![CDATA[new BigDecimal(0.0)]]></initialValueExpression>
+  </variable>
+  <!-- Group the data by account group number. -->
+  <group name="group.1">
+    <expression><![CDATA[$F{group.1.number}]]></expression>
+    <groupHeader>
+      <band height="25">
+        <element height="16" kind="textField" width="400" x="20" y="4">
+          <expression><![CDATA[$F{group.1.description}]]></expression>
+        </element>
+      </band>
+    </groupHeader>
+  </group>
+  <columnHeader height="15">
+    <element height="1" kind="line" width="510" x="20" y="12"/>
+    <element hTextAlign="Right" height="12" kind="textField" width="80" x="450" y="0">
+      <expression><![CDATA[$R{vatreport.column.1}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="12" splitType="Prevent">
+      <element height="12" kind="textField" width="30" x="20" y="0">
+        <expression><![CDATA[$F{group.2.number}]]></expression>
+      </element>
+      <element height="12" kind="textField" width="250" x="40" y="0">
+        <expression><![CDATA[$F{group.2.description}]]></expression>
+      </element>
+      <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0" width="80" x="450" y="0">
+        <expression><![CDATA[$F{group.2.sum}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="25">
+    <element backcolor="#000000" height="2" kind="rectangle" width="510" x="20" y="0"/>
+    <element height="14" kind="textField" width="250" x="20" y="3">
+      <expression><![CDATA[$R{vatreport.sum}]]></expression>
+    </element>
+    <element blankWhenNull="false" hTextAlign="Right" height="14" kind="textField" pattern="#,##0" width="80" x="450" y="3">
+      <expression><![CDATA[$V{vatreport.sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

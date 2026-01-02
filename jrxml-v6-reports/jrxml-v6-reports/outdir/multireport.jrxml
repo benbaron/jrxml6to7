@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport bottomMargin="0" leftMargin="0" name="MultiReport" resourceBundle="book" rightMargin="0" topMargin="0">
+  <field class="java.lang.String" name="report.name"/>
+  <field class="net.sf.jasperreports.engine.JasperReport" name="report.report"/>
+  <field class="net.sf.jasperreports.engine.JRDataSource" name="report.datasource"/>
+  <field class="java.util.Map" name="report.parameters"/>
+  <field class="java.util.ResourceBundle" name="report.bundle"/>
+  <!-- 595  842 -->
+  <detail>
+    <band height="842" splitType="Stretch">
+      <element backcolor="#FF0000" height="842" kind="subreport" width="595" x="0" y="0">
+        <parametersMapExpression><![CDATA[new java.util.HashMap(($F{report.parameters}) == null ? java.util.Collections.emptyMap() : ($F{report.parameters})) {{ put("REPORT_RESOURCE_BUNDLE", $F{report.bundle}); }}]]></parametersMapExpression>
+        <dataSourceExpression><![CDATA[$F{report.datasource}]]></dataSourceExpression>
+        <expression><![CDATA[$F{report.report}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

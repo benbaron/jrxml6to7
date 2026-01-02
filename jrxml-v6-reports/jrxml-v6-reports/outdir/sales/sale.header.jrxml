@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="SaleHeader">
+  <!--- Declared parameters in the report. -->
+  <parameter class="java.lang.String" name="title"/>
+  <parameter class="java.lang.String" name="title.date"/>
+  <parameter class="java.lang.String" name="title.number"/>
+  <parameter class="java.awt.Image" name="company.logo"/>
+  <parameter class="java.lang.Integer" name="number"/>
+  <parameter class="java.lang.String" name="date"/>
+  <parameter class="java.lang.String" name="text"/>
+  <pageHeader height="90" splitType="Prevent">
+    <!-- Logo -->
+    <element height="60" kind="image" onErrorType="Icon" width="300" x="40" y="20">
+      <expression><![CDATA[$P{company.logo}]]></expression>
+    </element>
+    <!-- Title -->
+    <element blankWhenNull="true" hTextAlign="Right" height="20" kind="textField" width="230" x="320" y="20">
+      <expression><![CDATA[$P{title}]]></expression>
+    </element>
+    <!-- Number and date frame -->
+    <element height="25" kind="frame" width="200" x="350" y="40">
+      <box>
+        <pen lineColor="#000000" lineWidth="0.5"/>
+      </box>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="90" x="5" y="1">
+        <expression><![CDATA[$P{title.number}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" width="90" x="5" y="11">
+        <expression><![CDATA[$P{number}]]></expression>
+      </element>
+      <element height="25" kind="line" width="1" x="100" y="0"/>
+      <element blankWhenNull="true" hTextAlign="Left" height="12" kind="textField" width="90" x="105" y="1">
+        <expression><![CDATA[$P{title.date}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Right" height="14" kind="textField" width="90" x="105" y="11">
+        <expression><![CDATA[$P{date}]]></expression>
+      </element>
+    </element>
+    <element height="15" kind="frame" width="100" x="450" y="70">
+      <element evaluationTime="Now" hTextAlign="Right" height="15" kind="textField" width="80" x="0" y="0">
+        <expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+      </element>
+      <element evaluationTime="Report" hTextAlign="Right" height="15" kind="textField" width="80" x="20" y="0">
+        <expression><![CDATA["(" + $V{PAGE_NUMBER}.toString() + ")"]]></expression>
+      </element>
+    </element>
+  </pageHeader>
+</jasperReport>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="InventoryListRow" resourceBundle="book">
+  <parameter class="java.lang.Integer" name="inventory.number"/>
+  <field class="java.lang.String" name="inventoryrow.product"/>
+  <field class="java.lang.String" name="inventoryrow.descripion"/>
+  <field class="java.lang.Integer" name="inventoryrow.stockquantity"/>
+  <field class="java.lang.Integer" name="inventoryrow.inventoryquantity"/>
+  <field class="java.lang.Integer" name="inventoryrow.change"/>
+  <detail>
+    <band height="12" splitType="Stretch">
+      <!-- Product number -->
+      <element blankWhenNull="true" height="12" kind="textField" width="80" x="80" y="0">
+        <expression><![CDATA[$F{inventoryrow.product}]]></expression>
+      </element>
+      <!-- Product description -->
+      <element blankWhenNull="true" height="12" kind="textField" width="70" x="180" y="0">
+        <expression><![CDATA[$F{inventoryrow.descripion}]]></expression>
+      </element>
+      <!-- Invoice currency rate -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0" width="70" x="320" y="0">
+        <expression><![CDATA[$F{inventoryrow.stockquantity}]]></expression>
+      </element>
+      <!-- Inpayment currency rate -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0" width="70" x="390" y="0">
+        <expression><![CDATA[$F{inventoryrow.inventoryquantity}]]></expression>
+      </element>
+      <!-- Inpayment sum  -->
+      <element blankWhenNull="true" hTextAlign="Right" height="12" kind="textField" pattern="#,##0" width="50" x="480" y="0">
+        <expression><![CDATA[$F{inventoryrow.change}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

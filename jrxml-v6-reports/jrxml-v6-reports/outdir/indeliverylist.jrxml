@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="IndeliveryList" resourceBundle="book">
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="Report"/>
+  <parameter class="java.util.HashMap" name="Parameters"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Integer" name="indelivery.number"/>
+  <field class="java.lang.String" name="indelivery.date"/>
+  <field class="java.lang.String" name="indelivery.text"/>
+  <field class="net.sf.jasperreports.engine.JRDataSource" name="indelivery.rows"/>
+  <columnHeader height="30">
+    <element height="1" kind="line" width="510" x="20" y="23"/>
+    <!-- Faktura nr -->
+    <element height="24" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{indeliverylistreport.column.1}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="70" x="80" y="0">
+      <expression><![CDATA[$R{indeliverylistreport.column.2}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="70" x="180" y="0">
+      <expression><![CDATA[$R{indeliverylistreport.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="70" x="460" y="0">
+      <expression><![CDATA[$R{indeliverylistreport.column.4}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="30" splitType="Stretch">
+      <!-- Title -->
+      <element height="14" kind="textField" width="30" x="20" y="0">
+        <expression><![CDATA[$F{indelivery.number}]]></expression>
+      </element>
+      <!-- Customer nr -->
+      <element height="14" kind="textField" width="200" x="80" y="0">
+        <expression><![CDATA[$F{indelivery.text}]]></expression>
+      </element>
+      <!-- Date -->
+      <element hTextAlign="Right" height="14" kind="textField" width="60" x="470" y="0">
+        <expression><![CDATA[$F{indelivery.date}]]></expression>
+      </element>
+      <!-- Order rows -->
+      <element height="0" kind="subreport" usingCache="false" width="575" x="0" y="12">
+        <parametersMapExpression><![CDATA[new java.util.HashMap() {{ put("indelivery.number", $F{indelivery.number}); }}]]></parametersMapExpression>
+        <dataSourceExpression><![CDATA[$F{indelivery.rows}]]></dataSourceExpression>
+        <expression><![CDATA[$P{Report}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

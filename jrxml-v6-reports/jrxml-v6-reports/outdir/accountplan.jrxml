@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="Accountplan" resourceBundle="book">
+  <parameter class="java.lang.String" name="accountplan"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Integer" name="account.number"/>
+  <field class="java.lang.String" name="account.description"/>
+  <field class="java.lang.String" name="account.vat"/>
+  <field class="java.lang.String" name="account.sru"/>
+  <field class="java.lang.String" name="account.report"/>
+  <columnHeader height="15">
+    <element height="1" kind="line" width="510" x="20" y="12"/>
+    <!-- Column 1 -->
+    <element hTextAlign="Left" height="12" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{accountplanreport.column.1}]]></expression>
+    </element>
+    <element hTextAlign="Left" height="12" kind="textField" width="220" x="120" y="0">
+      <expression><![CDATA[$R{accountplanreport.column.2}]]></expression>
+    </element>
+    <element hTextAlign="Center" height="12" kind="textField" width="50" x="380" y="0">
+      <expression><![CDATA[$R{accountplanreport.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Center" height="12" kind="textField" width="50" x="430" y="0">
+      <expression><![CDATA[$R{accountplanreport.column.4}]]></expression>
+    </element>
+    <element hTextAlign="Center" height="12" kind="textField" width="50" x="480" y="0">
+      <expression><![CDATA[$R{accountplanreport.column.5}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="14">
+      <element height="14" kind="textField" width="70" x="20" y="0">
+        <expression><![CDATA[$F{account.number}]]></expression>
+      </element>
+      <element blankWhenNull="true" height="14" kind="textField" width="220" x="120" y="0">
+        <expression><![CDATA[$F{account.description}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Center" height="14" kind="textField" width="50" x="380" y="0">
+        <expression><![CDATA[$F{account.vat}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Center" height="14" kind="textField" width="50" x="430" y="0">
+        <expression><![CDATA[$F{account.sru}]]></expression>
+      </element>
+      <element blankWhenNull="true" hTextAlign="Center" height="14" kind="textField" width="50" x="480" y="0">
+        <expression><![CDATA[$F{account.report}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>

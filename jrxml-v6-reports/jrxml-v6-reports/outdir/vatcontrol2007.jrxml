@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="VATControl" resourceBundle="book">
+  <field class="java.lang.Integer" name="group.number"/>
+  <field class="java.lang.String" name="group.description"/>
+  <field class="java.math.BigDecimal" name="group.turnover"/>
+  <field class="java.math.BigDecimal" name="group.calculated"/>
+  <field class="java.math.BigDecimal" name="group.reported"/>
+  <!-- Sums the deviation. -->
+  <variable calculation="Nothing" class="java.math.BigDecimal" name="deviation" resetType="Report">
+    <expression><![CDATA[$F{group.calculated}.subtract( $F{group.reported} )]]></expression>
+  </variable>
+  <!-- Sums the deviation. -->
+  <variable calculation="Sum" class="java.math.BigDecimal" name="deviation.sum" resetType="Report">
+    <expression><![CDATA[$V{deviation}]]></expression>
+  </variable>
+  <columnHeader height="15">
+    <element height="1" kind="line" width="510" x="20" y="12"/>
+    <element hTextAlign="Right" height="12" kind="textField" width="80" x="210" y="0">
+      <expression><![CDATA[$R{vatcontrolreport.column.1}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="80" x="290" y="0">
+      <expression><![CDATA[$R{vatcontrolreport.column.2}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="80" x="370" y="0">
+      <expression><![CDATA[$R{vatcontrolreport.column.3}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="12" kind="textField" width="80" x="450" y="0">
+      <expression><![CDATA[$R{vatcontrolreport.column.4}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="12" splitType="Prevent">
+      <element height="12" kind="textField" width="190" x="20" y="0">
+        <expression><![CDATA[$F{group.description}]]></expression>
+      </element>
+      <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="210" y="0">
+        <expression><![CDATA[$F{group.turnover}]]></expression>
+      </element>
+      <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="290" y="0">
+        <expression><![CDATA[$F{group.calculated}]]></expression>
+      </element>
+      <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="370" y="0">
+        <expression><![CDATA[$F{group.reported}]]></expression>
+      </element>
+      <element hTextAlign="Right" height="12" kind="textField" pattern="#,##0.00" width="80" x="450" y="0">
+        <expression><![CDATA[$V{deviation}]]></expression>
+      </element>
+    </band>
+  </detail>
+  <summary height="25">
+    <element backcolor="#000000" height="2" kind="rectangle" width="510" x="20" y="0"/>
+    <element height="14" kind="textField" width="250" x="20" y="3">
+      <expression><![CDATA[$R{vatcontrolreport.sum}]]></expression>
+    </element>
+    <element blankWhenNull="false" hTextAlign="Right" height="14" kind="textField" pattern="#,##0.00" width="80" x="450" y="3">
+      <expression><![CDATA[$V{deviation.sum}]]></expression>
+    </element>
+  </summary>
+</jasperReport>

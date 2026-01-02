@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jasperReport name="MainBook" resourceBundle="book">
+  <parameter class="net.sf.jasperreports.engine.JasperReport" name="Report"/>
+  <parameter class="java.util.HashMap" name="Parameters"/>
+  <!-- Declared fields in the report. -->
+  <field class="java.lang.Integer" name="account.number"/>
+  <field class="java.lang.String" name="account.description"/>
+  <field class="java.lang.Boolean" name="account.visible"/>
+  <field class="net.sf.jasperreports.engine.JRDataSource" name="month.data"/>
+  <columnHeader height="30">
+    <element height="1" kind="line" width="510" x="20" y="23"/>
+    <!-- Column 1 -->
+    <element height="24" kind="textField" width="80" x="20" y="0">
+      <expression><![CDATA[$R{budgetreport.column.1}]]></expression>
+    </element>
+    <element height="24" kind="textField" width="220" x="80" y="0">
+      <expression><![CDATA[$R{budgetreport.column.2}]]></expression>
+    </element>
+    <element hTextAlign="Right" height="24" kind="textField" width="80" x="450" y="0">
+      <expression><![CDATA[$R{budgetreport.column.3}]]></expression>
+    </element>
+  </columnHeader>
+  <detail>
+    <band height="30" splitType="Stretch">
+      <printWhenExpression><![CDATA[$F{account.visible}]]></printWhenExpression>
+      <!-- Title -->
+      <element height="14" kind="textField" width="30" x="20" y="0">
+        <expression><![CDATA[$F{account.number}]]></expression>
+      </element>
+      <element height="14" kind="textField" width="250" x="80" y="0">
+        <expression><![CDATA[$F{account.description}]]></expression>
+      </element>
+      <element height="0" kind="subreport" usingCache="false" width="555" x="20" y="14">
+        <parametersMapExpression><![CDATA[new java.util.HashMap() {{ put("account.number", $F{account.number}); }}]]></parametersMapExpression>
+        <dataSourceExpression><![CDATA[$F{month.data}]]></dataSourceExpression>
+        <expression><![CDATA[$P{Report}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>
